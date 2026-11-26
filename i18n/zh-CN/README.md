@@ -200,6 +200,10 @@ ECR 是一种模式，而不是一个移动端工具：任何智能体能够使�
 
 至于代码本身，以 Apache-2.0 许可证为准：ECR 代码的任何副本、fork 或软件包，无论是否修改，都必须保留 [LICENSE](../../LICENSE) 和 [NOTICE](../../NOTICE) 两个文件。NOTICE 写明了 ECR 的名称和本仓库的链接。
 
+## Star 历史
+
+<a href="https://star-history.com/#pierridotite/explore-compile-replay&Date"><picture><source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=pierridotite/explore-compile-replay&type=Date&theme=dark"><img src="https://api.star-history.com/svg?repos=pierridotite/explore-compile-replay&type=Date" alt="Star History Chart"></picture></a>
+
 ## 参与贡献
 
 现在最值得挑战的是契约：[提一个 issue](https://github.com/pierridotite/explore-compile-replay/issues/new)，说说哪里不适合你的系统。如果想写代码，[CONTRIBUTING.md](../../CONTRIBUTING.md) 列出了两个开放的大块工作（一个 Web 适配器和一个 MCP 服务器），以及适合入门的小任务。

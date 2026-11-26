@@ -200,6 +200,10 @@ Em um artigo, uma palestra ou a página de um produto, cite o repositório: o bo
 
 Para o código em si, vale a licença Apache-2.0: toda cópia, fork ou pacote do código do ECR, com ou sem mudanças, deve manter os arquivos [LICENSE](../../LICENSE) e [NOTICE](../../NOTICE). O NOTICE nomeia o ECR e leva a este repositório.
 
+## Histórico de estrelas
+
+<a href="https://star-history.com/#pierridotite/explore-compile-replay&Date"><picture><source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=pierridotite/explore-compile-replay&type=Date&theme=dark"><img src="https://api.star-history.com/svg?repos=pierridotite/explore-compile-replay&type=Date" alt="Star History Chart"></picture></a>
+
 ## Contribuir
 
 O que mais vale questionar agora é o contrato: [abra uma issue](https://github.com/pierridotite/explore-compile-replay/issues/new) e diga o que não caberia no seu sistema. Para escrever código, o [CONTRIBUTING.md](../../CONTRIBUTING.md) lista duas peças grandes em aberto, um adaptador web e um servidor MCP, e tarefas menores para começar.

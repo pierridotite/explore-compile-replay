@@ -200,6 +200,10 @@ Bir makalede, bir konuşmada ya da bir ürün sayfasında depoya atıf yapın: G
 
 Kodun kendisi için Apache-2.0 lisansı geçerlidir: ECR kodunun her kopyası, fork'u ya da paketi, değiştirilmiş olsun ya da olmasın, [LICENSE](../../LICENSE) ve [NOTICE](../../NOTICE) dosyalarını korumak zorundadır. NOTICE, ECR'nin adını ve bu deponun bağlantısını içerir.
 
+## Yıldız geçmişi
+
+<a href="https://star-history.com/#pierridotite/explore-compile-replay&Date"><picture><source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=pierridotite/explore-compile-replay&type=Date&theme=dark"><img src="https://api.star-history.com/svg?repos=pierridotite/explore-compile-replay&type=Date" alt="Star History Chart"></picture></a>
+
 ## Katkıda bulunma
 
 Şu an sorgulanması gereken şey sözleşme: [bir issue açın](https://github.com/pierridotite/explore-compile-replay/issues/new) ve sisteminize neyin uymayacağını söyleyin. Kod yazmak için [CONTRIBUTING.md](../../CONTRIBUTING.md), açık iki büyük parçayı (bir web adaptörü ve bir MCP sunucusu) ve başlamak için daha küçük görevleri listeler.

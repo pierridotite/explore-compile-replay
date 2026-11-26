@@ -190,6 +190,10 @@ In a paper, a talk or a product page, cite the repository: the "Cite this reposi
 
 For the code itself, the Apache-2.0 license decides: a copy, a fork or a package of ECR's code, changed or not, must keep the [LICENSE](LICENSE) and [NOTICE](NOTICE) files. NOTICE names ECR and links to this repository.
 
+## Star history
+
+<a href="https://star-history.com/#pierridotite/explore-compile-replay&Date"><picture><source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=pierridotite/explore-compile-replay&type=Date&theme=dark"><img src="https://api.star-history.com/svg?repos=pierridotite/explore-compile-replay&type=Date" alt="Star History Chart"></picture></a>
+
 ## Contributing
 
 The contract is the thing to challenge right now: [open an issue](https://github.com/pierridotite/explore-compile-replay/issues/new) and say what would not fit your system. To write code, [CONTRIBUTING.md](CONTRIBUTING.md) lists two open pieces, a web adapter and an MCP server, and smaller tasks to start with.

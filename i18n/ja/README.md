@@ -200,6 +200,10 @@ ECR はパターンであり、モバイル用のツールではありません�
 
 コードそのものについては Apache-2.0 ライセンスが定めています。ECR のコードのコピー、フォーク、パッケージは、変更の有無にかかわらず、[LICENSE](../../LICENSE) と [NOTICE](../../NOTICE) の 2 つのファイルを残さなければなりません。NOTICE には ECR の名前とこのリポジトリへのリンクが書かれています。
 
+## スターの推移
+
+<a href="https://star-history.com/#pierridotite/explore-compile-replay&Date"><picture><source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=pierridotite/explore-compile-replay&type=Date&theme=dark"><img src="https://api.star-history.com/svg?repos=pierridotite/explore-compile-replay&type=Date" alt="Star History Chart"></picture></a>
+
 ## コントリビュート
 
 今いちばん議論したいのは契約です：[issue を開いて](https://github.com/pierridotite/explore-compile-replay/issues/new)、あなたのシステムに合わない点を教えてください。コードを書くなら、[CONTRIBUTING.md](../../CONTRIBUTING.md) に、空いている 2 つの大きな作業（Web アダプターと MCP サーバー）と、手始めに向いた小さなタスクがあります。

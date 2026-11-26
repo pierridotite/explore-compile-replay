@@ -200,6 +200,10 @@ Trong một bài báo, một bài nói hay trang của một sản phẩm, hãy 
 
 Với chính phần mã, giấy phép Apache-2.0 quyết định: mọi bản sao, fork hay gói chứa mã của ECR, dù có sửa hay không, đều phải giữ lại hai tệp [LICENSE](../../LICENSE) và [NOTICE](../../NOTICE). NOTICE ghi tên ECR và dẫn về repo này.
 
+## Lịch sử star
+
+<a href="https://star-history.com/#pierridotite/explore-compile-replay&Date"><picture><source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=pierridotite/explore-compile-replay&type=Date&theme=dark"><img src="https://api.star-history.com/svg?repos=pierridotite/explore-compile-replay&type=Date" alt="Star History Chart"></picture></a>
+
 ## Đóng góp
 
 Điều đáng thử thách nhất lúc này là hợp đồng: [mở một issue](https://github.com/pierridotite/explore-compile-replay/issues/new) và cho biết điều gì không hợp với hệ thống của bạn. Nếu muốn viết code, [CONTRIBUTING.md](../../CONTRIBUTING.md) liệt kê hai phần lớn đang mở, một adapter web và một máy chủ MCP, cùng các việc nhỏ hơn để bắt đầu.

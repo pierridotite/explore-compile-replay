@@ -1,0 +1,8 @@
+\section{Implications for the Development Process}
+\label{sec:implications}
+
+\textbf{A place for the model.} ECR assigns the model to two activities, exploring and proposing, and both produce files that are reviewed before they count. Exploration becomes scheduled work whose output arrives as a trace and a compiled test in a change request, while the gate stays a deterministic program. The two decisions that change what a test means stay with people: a repair reaches a reviewer as one changed action, already checked against every recorded oracle, and a failed oracle reaches a person as a question, regression or intended change, that no agent may settle by editing the test.
+
+\textbf{Findings as executable artifacts.} A defect found by an agent reaches its bug report as a test that anyone can run, red until the fix and a guard after it.
+
+\textbf{Economics.} The cost of a model moves from each run to each change: one exploration when a path is first tested, one proposal when the system drifts under it. On LocalSend a replay saved the whole price of an agent run but only about a minute of its time, and repairs cost mostly device time, so ECR paid back in price within fifteen runs and in time only after tens. How often a system drifts, a property of each project, decides the rest.

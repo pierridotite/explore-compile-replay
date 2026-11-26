@@ -1,0 +1,18 @@
+{
+ "rq": "rq3",
+ "kind": "repair_run",
+ "system": "localsend",
+ "run": 45788986446,
+ "mutant": "d5-settings-content-1s",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+ "apk_sha256": "e1a0c758fd54c0924c228cd53938af7d4f0362f8dc26bb2e0805ba254978a8af",
+ "traces_diverged_in_this_run": [],
+ "traces_with_nothing_to_repair": [
+  "lucia-20261125T212222"
+ ],
+ "traces_repaired": [],
+ "proposer_price_usd": 0,
+ "attempts": [],
+ "source": "public lines of the run page, run-d5-settings-content-1s-repair-lines.txt"
+}

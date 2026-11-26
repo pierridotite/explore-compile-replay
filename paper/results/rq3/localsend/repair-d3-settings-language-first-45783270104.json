@@ -1,0 +1,108 @@
+{
+ "rq": "rq3",
+ "kind": "repair_run",
+ "system": "localsend",
+ "run": 45783270104,
+ "mutant": "d3-settings-language-first",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+ "apk_sha256": "56f05a6b6781328501fffba76ba815602e3c6205e50fa3888741d1abbe3e0f8c",
+ "traces_diverged_in_this_run": [
+  "ravi-20261125T212224"
+ ],
+ "traces_with_nothing_to_repair": [],
+ "traces_repaired": [],
+ "proposer_price_usd": 0.1066,
+ "attempts": [
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s15"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": null,
+    "stepId": "s15"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0396,
+    "turns": 2,
+    "tokens_out": 753
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s16"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "सिस्टम"
+     }
+    },
+    "stepId": "s16"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0359,
+    "turns": 2,
+    "tokens_out": 539
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s16"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s16"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0311,
+    "turns": 1,
+    "tokens_out": 570
+   }
+  }
+ ],
+ "source": "public lines of the run page, run-d3-settings-language-first-repair-lines.txt"
+}

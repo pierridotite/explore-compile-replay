@@ -1,0 +1,62 @@
+{
+ "rq": "rq3",
+ "kind": "hand_baseline_run",
+ "system": "localsend",
+ "mutant": "d1-address-confirm",
+ "edited_by": "an AI assistant (protocol amendment 5)",
+ "branch": "eval-localsend-1-hand",
+ "traces": [
+  {
+   "kind": "hand_baseline",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "flow_sha256": "9f8ab55b55469b89b0a0b224770625de8f85343aacc41cd6bddd37dc159315b0",
+   "lines_changed": 2,
+   "replays": {
+    "same_as_recorded": 3,
+    "of": 3,
+    "run": 45789563007
+   },
+   "kept_green": true
+  },
+  {
+   "kind": "hand_baseline",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "flow_sha256": "4bca5707e6a6d93e5aaba5c836e2c9bec1466aedabdff39cb5f19b5895ead195",
+   "lines_changed": 2,
+   "replays": {
+    "same_as_recorded": 3,
+    "of": 3,
+    "run": 45789563007
+   },
+   "kept_green": true
+  },
+  {
+   "kind": "hand_baseline",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "flow_sha256": "443758815b65c26b92c79fa33c6b7929daa4e2d91139c6145a803167af9d2a95",
+   "lines_changed": 2,
+   "replays": {
+    "same_as_recorded": 3,
+    "of": 3,
+    "run": 45789563007
+   },
+   "kept_green": true
+  },
+  {
+   "kind": "hand_baseline",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "flow_sha256": "43b410f0a06421272869e63d4ee62840f39711787e9ff99d6eaf8dedd47a05e5",
+   "lines_changed": 2,
+   "replays": {
+    "same_as_recorded": 3,
+    "of": 3,
+    "run": 45789563007
+   },
+   "kept_green": true
+  }
+ ]
+}

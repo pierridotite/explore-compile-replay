@@ -1,0 +1,16 @@
+{
+ "rq": "rq3",
+ "kind": "repair_run",
+ "system": "localsend",
+ "run": 45789017928,
+ "mutant": "d5-address-confirm-5s",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+ "apk_sha256": "0d093055233e1463196ad44cfc868a536ea1573f54c2b716f237d4a710d2f4d8",
+ "traces_diverged_in_this_run": [],
+ "traces_with_nothing_to_repair": [],
+ "traces_repaired": [],
+ "proposer_price_usd": 0,
+ "attempts": [],
+ "source": "public lines of the run page, run-d5-address-confirm-5s-repair-lines.txt"
+}

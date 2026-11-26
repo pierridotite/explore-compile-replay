@@ -1,0 +1,30 @@
+{
+ "rq": "rq4",
+ "kind": "adapters",
+ "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+ "size_definition": "lines neither blank nor comments, `pnpm size` (spec/adapter-size.ts)",
+ "adapters": {
+  "fixture": {
+   "lines": 302,
+   "lines_with_toy_system_and_example": 415,
+   "files": {"src/adapter.ts": 271, "src/index.ts": 3, "src/instrumented.ts": 28, "left out: src/todo.ts": 38, "left out: src/example.ts": 75},
+   "laws_source": "conformance kit, `pnpm conformance`, system without bug",
+   "laws": {"L1": "pass", "L2": "pass", "L3": "pass", "L4": "partial (network open)", "L5": "pass", "L6": "partial (a behaviour change coming back as a failed oracle is not checked by the kit)", "L7": "pass"}
+  },
+  "maestro": {
+   "lines": 298,
+   "files": {"src/adapter.ts": 295, "src/index.ts": 3},
+   "contract_changes_needed": 0,
+   "laws_source": "the kit runs on the fixture adapter only; for this adapter each law is read from its tests and from the LocalSend campaign",
+   "laws": {
+    "L1": {"state": "partial", "evidence": "same bytes on two compilations of the 7 kept traces; same result on 20 replays of 20 for 6 of 7 traces (results/rq2)"},
+    "L2": {"state": "partial", "evidence": "137 of 140 replays on the unchanged app give what the trace records (results/rq2)"},
+    "L3": {"state": "pass", "evidence": "test 'L1 and L3' of packages/adapter-maestro/test/maestro.test.ts, checkSourceMap"},
+    "L4": {"state": "pass", "evidence": "the last replay of each kept trace ran with the network of the tools closed and passed (results/rq2)"},
+    "L5": {"state": "not checked", "evidence": "capabilities.snapshot is false; a fresh state comes from clearing the app data and clearState of launchApp"},
+    "L6": {"state": "pass on the campaign", "evidence": "25 accepted repairs kept the checks (25 of 25); every D6 mutant came back as oracle_failed and every proposal on it was refused (results/rq3)"},
+    "L7": {"state": "not checked", "evidence": "typed texts are kept apart as parameters; a value reaches Maestro on the command line (Section 8)"}
+   }
+  }
+ }
+}

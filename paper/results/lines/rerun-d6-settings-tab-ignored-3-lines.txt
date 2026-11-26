@@ -1,0 +1,16 @@
+Run 45789873866 of pierridotite/mobile-agent-testers (agent run on mutant d6-settings-tab-ignored, inputs of the reruns)
+Branch eval-localsend-1-traces at 385a721c34a86417b57e41e2e21f14059f46f87d (3a700fc + the repair code of protocol amendment 5, ECR 65f8064; with repair empty, replays run as at 3a700fc)
+Build in the job: the default flutter recipe after git -C .. apply of drift-bench/mutants/localsend/d6-settings-tab-ignored.patch from ECR e5425f2abce99f51073a436b8c0ff6e881f4181e (the public build log names this patch), apk_path=mutant.apk
+Created 2026-11-26T09:12:50Z, attempt 1 started 2026-11-26T09:12:50Z, completed 2026-11-26T09:31:11Z, conclusion success. Personas malik.
+Inputs seen in the job env: BRIEF=AGENT_BRIEF.md, MAP=none, MODEL=claude-sonnet-5-5, RECORD_VIDEO=false, REPAIR=, REPLAY_PATH=true, REPLAY_TIMES=20, REPLAY_TRACES=
+
+Lines of the run page, copied from the public job logs:
+malik (job success, 7 min 55 s):
+  malik: finished (47 turns, $0.31)
+  trace: 25 steps, 2 typed texts kept apart, 0 commands left out
+  trace: 18 taps: 15 by name, 0 by id, 3 by position, 3 at a place inside the element
+  goal: malik-20261125T212400: screen of step s16 (1 texts), not reached on 27 screens
+  replay: stopped at step 9 of 25 (target_not_found, tapOn by name, after tapOn by name, eraseText, inputText), after 69 s; on screen: the app, the app running, started 58 s before; app start 4 s; in the log the app was cleared 1, stopped 2 and launched 1 times; nothing stopped responding; no crash; load 3.3 on the phone, 2.8 on the runner
+  Agent finished (exit 0), 56 files
+
+Total agent cost of the run: $0.31.

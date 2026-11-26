@@ -1,0 +1,16 @@
+{
+ "rq": "rq3",
+ "kind": "repair_run",
+ "system": "localsend",
+ "run": 45783286618,
+ "mutant": "d3-address-buttons-swapped",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+ "apk_sha256": "3530d0ff68fb1352acf41f7f5ee50fabea023ebe5a2dbb4f2f2bb309f9efd9b7",
+ "traces_diverged_in_this_run": [],
+ "traces_with_nothing_to_repair": [],
+ "traces_repaired": [],
+ "proposer_price_usd": 0,
+ "attempts": [],
+ "source": "public lines of the run page, run-d3-address-buttons-swapped-repair-lines.txt"
+}

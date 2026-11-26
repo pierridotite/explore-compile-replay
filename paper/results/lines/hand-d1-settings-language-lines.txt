@@ -1,0 +1,13 @@
+Run 45789627845 of pierridotite/mobile-agent-testers (hand baseline on mutant d1-settings-language, 3 replays of each hand-kept trace of hand/d1-settings-language, replay_times=3)
+Branch eval-localsend-1-hand at 09622c7aacd2029fc48a495bdd1ec3c13411f290 (385a721 + hand/, the traces kept by hand for the hand baseline of amendment 5)
+Build in the job: the default flutter recipe after git -C .. apply of drift-bench/mutants/localsend/d1-settings-language.patch from ECR e5425f2abce99f51073a436b8c0ff6e881f4181e (the public build log names this patch), apk_path=mutant.apk
+Created 2026-11-26T09:11:12Z, attempt 1 started 2026-11-26T09:11:12Z, completed 2026-11-26T09:29:34Z, conclusion success. Personas ravi.
+Inputs seen in the job env: BRIEF=AGENT_BRIEF.md, MAP=none, MODEL=sonnet, RECORD_VIDEO=false, REPAIR=, REPLAY_PATH=false, REPLAY_TIMES=3, REPLAY_TRACES=hand/d1-settings-language
+
+Lines of the run page, copied from the public job logs:
+Android app: localsend/localsend v1.19.0 at 44f48f18a5503c43873570ff489d27ff1983e198, APK SHA-256 ca2edc2a05af455d9cebbc5bd561d6154d69f4b2442dda8f899e7555891f981b
+replays: ravi-20261125T212224: 2 of 3 replays give what the trace recorded (2 pass, 1 FAIL), 1 with the network of the tools closed (FAIL), median 70 s, 16 steps, taps 7 by name, 0 by id, 0 by position, trace d696167bae49, app start median 4.2 s, slowest 7.3 s, app cleared by the harness before 3 of 3, cleared again by the replay itself in 3 of 3; stops: oracle_failed at step s15
+replays:   ravi-20261125T212224 replay 3 of 3 (network of the tools closed): FAIL, oracle_failed at step s15 (oracle ai-s15-settings-tab), after 70 s; on screen: the app, the app running, started 62 s before; app start 3.7 s; in the log the app was cleared 1, stopped 2 and launched 1 times; nothing stopped responding; no crash; load 4.4 on the phone, 2.5 on the runner
+
+Total: 2 of 3 replays give what the trace recorded. 0 of 1 traces 3 of 3; ravi-20261125T212224 2 of 3 (oracle_failed at step s15). The last replay of each trace ran with the network of the tools closed: 0 of 1 pass.
+replays.json of each persona: public artifact replays-<persona> of the run (gh run download 45789627845 -R pierridotite/mobile-agent-testers -p 'replays-*').

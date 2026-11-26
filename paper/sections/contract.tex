@@ -1,0 +1,61 @@
+\section{The Adapter Contract and Seven Laws}
+\label{sec:contract}
+
+To support a new kind of system, one writes an \emph{adapter}: the two vocabularies as schemas, a driver, and one target for each artifact format (Figure~\ref{fig:contract}). The \emph{driver} acts on the live system. It is used to explore, and a replay never uses it: a replay runs the compiled artifact. Its \code{verify} must be deterministic and call no model. Its \code{snapshot} and \code{restore} are optional and declared as a capability. A \emph{target} compiles and replays.
+
+\begin{figure}[t]
+\begin{lstlisting}
+interface SystemDriver<State, A, O> {
+  capabilities: { snapshot: boolean };
+  setup(): Promise<void>;  teardown(): Promise<void>;
+  observe(): Promise<{ state: State; stable: boolean }>;
+  execute(action: A): Promise<void>;
+  verify(oracle: O): Promise<Verdict>;  // deterministic, no model
+  snapshot?(): Promise<SnapshotId>;
+  restore?(id: SnapshotId): Promise<void>;
+}
+interface Target<A, O> {
+  id: string;  // "maestro", "playwright"
+  compile(trace: TypedTrace<A, O>): CompiledArtifact;  // pure
+  replay(artifact: CompiledArtifact, options?: ReplayOptions):
+    Promise<ReplayResult>;
+  replayInstrumented?(artifact: CompiledArtifact,  // for law L2
+    options?: ReplayOptions):
+    Promise<{ result: ReplayResult; received: Received[] }>;
+}
+interface Adapter<State, A, O> {
+  id: string;  actions: z.ZodType<A>;  oracles: z.ZodType<O>;
+  driver: SystemDriver<State, A, O>;  targets: Target<A, O>[];
+}
+\end{lstlisting}
+\caption{The adapter contract of \code{spec/contract.ts}, abridged: comments and \code{readonly} modifiers are left out.}
+\Description{Three TypeScript interfaces: SystemDriver, Target and Adapter.}
+\label{fig:contract}
+\end{figure}
+
+An adapter is correct when it obeys seven laws (Table~\ref{tab:laws}). The laws are executable. A conformance kit takes an adapter and a few traces, and reports one status for each law. The kit says what it cannot check: a law that is covered in part is reported as \emph{partial}, a law with no applicable check as \emph{skipped}, and neither counts as a pass.
+
+\begin{table}[t]
+\caption{The seven laws, and the report of the conformance kit for the reference adapter at \ecrcommit{}, in the CI job that closes the network.}
+\label{tab:laws}
+\footnotesize
+\begin{tabular}{@{}L{1.75cm}L{5.25cm}l@{}}
+\toprule
+Law & Statement & Kit \\
+\midrule
+\law{L1} Determinism & The same trace compiles to the same bytes. The same artifact, on the same system state, gives the same verdict. & pass \\
+\law{L2} Fidelity & The artifact runs the actions of the trace and checks its oracles, in the same order. It adds none and drops none. & pass \\
+\law{L3} Traceability & Each step maps to one distinct range of the artifact. Ranges do not overlap. & pass \\
+\law{L4} No model & Compiling and replaying call no model. & pass \\
+\law{L5} State & If the driver declares snapshots, restoring a snapshot gives a state that is observed as identical. & pass \\
+\law{L6} Safe repair & A patch stays inside the range of the step that diverged. It removes no oracle and weakens none. A failed oracle is never repaired. & partial \\
+\law{L7} No secret & Neither the trace nor the artifact contains a secret value. & pass \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:laws} gives the report for the reference adapter of Section~\ref{sec:implementation}. Six laws pass. For \law{L1} the kit compiles each trace twice and compares the bytes, then replays each artifact three times and compares the results. For \law{L2} a recorded trace must replay as it was observed. The artifact is then replayed against an instrumented copy of the system, which notes every call it receives, and the kit compares these notes with the trace: the same actions with the same values, one read of the state for each oracle, in the same order, and nothing else. For \law{L3} it validates the source map. For \law{L5} it observes, takes a snapshot, acts, restores, and compares the two observations. For \law{L7} it searches the trace and the artifact for the value of each parameter that the trace declares secret.
+
+\law{L4} needs help from outside. The kit verifies that no artifact imports a known model SDK, but it does not close the network itself: the caller does, and says so. The kit then checks that no public address answers before it runs anything. A CI job runs it this way, in a network namespace that has only the loopback. Otherwise the kit reports \law{L4} as partial.
+
+One law is partial, and the report says which part is missing. For \law{L6}, the kit gives each step the action of another step and verifies, on the compiled files, that the text of every other step is unchanged; the refusal of every patch after a behaviour change is covered by the tests of the core, not yet by the kit. The kit has been run on the reference adapter only. On the mobile adapter it needs a device, and the mobile target has no instrumented replay, so \law{L2} would stay partial there.

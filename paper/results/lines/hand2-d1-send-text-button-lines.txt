@@ -1,0 +1,12 @@
+Run 45794958946 of pierridotite/mobile-agent-testers (hand baseline on mutant d1-send-text-button, 3 replays of each hand-kept trace of hand/d1-send-text-button, replay_times=3, second run after the correction of malik's hand edits, malik only)
+Branch eval-localsend-1-hand at 071f0f3acb9728e31111f06d61f613bb689153d1 (09622c7 + the hand edits of malik on d1-send-text-button and d4-message-dialog-before corrected: malik taps Text twice, at s3 and s7)
+Build in the job: the default flutter recipe after git -C .. apply of drift-bench/mutants/localsend/d1-send-text-button.patch from ECR e5425f2abce99f51073a436b8c0ff6e881f4181e (the public build log names this patch), apk_path=mutant.apk
+Created 2026-11-26T09:45:40Z, attempt 1 started 2026-11-26T09:45:40Z, completed 2026-11-26T10:05:31Z, conclusion success. Personas malik.
+Inputs seen in the job env: BRIEF=AGENT_BRIEF.md, MAP=none, MODEL=sonnet, RECORD_VIDEO=false, REPAIR=, REPLAY_PATH=false, REPLAY_TIMES=3, REPLAY_TRACES=hand/d1-send-text-button
+
+Lines of the run page, copied from the public job logs:
+Android app: localsend/localsend v1.19.0 at 44f48f18a5503c43873570ff489d27ff1983e198, APK SHA-256 dd9812851718480cd218d8fb8bc626b2f526eeda12e5494b5738198dd9a69e22
+replays: malik-20261125T212400: 3 of 3 replays give what the trace recorded (3 pass), 1 with the network of the tools closed (pass), median 98 s, 17 steps, taps 9 by name, 0 by id, 0 by position, trace 473fc1a2fdca, app start median 5.3 s, slowest 9.3 s, app cleared by the harness before 3 of 3, cleared again by the replay itself in 3 of 3
+
+Total: 3 of 3 replays give what the trace recorded. 1 of 1 traces 3 of 3. The last replay of each trace ran with the network of the tools closed: 1 of 1 pass.
+replays.json of each persona: public artifact replays-<persona> of the run (gh run download 45794958946 -R pierridotite/mobile-agent-testers -p 'replays-*').

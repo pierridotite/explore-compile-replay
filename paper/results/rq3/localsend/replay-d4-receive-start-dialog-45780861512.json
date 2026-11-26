@@ -1,0 +1,354 @@
+{
+ "rq": "rq3",
+ "kind": "replay_set",
+ "system": "localsend",
+ "run": 45780861512,
+ "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+ "mat_commit": "cd31933fee2d8e9821d5ec626fe8082ef635ef89",
+ "traces_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "app_tag": "v1.19.0",
+ "app_commit": "44f48f18a5503c43873570ff489d27ff1983e198",
+ "apk_sha256": "c8863436719581e8ad6cc128e8810a8d515876ad318c5813eea4bcb08b5e2a07",
+ "mutant": "d4-receive-start-dialog",
+ "patch_from_ecr": "e5425f2abce99f51073a436b8c0ff6e881f4181e",
+ "device": "Android emulator of the workflow at cd31933",
+ "per_trace": {
+  "felipe-20261125T212237": {
+   "same_as_recorded": 0,
+   "of": 3,
+   "median_seconds": 31
+  },
+  "felipe-20261125T215845": {
+   "same_as_recorded": 0,
+   "of": 3,
+   "median_seconds": 27
+  },
+  "lucia-20261125T212222": {
+   "same_as_recorded": 0,
+   "of": 3,
+   "median_seconds": 37
+  },
+  "lucia-20261125T215848": {
+   "same_as_recorded": 0,
+   "of": 3,
+   "median_seconds": 33
+  },
+  "malik-20261125T212400": {
+   "same_as_recorded": 0,
+   "of": 3,
+   "median_seconds": 30
+  },
+  "ravi-20261125T212224": {
+   "same_as_recorded": 0,
+   "of": 3,
+   "median_seconds": 26
+  },
+  "ravi-20261125T215801": {
+   "same_as_recorded": 0,
+   "of": 3,
+   "median_seconds": 26
+  }
+ },
+ "replays": [
+  {
+   "kind": "replay",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "index": 1,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "index": 2,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "index": 3,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "cut",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "index": 1,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "index": 2,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "index": 3,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "cut",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s1",
+    "oracle": "ai-s1-home"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "index": 1,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "index": 2,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s1",
+    "oracle": "ai-s1-home"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "index": 3,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "cut",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "index": 1,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "index": 2,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s2",
+    "oracle": "ai-s2-send-tab"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "index": 3,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "cut",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s1",
+    "oracle": "ai-s1-home"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "index": 1,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "index": 2,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "index": 3,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "cut",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s1",
+    "oracle": "ai-s1-home"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "index": 1,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "index": 2,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "index": 3,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "cut",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "index": 1,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "index": 2,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "open",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  },
+  {
+   "kind": "replay",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "index": 3,
+   "fresh_state": "app data cleared by the harness, then clearState of launchApp",
+   "internet": "cut",
+   "model_key_present": false,
+   "outcome": "fail",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   }
+  }
+ ],
+ "source": "public lines of the run page, run-d4-receive-start-dialog-lines.txt"
+}

@@ -1,0 +1,54 @@
+{
+ "rq": "rq3",
+ "kind": "repair_run",
+ "system": "localsend",
+ "run": 45779340018,
+ "mutant": "d1-settings-language",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+ "apk_sha256": "72f82034959a4a0b9f1ee7f65ce04d2461dc06eb85c689bad67461dd936c28cd",
+ "traces_diverged_in_this_run": [
+  "ravi-20261125T212224"
+ ],
+ "traces_with_nothing_to_repair": [],
+ "traces_repaired": [
+  "ravi-20261125T212224"
+ ],
+ "proposer_price_usd": 0.03,
+ "attempts": [
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s16"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "सिस्टम ›"
+     }
+    },
+    "stepId": "s16"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": true,
+   "refusal_reason": null,
+   "oracles_kept": true,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": 2,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.03,
+    "turns": 1,
+    "tokens_out": 388
+   }
+  }
+ ],
+ "source": "public lines of the run page, run-d1-settings-language-repair-lines.txt"
+}

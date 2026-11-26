@@ -1,0 +1,613 @@
+{
+ "rq": "rq3",
+ "kind": "repair_run",
+ "system": "localsend",
+ "run": 45785451641,
+ "mutant": "d4-message-dialog-before",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+ "apk_sha256": "af86d83435b811669ab6c83630c7ee69bcce530a76880e35368ffaae75177b8d",
+ "traces_diverged_in_this_run": [
+  "felipe-20261125T212237",
+  "felipe-20261125T215845",
+  "lucia-20261125T212222",
+  "lucia-20261125T215848",
+  "malik-20261125T212400",
+  "ravi-20261125T212224",
+  "ravi-20261125T215801"
+ ],
+ "traces_with_nothing_to_repair": [],
+ "traces_repaired": [],
+ "proposer_price_usd": 0.6187,
+ "attempts": [
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0327,
+    "turns": 2,
+    "tokens_out": 300
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0274,
+    "turns": 1,
+    "tokens_out": 311
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0271,
+    "turns": 1,
+    "tokens_out": 273
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0336,
+    "turns": 2,
+    "tokens_out": 335
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.028,
+    "turns": 1,
+    "tokens_out": 327
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0333,
+    "turns": 2,
+    "tokens_out": 277
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0281,
+    "turns": 1,
+    "tokens_out": 414
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0268,
+    "turns": 1,
+    "tokens_out": 273
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0274,
+    "turns": 1,
+    "tokens_out": 323
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0265,
+    "turns": 1,
+    "tokens_out": 283
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0265,
+    "turns": 1,
+    "tokens_out": 268
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0272,
+    "turns": 1,
+    "tokens_out": 321
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0339,
+    "turns": 2,
+    "tokens_out": 278
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0342,
+    "turns": 2,
+    "tokens_out": 293
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0289,
+    "turns": 1,
+    "tokens_out": 342
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0278,
+    "turns": 1,
+    "tokens_out": 269
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0349,
+    "turns": 2,
+    "tokens_out": 368
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0292,
+    "turns": 1,
+    "tokens_out": 378
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0281,
+    "turns": 1,
+    "tokens_out": 289
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0284,
+    "turns": 1,
+    "tokens_out": 303
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0287,
+    "turns": 1,
+    "tokens_out": 326
+   }
+  }
+ ],
+ "source": "public lines of the run page, run-d4-message-dialog-before-repair-lines.txt"
+}

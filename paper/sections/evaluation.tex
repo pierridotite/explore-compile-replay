@@ -1,0 +1,48 @@
+\section{Evaluation}
+\label{sec:evaluation}
+
+The protocol of this evaluation was written before any measured run and is part of the artifact, with six dated amendments. As guidelines for empirical studies that involve LLMs ask~\cite{baltes2025guidelines}, model versions, prompts and traces are published, and every number below comes from a result file.
+
+\subsection{Questions}
+
+\textbf{RQ1, cost.} What does a verdict cost with ECR, against running the agent again, and after how many runs does one exploration plus its replays and repairs cost less? \textbf{RQ2, determinism.} On an unchanged system, does a replay give the same result 20 times of 20, and does the agent, run again five times? \textbf{RQ3, drift.} When the system changes, does the replay break where it should, is a correct repair accepted and a wrong one refused, and does a regression stay red? \textbf{RQ4, generality.} What does a new adapter cost to write, and do the seven laws transfer to it?
+
+\subsection{Injected drift}
+
+Real drift arrives slowly and without labels, so we inject it, in the manner of mutation analysis~\cite{jia2011mutation}. A \emph{mutant} is one change to the system under test, applied alone, written once the traces are frozen and committed before any replay on a mutant. Table~\ref{tab:drift} gives the six classes, what the protocol expects of each, and what we observed. A change of behaviour (\textsf{D6}) is the control: a \textsf{D6} mutant that ends green, by any path, counts as a false green and as a failure of law \law{L6}.
+
+\begin{table*}[t]
+\caption{Injected drift on LocalSend, five mutants per class: what the protocol expects (columns 3 and 5), and what 3 replays of the 7 traces per mutant and at most 3 proposals per diverged trace gave. Detected: a trace fails its 3 replays.}
+\label{tab:drift}
+\footnotesize
+\begin{tabular}{@{}L{1.55cm}L{2.85cm}L{2.9cm}L{2.05cm}L{1.15cm}L{5.05cm}@{}}
+\toprule
+Class & The change & Expected replay & Detected (type) & Repair & Repairs accepted \\
+\midrule
+\textsf{D1} Text & A targeted text is reworded & \code{target\_not\_found} & 5 of 5 (5 of 5) & Accepted & 25 of the 26 traces; 4 of 5 mutants in full \\
+\textsf{D2} Identifier & A targeted identifier is renamed & \code{target\_not\_found} & \multicolumn{3}{@{}l}{Not applicable: the 54 taps of the 7 traces all target a text} \\
+\textsf{D3} Structure & The target moves & \code{target\_not\_found}, \code{action\_failed} & 2 of 5 (1 of 2) & Accepted & 0 of 8 traces: 2 steps to change (7), oracle (1) \\
+\textsf{D4} Added step & A dialog comes first & \code{target\_not\_found}, \code{unexpected\_state} & 5 of 5 (0 of 5) & Refused & \CellDfour \\
+\textsf{D5} Delay & The target comes 1, 5 or 15~s later & Pass, or \code{timeout} & 0 of 5; 102 of 105 replays pass & None & None asked \\
+\textsf{D6} Behaviour & A checked state is not reached & \code{oracle\_failed} & 5 of 5 (5 of 5) & Refused & \CellDsix \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Procedure and baselines}
+
+The subject is LocalSend~v1.19.0, an open-source file-sharing app that the author did not write, built from source and run on Android emulators; the agent runs the model \code{claude-sonnet-5-5}. A trace keeps the path of one exploration and the checks that an AI assistant wrote on it, under a rule fixed in advance. Each trace is replayed on the unchanged app, then three times on each mutant. For each trace that diverges, the exploring agent, with a fixed prompt, proposes a new action at most three times; it sees the steps without their oracles, the divergence and the current screen, and may answer that one action is not enough. The guard decides; an AI assistant judges accepted repairs.
+
+Two baselines run on the same traces: the same agent run again (RQ1, RQ2, and three runs on each \textsf{D6} mutant), and a flow that an AI assistant keeps green by editing the trace for each mutant on which it stops (lines changed in the compiled flow). The protocol lists in advance the outcomes that count against ECR.
+
+\subsection{Results}
+
+\textbf{Explorations and traces.} Twenty explorations, two per persona, cost a median of \$0.20 (0.16 to 0.36), 23.5 turns and 112.5~s of agent time. Replayed once, 10 of the 20 paths passed (Wilson 95\%: 0.30 to 0.70); with their checks, 7 traces from 4 personas, fewer than the 10 planned, passed and were kept (62 checks, none recording a defect).
+
+\textbf{RQ1, cost.} A replay calls no model (the last replay of each trace ran with the network closed, and passed) and takes 52 to 101~s per trace. An agent run of the same persona costs a median of \$0.20 (0.12 to 0.31) and 121.5~s. A replay thus saves the whole price of a run but only about a minute. With every repair asked in the campaign, \textsf{D6} included (\BEreprice{} and \BEresec{} of device time per trace), a kept trace costs less than the agent from the \BEprice{} run in price and the \BEtime{} in time; from the \BEpriceX{} and the \BEtimeX{} if each of the \BEunrepaired{} pairs of a trace and a mutant left unrepaired outside \textsf{D6} costs a new exploration. How long a trace lives before it drifts is not measured.
+
+\textbf{RQ2, determinism.} On the unchanged app, 137 of 140 replays gave what the trace records: six traces 20 times of 20, one 17 times, failing each time on the check right after a Back (cause not established), and once more in the 21 replays of the unpatched build that preceded the mutants. This counts against ECR. Run again, the agent reached the goal of a trace, the screen that its last checks name, in 30 of 35 trace-runs (Wilson: 0.71 to 0.94), never for the unstable trace, and its own path replayed in full in 12 of 20 runs.
+
+\textbf{RQ3, drift.} No \textsf{D6} mutant ended green (Table~\ref{tab:drift}). Every reworded text stopped the replay with \code{target\_not\_found}. Every added dialog was detected, but mostly as a failed oracle, which is never repaired: a wrong type, on the safe side. Three moves and every delay went unseen: a text target survives a move, and the waits of Maestro absorb up to 15~s; still, a 5~s delay failed one trace on an oracle in 2 replays of 3. The 25 accepted proposals are all on \textsf{D1}: 22 taps by text and 3 by position, 21 at the first attempt; an attempt took a median of one turn and \$0.03. An AI assistant judged all 25 right. Each kept the hashes of the oracles, and 24 then passed 3 replays of 3, the other being on the unstable trace. The tab swap of \textsf{D3} needed two steps changed in every trace, as did the one \textsf{D1} trace that taps the reworded button twice, and all their proposals were refused: the bound of one step. Of the 7 mutants of \textsf{D1} and \textsf{D3} that stop a trace, 4 were repaired for every trace, and 4 of the 10 in all: fewer than half, which counts against ECR. On \textsf{D4} the proposer itself declined in \BEdfournone{} of \BEdfourattempts{} attempts. Edited freely, the same \HANDtraces{} broken traces needed 2 to 4 lines changed in the compiled flow, \textsf{D3} and \textsf{D4} included, and all then replayed 3 times of 3 apart from the unstable trace: free edits reach what the bound refuses, with no guard on what they change. Run again on each \textsf{D6} mutant, the agent reached its goal screen in \DSIXgoal{} runs; its findings were not read.
+
+\textbf{RQ4, generality.} The reference adapter has 302 lines and the mobile adapter 298, with no driver and no change to the contract. The kit runs on the reference adapter; read from its tests and this campaign, the mobile adapter passes \law{L3} and \law{L4}, holds \law{L1} and part of \law{L2} for 6 traces of 7 and \law{L6} on every accepted repair and \textsf{D6} mutant; \law{L5} and \law{L7} are not checked.

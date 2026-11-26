@@ -1,0 +1,37 @@
+{
+ "rq": "rq1",
+ "kind": "rerun",
+ "system": "localsend",
+ "run": 45780746421,
+ "index": 3,
+ "persona": "lucia",
+ "job": "success",
+ "brief": "AGENT_BRIEF.md (inputs of exploration run 45701272440)",
+ "model": "claude-sonnet-5-5",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "mutant": null,
+ "app_tag": "v1.19.0",
+ "app_commit": "44f48f18a5503c43873570ff489d27ff1983e198",
+ "apk_sha256": null,
+ "turns": 21,
+ "price_usd": 0.21,
+ "price_rate_date": "2026-11-26",
+ "path_replay": "pass",
+ "traces": [
+  {
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "reached_goal": true,
+   "reported_bug_again": null,
+   "judged_by": "scripts/goal_check.py (amendment 5)"
+  },
+  {
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "reached_goal": true,
+   "reported_bug_again": null,
+   "judged_by": "scripts/goal_check.py (amendment 5)"
+  }
+ ],
+ "source": "public lines of the run page, rerun-3-lines.txt"
+}

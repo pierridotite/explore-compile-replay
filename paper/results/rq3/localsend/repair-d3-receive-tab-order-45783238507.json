@@ -1,0 +1,683 @@
+{
+ "rq": "rq3",
+ "kind": "repair_run",
+ "system": "localsend",
+ "run": 45783238507,
+ "mutant": "d3-receive-tab-order",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+ "apk_sha256": "d7e041af8d985421c1a38fc3a6ea92a953f596e3ca8f5176fe4b9abf36912960",
+ "traces_diverged_in_this_run": [
+  "felipe-20261125T212237",
+  "felipe-20261125T215845",
+  "lucia-20261125T212222",
+  "lucia-20261125T215848",
+  "malik-20261125T212400",
+  "ravi-20261125T212224",
+  "ravi-20261125T215801"
+ ],
+ "traces_with_nothing_to_repair": [],
+ "traces_repaired": [],
+ "proposer_price_usd": 0.6764,
+ "attempts": [
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Enviar\nGuia 3 de 3"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0342,
+    "turns": 2,
+    "tokens_out": 385
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "83%,89%"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0298,
+    "turns": 1,
+    "tokens_out": 489
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s2"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0329,
+    "turns": 1,
+    "tokens_out": 779
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Enviar\nGuia 3 de 3"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0337,
+    "turns": 2,
+    "tokens_out": 291
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": null,
+    "stepId": "s2"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0309,
+    "turns": 1,
+    "tokens_out": 548
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "83%,89%"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.033,
+    "turns": 1,
+    "tokens_out": 752
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Enviar\nPestaña 3 de 3"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.028,
+    "turns": 1,
+    "tokens_out": 313
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "10%,29%"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0421,
+    "turns": 2,
+    "tokens_out": 740
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s2"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0332,
+    "turns": 1,
+    "tokens_out": 781
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Enviar\nPestaña 3 de 3"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0351,
+    "turns": 2,
+    "tokens_out": 262
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "10%,29.5%"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "invalid_action",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0298,
+    "turns": 1,
+    "tokens_out": 477
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s2"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0331,
+    "turns": 1,
+    "tokens_out": 787
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Send\nTab 3 of 3"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0286,
+    "turns": 1,
+    "tokens_out": 291
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "83%,93%"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0323,
+    "turns": 1,
+    "tokens_out": 622
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s2"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0319,
+    "turns": 1,
+    "tokens_out": 566
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "भेजें\n3 का टैब 3"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.028,
+    "turns": 1,
+    "tokens_out": 225
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "83%,88%"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0309,
+    "turns": 1,
+    "tokens_out": 483
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s2"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0325,
+    "turns": 1,
+    "tokens_out": 627
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "भेजें\n3 का टैब 3"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0292,
+    "turns": 1,
+    "tokens_out": 343
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "83%,88%"
+     }
+    },
+    "stepId": "s2"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "still_diverges",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0312,
+    "turns": 1,
+    "tokens_out": 510
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s2"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s2"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.036,
+    "turns": 1,
+    "tokens_out": 973
+   }
+  }
+ ],
+ "source": "public lines of the run page, run-d3-receive-tab-order-repair-lines.txt"
+}

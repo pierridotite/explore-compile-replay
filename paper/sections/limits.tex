@@ -1,0 +1,16 @@
+\section{Limitations and Threats to Validity}
+\label{sec:limits}
+
+\textbf{What a deterministic oracle cannot say.} A persona notices that a label is confusing or that a screen feels slow. A check such as ``this text is visible'' cannot express that. ECR keeps such findings in the report and turns into tests only the ones that can be stated as a check. The mobile vocabulary has two checks today, which narrows this further.
+
+\textbf{Who writes the oracles.} In the mobile case study the agent supplies a path and a finding, and a person writes the checks. In the evaluation an AI assistant writes them under a fixed rule, and also keeps the hand baseline green: RQ1 counts no cost for writing the checks, which may be weaker, and the baseline is weaker than one kept by a person who knows the app. Recording oracles while the agent explores needs the server that is not written yet.
+
+\textbf{The price of bounds.} A repair is one action for one step. On LocalSend this bound accepted every reworded text but one, and refused every added dialog and a swap of two tabs, which needed two steps changed. Fewer than half of the mutants of \textsf{D1} to \textsf{D3} were repaired in full. A wider repair, several steps under the same guard, is the obvious next step, and it widens what a wrong repair can reach.
+
+\textbf{A guard as strong as its oracles.} The repair guard compares outcomes, not intentions. A new action that reaches the same oracles by another route is accepted, and for five of the 25 accepted repairs no oracle could detect a missed tap. This is why each accepted repair is judged afterwards, here by an AI assistant.
+
+\textbf{Determinism is relative to the system.} Law \law{L1} holds for the same system state. On a device, state leaks between runs and timing varies. The contract offers snapshots and a flag for unsettled states, but a flaky system gives a flaky replay. A tap stored as a point breaks on another screen size.
+
+\textbf{Secrets at replay.} Values never reach the trace or the artifact, but the mobile target passes them to Maestro on the command line, where the process list shows them while a flow runs.
+
+\textbf{Threats to the evaluation.} The drift is injected, not observed, and the mutants were written inside the project, by an AI assistant. Delays and moves that a text target survives went unseen, so the detection rate of \textsf{D3} and \textsf{D5} says as much about Maestro as about ECR. Seven traces from four personas are few, and ECR does not measure what a set of traces covers. We limit this with a protocol committed before any measured run, mutants committed before any replay on them, a control class that must stay red, and published result files. One app, one platform and one model say little about others. One person designed ECR and its evaluation.

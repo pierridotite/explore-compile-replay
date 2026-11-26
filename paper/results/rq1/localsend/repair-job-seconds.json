@@ -1,0 +1,512 @@
+{
+ "rq": "rq1",
+ "kind": "repair_job_seconds",
+ "system": "localsend",
+ "definition": "duration of the step \"Emulator + agent\" of each Android job of each repair run (GitHub API, last attempt); it holds the emulator start, one replay of each trace of the persona, and the repairs",
+ "jobs": [
+  {
+   "mutant": "d1-settings-language",
+   "run": 45779340018,
+   "persona": "felipe",
+   "seconds": 268
+  },
+  {
+   "mutant": "d1-settings-language",
+   "run": 45779340018,
+   "persona": "ravi",
+   "seconds": 760
+  },
+  {
+   "mutant": "d1-settings-language",
+   "run": 45779340018,
+   "persona": "lucia",
+   "seconds": 317
+  },
+  {
+   "mutant": "d1-settings-language",
+   "run": 45779340018,
+   "persona": "malik",
+   "seconds": 245
+  },
+  {
+   "mutant": "d1-receive-send-tab",
+   "run": 45783162733,
+   "persona": "felipe",
+   "seconds": 851
+  },
+  {
+   "mutant": "d1-receive-send-tab",
+   "run": 45783162733,
+   "persona": "malik",
+   "seconds": 574
+  },
+  {
+   "mutant": "d1-receive-send-tab",
+   "run": 45783162733,
+   "persona": "ravi",
+   "seconds": 864
+  },
+  {
+   "mutant": "d1-receive-send-tab",
+   "run": 45783162733,
+   "persona": "lucia",
+   "seconds": 959
+  },
+  {
+   "mutant": "d1-send-text-button",
+   "run": 45783189678,
+   "persona": "ravi",
+   "seconds": 875
+  },
+  {
+   "mutant": "d1-send-text-button",
+   "run": 45783189678,
+   "persona": "lucia",
+   "seconds": 1117
+  },
+  {
+   "mutant": "d1-send-text-button",
+   "run": 45783189678,
+   "persona": "felipe",
+   "seconds": 877
+  },
+  {
+   "mutant": "d1-send-text-button",
+   "run": 45783189678,
+   "persona": "malik",
+   "seconds": 600
+  },
+  {
+   "mutant": "d1-message-confirm",
+   "run": 45783205394,
+   "persona": "malik",
+   "seconds": 788
+  },
+  {
+   "mutant": "d1-message-confirm",
+   "run": 45783205394,
+   "persona": "lucia",
+   "seconds": 1097
+  },
+  {
+   "mutant": "d1-message-confirm",
+   "run": 45783205394,
+   "persona": "ravi",
+   "seconds": 1160
+  },
+  {
+   "mutant": "d1-message-confirm",
+   "run": 45783205394,
+   "persona": "felipe",
+   "seconds": 932
+  },
+  {
+   "mutant": "d1-address-confirm",
+   "run": 45783222382,
+   "persona": "malik",
+   "seconds": 765
+  },
+  {
+   "mutant": "d1-address-confirm",
+   "run": 45783222382,
+   "persona": "ravi",
+   "seconds": 647
+  },
+  {
+   "mutant": "d1-address-confirm",
+   "run": 45783222382,
+   "persona": "felipe",
+   "seconds": 989
+  },
+  {
+   "mutant": "d1-address-confirm",
+   "run": 45783222382,
+   "persona": "lucia",
+   "seconds": 330
+  },
+  {
+   "mutant": "d3-receive-tab-order",
+   "run": 45783238507,
+   "persona": "lucia",
+   "seconds": 848
+  },
+  {
+   "mutant": "d3-receive-tab-order",
+   "run": 45783238507,
+   "persona": "ravi",
+   "seconds": 824
+  },
+  {
+   "mutant": "d3-receive-tab-order",
+   "run": 45783238507,
+   "persona": "malik",
+   "seconds": 541
+  },
+  {
+   "mutant": "d3-receive-tab-order",
+   "run": 45783238507,
+   "persona": "felipe",
+   "seconds": 864
+  },
+  {
+   "mutant": "d3-send-text-last",
+   "run": 45783254229,
+   "persona": "lucia",
+   "seconds": 291
+  },
+  {
+   "mutant": "d3-send-text-last",
+   "run": 45783254229,
+   "persona": "ravi",
+   "seconds": 220
+  },
+  {
+   "mutant": "d3-send-text-last",
+   "run": 45783254229,
+   "persona": "felipe",
+   "seconds": 222
+  },
+  {
+   "mutant": "d3-send-text-last",
+   "run": 45783254229,
+   "persona": "malik",
+   "seconds": 232
+  },
+  {
+   "mutant": "d3-settings-language-first",
+   "run": 45783270104,
+   "persona": "felipe",
+   "seconds": 269
+  },
+  {
+   "mutant": "d3-settings-language-first",
+   "run": 45783270104,
+   "persona": "ravi",
+   "seconds": 596
+  },
+  {
+   "mutant": "d3-settings-language-first",
+   "run": 45783270104,
+   "persona": "malik",
+   "seconds": 249
+  },
+  {
+   "mutant": "d3-settings-language-first",
+   "run": 45783270104,
+   "persona": "lucia",
+   "seconds": 297
+  },
+  {
+   "mutant": "d3-address-buttons-swapped",
+   "run": 45783286618,
+   "persona": "malik",
+   "seconds": 231
+  },
+  {
+   "mutant": "d3-address-buttons-swapped",
+   "run": 45783286618,
+   "persona": "ravi",
+   "seconds": 262
+  },
+  {
+   "mutant": "d3-address-buttons-swapped",
+   "run": 45783286618,
+   "persona": "lucia",
+   "seconds": 325
+  },
+  {
+   "mutant": "d3-address-buttons-swapped",
+   "run": 45783286618,
+   "persona": "felipe",
+   "seconds": 227
+  },
+  {
+   "mutant": "d4-receive-start-dialog",
+   "run": 45785414812,
+   "persona": "ravi",
+   "seconds": 522
+  },
+  {
+   "mutant": "d4-receive-start-dialog",
+   "run": 45785414812,
+   "persona": "lucia",
+   "seconds": 607
+  },
+  {
+   "mutant": "d4-receive-start-dialog",
+   "run": 45785414812,
+   "persona": "felipe",
+   "seconds": 419
+  },
+  {
+   "mutant": "d4-receive-start-dialog",
+   "run": 45785414812,
+   "persona": "malik",
+   "seconds": 400
+  },
+  {
+   "mutant": "d4-send-tab-dialog",
+   "run": 45785431811,
+   "persona": "lucia",
+   "seconds": 582
+  },
+  {
+   "mutant": "d4-send-tab-dialog",
+   "run": 45785431811,
+   "persona": "felipe",
+   "seconds": 596
+  },
+  {
+   "mutant": "d4-send-tab-dialog",
+   "run": 45785431811,
+   "persona": "malik",
+   "seconds": 359
+  },
+  {
+   "mutant": "d4-send-tab-dialog",
+   "run": 45785431811,
+   "persona": "ravi",
+   "seconds": 427
+  },
+  {
+   "mutant": "d4-message-dialog-before",
+   "run": 45785451641,
+   "persona": "lucia",
+   "seconds": 598
+  },
+  {
+   "mutant": "d4-message-dialog-before",
+   "run": 45785451641,
+   "persona": "felipe",
+   "seconds": 484
+  },
+  {
+   "mutant": "d4-message-dialog-before",
+   "run": 45785451641,
+   "persona": "ravi",
+   "seconds": 560
+  },
+  {
+   "mutant": "d4-message-dialog-before",
+   "run": 45785451641,
+   "persona": "malik",
+   "seconds": 341
+  },
+  {
+   "mutant": "d5-settings-content-1s",
+   "run": 45788986446,
+   "persona": "felipe",
+   "seconds": 251
+  },
+  {
+   "mutant": "d5-settings-content-1s",
+   "run": 45788986446,
+   "persona": "malik",
+   "seconds": 237
+  },
+  {
+   "mutant": "d5-settings-content-1s",
+   "run": 45788986446,
+   "persona": "ravi",
+   "seconds": 280
+  },
+  {
+   "mutant": "d5-settings-content-1s",
+   "run": 45788986446,
+   "persona": "lucia",
+   "seconds": 386
+  },
+  {
+   "mutant": "d5-address-confirm-5s",
+   "run": 45789017928,
+   "persona": "felipe",
+   "seconds": 257
+  },
+  {
+   "mutant": "d5-address-confirm-5s",
+   "run": 45789017928,
+   "persona": "ravi",
+   "seconds": 267
+  },
+  {
+   "mutant": "d5-address-confirm-5s",
+   "run": 45789017928,
+   "persona": "lucia",
+   "seconds": 288
+  },
+  {
+   "mutant": "d5-address-confirm-5s",
+   "run": 45789017928,
+   "persona": "malik",
+   "seconds": 271
+  },
+  {
+   "mutant": "d4-address-dialog-before",
+   "run": 45789132168,
+   "persona": "malik",
+   "seconds": 561
+  },
+  {
+   "mutant": "d4-address-dialog-before",
+   "run": 45789132168,
+   "persona": "ravi",
+   "seconds": 456
+  },
+  {
+   "mutant": "d4-address-dialog-before",
+   "run": 45789132168,
+   "persona": "felipe",
+   "seconds": 644
+  },
+  {
+   "mutant": "d4-address-dialog-before",
+   "run": 45789132168,
+   "persona": "lucia",
+   "seconds": 788
+  },
+  {
+   "mutant": "d4-settings-tab-dialog",
+   "run": 45789993722,
+   "persona": "malik",
+   "seconds": 828
+  },
+  {
+   "mutant": "d4-settings-tab-dialog",
+   "run": 45789993722,
+   "persona": "felipe",
+   "seconds": 928
+  },
+  {
+   "mutant": "d4-settings-tab-dialog",
+   "run": 45789993722,
+   "persona": "lucia",
+   "seconds": 804
+  },
+  {
+   "mutant": "d4-settings-tab-dialog",
+   "run": 45789993722,
+   "persona": "ravi",
+   "seconds": 787
+  },
+  {
+   "mutant": "d6-receive-no-link-button",
+   "run": 45791765836,
+   "persona": "lucia",
+   "seconds": 402
+  },
+  {
+   "mutant": "d6-receive-no-link-button",
+   "run": 45791765836,
+   "persona": "malik",
+   "seconds": 266
+  },
+  {
+   "mutant": "d6-receive-no-link-button",
+   "run": 45791765836,
+   "persona": "ravi",
+   "seconds": 392
+  },
+  {
+   "mutant": "d6-receive-no-link-button",
+   "run": 45791765836,
+   "persona": "felipe",
+   "seconds": 403
+  },
+  {
+   "mutant": "d6-send-no-selection-card",
+   "run": 45791787944,
+   "persona": "ravi",
+   "seconds": 727
+  },
+  {
+   "mutant": "d6-send-no-selection-card",
+   "run": 45791787944,
+   "persona": "lucia",
+   "seconds": 804
+  },
+  {
+   "mutant": "d6-send-no-selection-card",
+   "run": 45791787944,
+   "persona": "malik",
+   "seconds": 432
+  },
+  {
+   "mutant": "d6-send-no-selection-card",
+   "run": 45791787944,
+   "persona": "felipe",
+   "seconds": 654
+  },
+  {
+   "mutant": "d6-message-dialog-gone",
+   "run": 45791807116,
+   "persona": "ravi",
+   "seconds": 717
+  },
+  {
+   "mutant": "d6-message-dialog-gone",
+   "run": 45791807116,
+   "persona": "felipe",
+   "seconds": 696
+  },
+  {
+   "mutant": "d6-message-dialog-gone",
+   "run": 45791807116,
+   "persona": "malik",
+   "seconds": 419
+  },
+  {
+   "mutant": "d6-message-dialog-gone",
+   "run": 45791807116,
+   "persona": "lucia",
+   "seconds": 749
+  },
+  {
+   "mutant": "d6-settings-tab-ignored",
+   "run": 45791830690,
+   "persona": "ravi",
+   "seconds": 1035
+  },
+  {
+   "mutant": "d6-settings-tab-ignored",
+   "run": 45791830690,
+   "persona": "felipe",
+   "seconds": 1188
+  },
+  {
+   "mutant": "d6-settings-tab-ignored",
+   "run": 45791830690,
+   "persona": "lucia",
+   "seconds": 1135
+  },
+  {
+   "mutant": "d6-settings-tab-ignored",
+   "run": 45791830690,
+   "persona": "malik",
+   "seconds": 825
+  },
+  {
+   "mutant": "d6-address-dialog-gone",
+   "run": 45791852478,
+   "persona": "lucia",
+   "seconds": 1267
+  },
+  {
+   "mutant": "d6-address-dialog-gone",
+   "run": 45791852478,
+   "persona": "felipe",
+   "seconds": 945
+  },
+  {
+   "mutant": "d6-address-dialog-gone",
+   "run": 45791852478,
+   "persona": "malik",
+   "seconds": 674
+  },
+  {
+   "mutant": "d6-address-dialog-gone",
+   "run": 45791852478,
+   "persona": "ravi",
+   "seconds": 605
+  }
+ ]
+}

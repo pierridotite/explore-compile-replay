@@ -1,0 +1,37 @@
+{
+ "rq": "rq1",
+ "kind": "rerun",
+ "system": "localsend",
+ "run": 45780760755,
+ "index": 4,
+ "persona": "felipe",
+ "job": "success",
+ "brief": "AGENT_BRIEF.md (inputs of exploration run 45701272440)",
+ "model": "claude-sonnet-5-5",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "mutant": null,
+ "app_tag": "v1.19.0",
+ "app_commit": "44f48f18a5503c43873570ff489d27ff1983e198",
+ "apk_sha256": null,
+ "turns": 24,
+ "price_usd": 0.17,
+ "price_rate_date": "2026-11-26",
+ "path_replay": "pass",
+ "traces": [
+  {
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "reached_goal": true,
+   "reported_bug_again": null,
+   "judged_by": "scripts/goal_check.py (amendment 5)"
+  },
+  {
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "reached_goal": true,
+   "reported_bug_again": null,
+   "judged_by": "scripts/goal_check.py (amendment 5)"
+  }
+ ],
+ "source": "public lines of the run page, rerun-4-lines.txt"
+}

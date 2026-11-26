@@ -1,0 +1,41 @@
+{
+  "rq": "rq1",
+  "kind": "explore",
+  "system": "localsend",
+  "run": 45706788156,
+  "mat_commit": "cd31933fee2d8e9821d5ec626fe8082ef635ef89",
+  "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+  "app_source": "localsend/localsend",
+  "app_tag": "v1.19.0",
+  "app_commit": "44f48f18a5503c43873570ff489d27ff1983e198",
+  "apk_sha256": "776d184ff403ef26d398aa44a75b7b78e9b09220426af3b9b0534de891eee5b4",
+  "persona": "olga",
+  "model": "claude-sonnet-5-5",
+  "turns": 26,
+  "price_usd": 0.22,
+  "price_source": "agent log line, public run page",
+  "seconds_agent": 117,
+  "seconds_definition": "from the install of the app to the line \"finished\" of the agent, public log timestamps",
+  "tokens_in": 44,
+  "tokens_out": 4587,
+  "steps": 16,
+  "params_kept_apart": 0,
+  "commands_left_out": 0,
+  "taps": 5,
+  "targets_by_name": 4,
+  "targets_by_id": 0,
+  "targets_by_point": 1,
+  "taps_at_place_inside": 0,
+  "path_replay": {
+    "outcome": "pass",
+    "seconds": 41
+  },
+  "tokens_cache_write": 26432,
+  "tokens_cache_read": 663507,
+  "tokens_source": "usage in agent-output.json, decrypted by the author; counts only",
+  "models_resolved": [
+    "claude-sonnet-5-5"
+  ],
+  "price_usd_exact": 0.21803669999999997,
+  "duration_ms_agent": 106870
+}

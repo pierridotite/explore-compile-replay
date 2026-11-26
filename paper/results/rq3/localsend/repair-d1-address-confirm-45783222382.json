@@ -1,0 +1,159 @@
+{
+ "rq": "rq3",
+ "kind": "repair_run",
+ "system": "localsend",
+ "run": 45783222382,
+ "mutant": "d1-address-confirm",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+ "apk_sha256": "4b2ceb14e586aba9522c69d58983e8a873301539167769ab6aabaa153b300ee6",
+ "traces_diverged_in_this_run": [
+  "felipe-20261125T212237",
+  "felipe-20261125T215845",
+  "malik-20261125T212400",
+  "ravi-20261125T215801"
+ ],
+ "traces_with_nothing_to_repair": [],
+ "traces_repaired": [
+  "felipe-20261125T212237",
+  "felipe-20261125T215845",
+  "malik-20261125T212400",
+  "ravi-20261125T215801"
+ ],
+ "proposer_price_usd": 0.1093,
+ "attempts": [
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s10"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Confirmar ›"
+     }
+    },
+    "stepId": "s10"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": true,
+   "refusal_reason": null,
+   "oracles_kept": true,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": 3,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0271,
+    "turns": 1,
+    "tokens_out": 225
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s12"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Confirmar ›"
+     }
+    },
+    "stepId": "s12"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": true,
+   "refusal_reason": null,
+   "oracles_kept": true,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": 3,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0267,
+    "turns": 1,
+    "tokens_out": 151
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s14"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Confirm ›"
+     }
+    },
+    "stepId": "s14"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": true,
+   "refusal_reason": null,
+   "oracles_kept": true,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": 3,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0272,
+    "turns": 1,
+    "tokens_out": 134
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "divergence": {
+    "type": "target_not_found",
+    "step": "s12"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "पुष्टि करें ›"
+     }
+    },
+    "stepId": "s12"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": true,
+   "refusal_reason": null,
+   "oracles_kept": true,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": 3,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0283,
+    "turns": 1,
+    "tokens_out": 243
+   }
+  }
+ ],
+ "source": "public lines of the run page, run-d1-address-confirm-repair-lines.txt"
+}

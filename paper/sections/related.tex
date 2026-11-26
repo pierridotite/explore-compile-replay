@@ -1,0 +1,39 @@
+\section{Background and Related Work}
+\label{sec:related}
+
+\begin{table*}[t]
+\caption{Systems that reuse the work of an agent or of a model instead of calling it at every step, as described by their own sources at the versions cited. ``n/s'': not stated in the cited source.}
+\label{tab:related}
+\footnotesize
+\begin{tabular}{@{}L{2.2cm}L{3.0cm}L{3.45cm}L{3.45cm}L{3.95cm}@{}}
+\toprule
+System & What is replayed & A model runs during replay & Checks during replay & When the replay breaks \\
+\midrule
+Playwright test agents~\cite{playwrightagents} & A Playwright test file & No & Assertions in the test code & A healer agent edits the test until it passes; its instructions include fixing ``assertions and expected values'' \\
+Stagehand~\cite{stagehand} & Results cached on the servers of the vendor & On a cache miss, or when the recorded selector no longer resolves & n/s & It ``falls back to full inference'' \\
+Midscene~\cite{midscene} & Cached plans and element paths & On an invalid entry, and for every assertion & By a model: assertion results ``will never be cached'' & The model plans again for that run \\
+Shortest~\cite{shortest} & Cached steps & On any cache error & Not evaluated again: the test is marked passed once the steps replay & A full run of the agent \\
+Arbigent~\cite{arbigent} & The actions of the last passing run & For image assertions, and for a task that drifted & Image assertions, by a model & The agent runs that task again, also when an assertion fails \\
+Skyvern~\cite{skyvern} & Python scripts generated from runs & When a block has no script & n/s & The agent runs instead of the script \\
+Auto~\cite{jaber2026auto} & A signed WebAssembly module, with its loader & When a runtime guard fails & Differential replay against a declared contract, before the module is emitted & The reference agent takes over \\
+Agentic Compilation~\cite{chundru2026agentic} & A JSON blueprint, run by its runtime & When a selector is missing or a schema is violated & n/s & A model plans again \\
+Compiled AI~\cite{trooskens2026compiled} & Code generated from a specification & Not in the control plane & Validation in four stages, when the code is generated & n/s \\
+\midrule
+ECR (this paper) & A file in an existing test format & No, by construction: a law of the contract, checked with the network closed & Every recorded oracle, compiled to assertions of the test format & On a step: one proposed action for that step, accepted only if every oracle gives what was recorded. On an oracle: a person decides \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\textbf{Oracles and replays that break.} A test needs an oracle, a way to tell correct behaviour from incorrect behaviour, and oracles remain the hard part of test automation~\cite{barr2015oracle}. Record and replay removes the writing of actions, not of oracles. Tools replay recorded streams of events~\cite{gomez2013reran}. A study of such tools in industrial cases reports where they fall short~\cite{lam2017record}, and a study of recorded web tests classifies why they break as the application changes~\cite{hammoudi2016why}. Synthesis from demonstrations generalises a recording into a program~\cite{dong2022webrobot}. ECR replaces the human demonstration by the exploration of an agent, records oracles together with actions, and gives a type to each way a replay can break.
+
+\textbf{Exploring with agents.} LLM agents test mobile applications by conversing with the interface~\cite{liu2023gptdroid} or by setting themselves tasks~\cite{yoon2024droidagent}, and agents with personas stand in for the participants of usability tests~\cite{lu2025uxagent} and A/B tests~\cite{lu2025agentab}. Their evaluations measure what an exploration covers or finds. ECR is concerned with what remains afterwards: it takes this kind of exploration as its input and turns it into a test.
+
+\textbf{Caching what the agent did.} Several tools record the actions of a successful run and replay them to save model calls (Table~\ref{tab:related}). In all of them the replay is an optimisation of the agent, with a path back to the model: a cache miss, an element that moved or a failed step hands control to inference again~\cite{stagehand,midscene,shortest,arbigent,workflowuse,musclemem,skyvern}. This suits automation, where the goal is to finish the task, but not a test, for two reasons. A run that should be red can come back green because the model found another way. And the checks do not survive the cache: Midscene never caches assertions, so each one calls a model~\cite{midscene}; Shortest marks a test as passed when its cached steps replay, without evaluating its expectations again~\cite{shortest}. ECR makes the replay a different program, a compiled file with no path back to a model.
+
+\textbf{Compiling traces and specifications.} A second group compiles agent behaviour to cut inference cost in production. Auto compiles recorded spans of an agent into a signed WebAssembly module that is checked by differential replay, with runtime guards that hand control back to the agent~\cite{jaber2026auto}. TraceCompiler mines tool-call traces into a workflow representation that keeps residual LLM nodes; its authors state that it has no runtime yet and make no conformance claim~\cite{elyadouni2026tracecompiler}. Agentic Compilation compiles a page and an intent into a blueprint that its runtime executes with no model call, and plans again with a model when a selector is missing~\cite{chundru2026agentic}. Compiled AI generates code from a specification and validates it before use~\cite{trooskens2026compiled}. ECR shares the idea of compiling. It differs in what is compiled and to what: the input is an exploration with its oracles, and the output is a test in a format that teams already run and review. Outside testing, Remotion shows the same split: a video is React code that maps a frame number to an image, written once, by a person or a model, and rendered as often as needed, with seeded randomness so that parallel renders agree~\cite{remotion}. ECR takes this split as an analogy.
+
+\textbf{Skills and experience.} Agents also keep what they learn as reusable skills or workflows~\cite{wang2024voyager,wang2025awm,zheng2025skillweaver}, as summarised experience replayed under check functions~\cite{feng2025agentrr}, or as cached plan templates~\cite{zhang2025plancaching}. In these systems the stored knowledge serves a later run of the agent, and the model stays in the loop. ECR stores a trace so that the later run needs no model.
+
+\textbf{Repairing tests.} Repair of broken tests predates LLMs: ReAssert suggests repairs for failing unit tests~\cite{daniel2009reassert}, and WATER and VISTA repair web test scripts after the interface has changed~\cite{choudhary2011water,stocco2018vista}. LLMs now extend these techniques~\cite{xu2023guiding}. The healer agent shipped with Playwright is instructed to fix ``assertions and expected values'', among other things, and to continue ``until the test runs successfully''~\cite{playwrightagents}. A multi-agent case study reports assertion weakening and the deletion of test cases as the ways agents reached a green run, and recommends treating any change to an assertion as high risk~\cite{lee2026limits}. ECR does not ask the repairing agent to be careful. It gives it a patch format that cannot name an oracle.
+
+What we claim is the combination, not any single element: exploration guided by a persona; oracles recorded as data; an artifact in an existing test format that runs without the tool; no model during replay, by construction and checked; a repair that is local and cannot alter an oracle; and one contract, with a conformance kit, meant for more than one kind of system.

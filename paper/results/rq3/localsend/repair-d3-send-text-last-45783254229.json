@@ -1,0 +1,16 @@
+{
+ "rq": "rq3",
+ "kind": "repair_run",
+ "system": "localsend",
+ "run": 45783254229,
+ "mutant": "d3-send-text-last",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+ "apk_sha256": "307cdf3d7123a729d895334210d172f27c6b6e23c5866e5ee0e118369ab22e1c",
+ "traces_diverged_in_this_run": [],
+ "traces_with_nothing_to_repair": [],
+ "traces_repaired": [],
+ "proposer_price_usd": 0,
+ "attempts": [],
+ "source": "public lines of the run page, run-d3-send-text-last-repair-lines.txt"
+}

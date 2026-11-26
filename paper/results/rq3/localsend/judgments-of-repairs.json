@@ -1,0 +1,606 @@
+{
+ "rq": "rq3",
+ "kind": "repair_judgments",
+ "system": "localsend",
+ "judged_by": "an AI assistant, at the author's request (protocol amendment 6); no person checked the judgments",
+ "judged_at": "2026-11-26",
+ "question": "Does the new action still do what the step meant to do (tap the same control)?",
+ "scale": [
+  "right",
+  "wrong",
+  "uncertain"
+ ],
+ "material": [
+  "judge/repairs-to-judge.md (the 25 accepted proposals, the step each replaces, the first check that follows)",
+  "drift-bench/mutants/localsend/d1-*.patch (ECR e5425f2)",
+  "traces/localsend/ of the mobile tool at 385a721 (recorded point, box and screen size of each tap)",
+  "public repair lines of runs 45783222382, 45783205394, 45783162733, 45783189678, 45779340018",
+  "results/rq3/localsend/repair-d1-*.json",
+  "app/assets/i18n/hi.json of LocalSend at tag v1.19.0 (Hindi translations, read on 2026-11-26, for the check of number 25)"
+ ],
+ "not_read": [
+  "screens of the mutant builds (encrypted outputs)",
+  "typed texts (private parameters)",
+  "source of the app outside the lines of the patches and the translation file named in material"
+ ],
+ "count": {
+  "right": 25,
+  "wrong": 0,
+  "uncertain": 0,
+  "by_position": [
+   10,
+   14,
+   21
+  ],
+  "no_check_can_tell_a_miss": [
+   1,
+   2,
+   3,
+   4,
+   25
+  ],
+  "repaired_step_has_no_check": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "judgments": [
+  {
+   "n": 1,
+   "mutant": "d1-address-confirm",
+   "run": 45783222382,
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "step": "s10",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Confirmar ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The new text is the label that the patch gives to the Confirm button of the address dialog, whose handler is unchanged, and no other element of that dialog can bear it."
+   },
+   "check_that_follows_can_tell_a_miss": false,
+   "check_note": "The repaired step has no check, and the next step taps Cancel, which closes the dialog whether or not Confirm was tapped; its check then holds either way."
+  },
+  {
+   "n": 2,
+   "mutant": "d1-address-confirm",
+   "run": 45783222382,
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "step": "s12",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Confirmar ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The new text is the label that the patch gives to the Confirm button of the address dialog, whose handler is unchanged, and no other element of that dialog can bear it."
+   },
+   "check_that_follows_can_tell_a_miss": false,
+   "check_note": "The repaired step has no check, and the next step taps Cancel, which closes the dialog whether or not Confirm was tapped; its check then holds either way."
+  },
+  {
+   "n": 3,
+   "mutant": "d1-address-confirm",
+   "run": 45783222382,
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "step": "s14",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Confirm ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The new text is the label that the patch gives to the Confirm button of the address dialog, whose handler is unchanged, and no other element of that dialog can bear it."
+   },
+   "check_that_follows_can_tell_a_miss": false,
+   "check_note": "The repaired step has no check, and the next step taps Cancel, which closes the dialog whether or not Confirm was tapped; its check then holds either way."
+  },
+  {
+   "n": 4,
+   "mutant": "d1-address-confirm",
+   "run": 45783222382,
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "step": "s12",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "पुष्टि करें ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The new text is the label that the patch gives to the Confirm button of the address dialog, whose handler is unchanged, and no other element of that dialog can bear it."
+   },
+   "check_that_follows_can_tell_a_miss": false,
+   "check_note": "The repaired step has no check, and the next step taps Cancel, which closes the dialog whether or not Confirm was tapped; its check then holds either way."
+  },
+  {
+   "n": 5,
+   "mutant": "d1-message-confirm",
+   "run": 45783205394,
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "step": "s6",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Confirmar ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The new text is the patched label of the Confirm button of the message dialog, and the check on the Edit button can only hold if that button returned the typed text."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 6,
+   "mutant": "d1-message-confirm",
+   "run": 45783205394,
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "step": "s7",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Confirmar ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The new text is the patched label of the Confirm button of the message dialog, and the check on the Edit button can only hold if that button returned the typed text."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 7,
+   "mutant": "d1-message-confirm",
+   "run": 45783205394,
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "step": "s7",
+   "attempt": 2,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Confirmar ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The new text is the patched label of the Confirm button of the message dialog, and the check on the Edit button can only hold if that button returned the typed text. The first attempt held the same text and was refused only for a stray null field."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 8,
+   "mutant": "d1-message-confirm",
+   "run": 45783205394,
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "step": "s6",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Confirmar ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The new text is the patched label of the Confirm button of the message dialog, and the check on the Edit button can only hold if that button returned the typed text."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 9,
+   "mutant": "d1-message-confirm",
+   "run": 45783205394,
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "step": "s10",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Confirm ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The new text is the patched label of the Confirm button of the message dialog, and the check on the Edit button can only hold if that button returned the typed text."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 10,
+   "mutant": "d1-message-confirm",
+   "run": 45783205394,
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "step": "s8",
+   "attempt": 2,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "point": "67%,38%"
+    }
+   },
+   "action_kind": "tapOn by position",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "On the 1080 by 1920 screen the point is (724, 730), inside the box recorded for Confirm (636 to 845 by 659 to 785), and the check on the Edit button can only hold after a tap on Confirm."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 11,
+   "mutant": "d1-message-confirm",
+   "run": 45783205394,
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "step": "s7",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "पुष्टि करें ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The new text is the patched label of the Confirm button of the message dialog, and the check on the Edit button can only hold if that button returned the typed text."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 12,
+   "mutant": "d1-receive-send-tab",
+   "run": 45783162733,
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "step": "s2",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Enviar ›\nGuia 2 de 3"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The text is the patched label of the Send tab with its tab-count suffix, and the check on the heading of the Send tab holds only on that tab."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 13,
+   "mutant": "d1-receive-send-tab",
+   "run": 45783162733,
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "step": "s2",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Enviar ›\nGuia 2 de 3"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The text is the patched label of the Send tab with its tab-count suffix, and the check on the heading of the Send tab holds only on that tab."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 14,
+   "mutant": "d1-receive-send-tab",
+   "run": 45783162733,
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "step": "s2",
+   "attempt": 2,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "point": "10%,24%"
+    }
+   },
+   "action_kind": "tapOn by position",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "On the 2560 by 1600 screen the point is (256, 384), the point recorded for this step and the centre of the box of the Send destination (0 to 512 by 340 to 428), and the heading of the Send tab is then visible."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 15,
+   "mutant": "d1-receive-send-tab",
+   "run": 45783162733,
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "step": "s2",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Enviar ›\nPestaña 2 de 3"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The text is the patched label of the Send tab with its tab-count suffix, and the check on the heading of the Send tab holds only on that tab."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 16,
+   "mutant": "d1-receive-send-tab",
+   "run": 45783162733,
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "step": "s2",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Send ›\nTab 2 of 3"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The text is the patched label of the Send tab with its tab-count suffix, and the check on the heading of the Send tab holds only on that tab."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 17,
+   "mutant": "d1-receive-send-tab",
+   "run": 45783162733,
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "step": "s2",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "भेजें ›\n3 का टैब 2"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The text is the patched label of the Send tab with its tab-count suffix, and the check on the heading of the Send tab holds only on that tab."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 18,
+   "mutant": "d1-receive-send-tab",
+   "run": 45783162733,
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "step": "s2",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "भेजें ›\n3 का टैब 2"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The text is the patched label of the Send tab with its tab-count suffix, and the check on the heading of the Send tab holds only on that tab."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 19,
+   "mutant": "d1-send-text-button",
+   "run": 45783189678,
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "step": "s3",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Texto ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The text is the patched label of the Text button, and the title of the message dialog, which the check names, appears only after a tap on that button. The dropped 'at' only said where in the button the press landed."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 20,
+   "mutant": "d1-send-text-button",
+   "run": 45783189678,
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "step": "s3",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Texto ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The text is the patched label of the Text button, and the title of the message dialog, which the check names, appears only after a tap on that button."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 21,
+   "mutant": "d1-send-text-button",
+   "run": 45783189678,
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "step": "s3",
+   "attempt": 3,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "point": "69%,18%"
+    }
+   },
+   "action_kind": "tapOn by position",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "On the 2560 by 1600 screen the point is (1766, 288), inside the box recorded for the Text button (1658 to 1862 by 216 to 346), and the message dialog that the check names opens only from that button."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 22,
+   "mutant": "d1-send-text-button",
+   "run": 45783189678,
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "step": "s3",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "Texto ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The text is the patched label of the Text button, and the title of the message dialog, which the check names, appears only after a tap on that button. The dropped 'at' only said where in the button the press landed."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 23,
+   "mutant": "d1-send-text-button",
+   "run": 45783189678,
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "step": "s3",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "पाठ ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The text is the patched label of the Text button, and the title of the message dialog, which the check names, appears only after a tap on that button. The dropped 'at' only said where in the button the press landed."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 24,
+   "mutant": "d1-send-text-button",
+   "run": 45783189678,
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "step": "s3",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "पाठ ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 3,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "The text is the patched label of the Text button, and the title of the message dialog, which the check names, appears only after a tap on that button."
+   },
+   "check_that_follows_can_tell_a_miss": true
+  },
+  {
+   "n": 25,
+   "mutant": "d1-settings-language",
+   "run": 45779340018,
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "step": "s16",
+   "attempt": 1,
+   "action": {
+    "kind": "tapOn",
+    "target": {
+     "text": "सिस्टम ›"
+    }
+   },
+   "action_kind": "tapOn by name",
+   "replays_after_pass": 2,
+   "judgment": {
+    "verdict": "right",
+    "sentence": "Only the button of the Language row bears the patched text, so the index that told it from the other button with the same text is no longer needed, and its handler is unchanged."
+   },
+   "check_that_follows_can_tell_a_miss": false,
+   "check_note": "The check names the word for Language. It is the value of settingsTab.general.language in the Hindi translations of the app at v1.19.0, and the label of the Language row of the Settings tab (label: t.settingsTab.general.language in the patch context): it is on the screen before the tap, so the check holds with or without the Language page."
+  }
+ ]
+}

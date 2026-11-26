@@ -1,0 +1,109 @@
+\section{The ECR Pattern}
+\label{sec:pattern}
+
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}[
+    font=\sffamily\footnotesize,
+    >={Stealth[length=1.8mm]},
+    box/.style={draw, rounded corners=1.5pt, align=center, text width=22mm, minimum height=9.5mm, inner sep=2pt},
+    data/.style={box, fill=black!8},
+    prog/.style={box},
+    llm/.style={box, densely dashed, line width=0.8pt},
+    lab/.style={font=\sffamily\scriptsize, align=center}]
+  \node[data] (persona)  at (0,0)     {Persona\\[-1pt]{\scriptsize profile, goal}};
+  \node[llm]  (explore)  at (2.95,0)  {Explore\\[-1pt]{\scriptsize an agent, once}};
+  \node[data] (trace)    at (5.9,0)   {Trace\\[-1pt]{\scriptsize actions and oracles}};
+  \node[prog] (compile)  at (8.85,0)  {Compile\\[-1pt]{\scriptsize pure function}};
+  \node[data] (artifact) at (11.8,0)  {Artifact\\[-1pt]{\scriptsize standard test file}};
+  \node[prog] (replay)   at (14.75,0) {Replay in CI\\[-1pt]{\scriptsize no model}};
+  \draw[->] (persona) -- (explore);
+  \draw[->] (explore) -- (trace);
+  \draw[->] (trace) -- (compile);
+  \draw[->] (compile) -- (artifact);
+  \draw[->] (artifact) -- (replay);
+
+  \node[prog] (guard)    at (5.9,-2.15)   {Repair guard\\[-1pt]{\scriptsize accepts or refuses}};
+  \node[llm]  (proposal) at (11.8,-2.15)  {Proposal\\[-1pt]{\scriptsize one step, one action}};
+  \node[prog] (person)   at (14.75,-2.15) {A person\\[-1pt]decides};
+  \draw[->] (replay.south) -- node[lab, right] {an oracle\\failed} (person.north);
+  \draw[->] ([xshift=-8mm]replay.south) -- ++(0,-0.6) -| node[lab, above, pos=0.25] {a step diverged} (proposal.north);
+  \draw[->] (proposal) -- node[lab, above] {from an agent or a person} (guard);
+  \draw[->] (guard) -- node[lab, right] {accepted:\\new action} (trace);
+
+  \node[llm, text width=5mm, minimum height=3.2mm] (legend) at (-0.75,-2.15) {};
+  \node[lab, right=1mm of legend, align=left] {a model may run\\here, and only here};
+\end{tikzpicture}
+\caption{The ECR loop. A model may run in the two dashed boxes only. Compiling and replaying are deterministic programs. When a step diverges, a proposal of one new action goes through a guard. When an oracle fails, nothing is repaired.}
+\Description{A pipeline from left to right: persona, explore, trace, compile, artifact, replay in continuous integration. From replay, a step divergence leads to a proposal of one action, then to a repair guard that updates the trace if it accepts. An oracle failure leads to a person.}
+\label{fig:loop}
+\end{figure*}
+
+\subsection{Traces}
+
+A \emph{system} is anything a program can act on and observe: a mobile application on an emulator, a web page, an API. An \emph{adapter} for a kind of system fixes two typed vocabularies: \emph{actions}, such as a tap on an element, and \emph{checks}, such as ``this element is visible''. A \emph{persona} is a profile, a goal, and an optional context such as device, locale and text size.
+
+A \emph{trace} records one exploration of one system by one persona. It holds the persona, a list of parameters, a list of invariants, an ordered list of steps, and its provenance. A \emph{step} has a stable identifier, an optional intent in plain words, one action, and its \emph{checkpoints}: oracles that must hold right after the step. An \emph{invariant} is an oracle that must hold after every step. An \emph{oracle} is an identifier, a check from the vocabulary, and what was observed during the exploration, \emph{held} or \emph{failed} (Section~\ref{sec:bug}).
+
+Three rules make a trace safe to commit and to review. A parameter is stored by name and its value is supplied at replay, so no password reaches the repository. Evidence attached to a step, such as a screenshot or the point where the finger landed, is for people and for tools that display a trace; no compiler reads it. Intent and provenance are kept for audit and are never used at replay.
+
+\subsection{Explore}
+
+Exploring has two halves. Choosing the steps is the work of the agent, of a person, or of an automated testing tool that hands over to a model where it stops making progress, as LLMDroid does when coverage growth slows~\cite{wang2025llmdroid}. Recording them is the work of ECR: each action is executed through a driver, the system is observed until it reports a stable state, and each oracle is verified by a deterministic procedure of the driver that calls no model. An oracle enters the trace as a guard only if it held. If it did not hold, the recording stops with an error. It also stops when the system never settles.
+
+\subsection{Compile and replay}
+
+A \emph{target} is a pair of functions for one artifact format. \emph{Compile} is pure: the same trace gives the same bytes. Its result, the \emph{artifact}, is a file in an existing format, together with the SHA-256 hash of the canonical form of the trace and a \emph{source map} that gives each step one range of lines. Figure~\ref{fig:step} shows a step and the lines it compiles to. The hash lets CI refuse a compiled file that no longer matches its trace.
+
+\begin{sloppypar}
+\emph{Replay} runs the artifact with its own tool and returns a verdict with a list of typed \emph{divergences}. Four types say that a step could not be carried out: \code{target\_not\_found}, \code{action\_failed}, \code{unexpected\_state} and \code{timeout}. The fifth, \code{oracle\_failed}, says that the steps ran and that the system no longer does what it did. Everything that follows rests on this distinction: the first four may be repaired, the fifth never is.
+\end{sloppypar}
+
+\begin{figure}[t]
+\begin{lstlisting}
+{ "id": "s8",
+  "action": { "kind": "tapOn", "target": { "text": "Save" } },
+  "checkpoints": [
+    { "id": "item-listed", "check": { "kind": "visible",
+        "target": { "text": { "param": "ITEM_TITLE" } } } },
+    { "id": "empty-message-gone", "check": { "kind": "notVisible",
+        "target": { "text": "Nothing here yet (0 items)" } } } ] }
+\end{lstlisting}
+\begin{lstlisting}
+# Step s8
+- tapOn:
+    text: "Save"
+# Oracle item-listed
+- assertVisible:
+    text: "${ITEM_TITLE}"
+# Oracle empty-message-gone
+- assertNotVisible:
+    text: "Nothing here yet \\(0 items\\)"
+# Oracle no-crash-dialog
+- assertNotVisible:
+    text: "App keeps stopping"
+\end{lstlisting}
+\caption{A step of the example mobile trace of the repository (top, white space condensed, evidence left out) and the lines of the Maestro flow it compiles to (bottom). The parameter stays a name, the literal text is escaped, and the invariant of the trace is checked after the step.}
+\Description{A JSON object for one step with an action and two checkpoints, and the twelve lines of YAML it compiles to.}
+\label{fig:step}
+\end{figure}
+
+\subsection{A defect is a test}
+\label{sec:bug}
+
+An agent that explores finds defects. In a report, a defect is a paragraph. In a trace, it is an oracle: it states what should be true, and it is recorded as \emph{failed} because it was false during the exploration. ECR records it only if the driver confirms that it is false. It compiles like any other oracle, so the compiled test is red until the defect is fixed: a reproduction that anyone can run, with no model.
+
+Because a trace now says what it expects, a replay has four outcomes instead of two. \emph{Pass}: every oracle holds and the trace records no defect. \emph{Known bug}: the replay stops on the first oracle recorded as failed, and on nothing before it. \emph{Fixed}: that oracle now holds, and it can be kept as a guard. \emph{Fail}: anything else, and the only outcome that fails the build. Two limits follow. A replay stops at the first recorded defect, so the steps after it are not checked until it is fixed. And only a checkpoint can record a defect, never an invariant.
+
+\subsection{Bounded repair}
+\label{sec:repair}
+
+When a replay ends on a step divergence, someone has to look at the changed system and say how the step should now be carried out. ECR does not produce that answer. An agent or a person proposes it, and ECR decides. A \emph{proposal} is one step identifier and one action, and nothing else. The guard runs five checks in order and refuses, with a reason, at the first one that fails:
+\begin{enumerate}
+  \item the replay of the current trace diverges, and not on an oracle;
+  \item the proposal names the step that diverged;
+  \item the action belongs to the vocabulary and compiles;
+  \item in the compiled file, the text of every other step is unchanged;
+  \item the replay of the patched artifact gives what the trace recorded.
+\end{enumerate}
+Two properties follow from this design. A proposal cannot remove or weaken an oracle, because it has no way to name one. And a patch that gets past the broken step by doing something else, such as ticking another item of a list, is refused by the fifth check, because an oracle then fails. An accepted repair is one changed action in the trace file, which reads as one hunk in a review. These bounds have a price: a change that needs a new step is refused, and the path has to be explored again.

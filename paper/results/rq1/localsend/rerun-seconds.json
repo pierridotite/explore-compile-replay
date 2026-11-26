@@ -1,0 +1,35 @@
+{
+ "rq": "rq1",
+ "kind": "rerun_seconds",
+ "system": "localsend",
+ "runs": [
+  45779353667,
+  45780731867,
+  45780746421,
+  45780760755,
+  45780775770
+ ],
+ "definition": "from the install of the app to the line \"finished\" of the agent, public log timestamps, one value per persona job (as for explorations)",
+ "seconds": [
+  105,
+  127,
+  159,
+  134,
+  139,
+  148,
+  84,
+  89,
+  118,
+  121,
+  96,
+  132,
+  127,
+  112,
+  104,
+  122,
+  127,
+  85,
+  90,
+  130
+ ]
+}

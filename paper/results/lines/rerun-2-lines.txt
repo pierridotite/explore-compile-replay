@@ -1,0 +1,41 @@
+Run 45780731867 of pierridotite/mobile-agent-testers (agent rerun on the campaign APK, inputs of exploration run 45701272440)
+Branch eval-localsend-1-traces at 385a721c34a86417b57e41e2e21f14059f46f87d (3a700fc + the repair code of protocol amendment 5, ECR 65f8064; with repair empty, replays run as at 3a700fc)
+Build in the job: download of the campaign APK, release eval-localsend-1, localsend-v1.19.0-44f48f1.apk, apk_path=app.apk
+Created 2026-11-26T08:08:59Z, attempt 2 started 2026-11-26T09:01:01Z, completed 2026-11-26T09:07:07Z, conclusion success. Personas felipe, lucia, malik, ravi.
+Inputs seen in the job env: BRIEF=AGENT_BRIEF.md, MAP=none, MODEL=claude-sonnet-5-5, RECORD_VIDEO=false, REPAIR=, REPLAY_PATH=true, REPLAY_TIMES=20, REPLAY_TRACES=
+Attempt 2: in attempt 1 the ravi job hung in the Emulator + agent step for 50 min with no output and was cancelled at 09:01 UTC; only that job was re-run. Its cancelled agent printed no cost.
+
+Lines of the run page, copied from the public job logs:
+felipe (job success, 4 min 46 s):
+  felipe: finished (20 turns, $0.14)
+  trace: 14 steps, 2 typed texts kept apart, 0 commands left out
+  trace: 9 taps: 9 by name, 0 by id, 0 by position, 2 at a place inside the element
+  goal: felipe-20261125T212237: screen of step s12 (1 texts), reached (first on screen 8 of 10)
+  goal: felipe-20261125T215845: screen of step s14 (1 texts), reached (first on screen 8 of 10)
+  replay: pass, 14 steps with no model in 45 s
+  Agent finished (exit 0), 26 files
+lucia (job success, 6 min 17 s):
+  lucia: finished (32 turns, $0.26)
+  trace: 22 steps, 1 typed texts kept apart, 0 commands left out
+  trace: 16 taps: 16 by name, 0 by id, 0 by position, 2 at a place inside the element
+  goal: lucia-20261125T212222: screen of step s11 (1 texts), reached (first on screen 14 of 20)
+  goal: lucia-20261125T215848: screen of step s10 (1 texts), reached (first on screen 14 of 20)
+  replay: stopped at step 7 of 22 (target_not_found, tapOn by name, after tapOn by name, eraseText, inputText), after 63 s; on screen: the app, the app running, started 53 s before; app start 4.5 s; in the log the app was cleared 1, stopped 2 and launched 1 times; nothing stopped responding; no crash; load 6.2 on the phone, 5.9 on the runner
+  Agent finished (exit 0), 43 files
+malik (job success, 5 min 13 s):
+  malik: finished (19 turns, $0.12)
+  trace: 14 steps, 2 typed texts kept apart, 0 commands left out
+  trace: 9 taps: 9 by name, 0 by id, 0 by position, 2 at a place inside the element
+  goal: malik-20261125T212400: screen of step s16 (1 texts), reached (first on screen 8 of 10)
+  replay: pass, 14 steps with no model in 66 s
+  Agent finished (exit 0), 26 files
+ravi (job success, 6 min 0 s):
+  ravi: finished (27 turns, $0.20)
+  trace: 17 steps, 3 typed texts kept apart, 0 commands left out
+  trace: 8 taps: 8 by name, 0 by id, 0 by position, 2 at a place inside the element
+  goal: ravi-20261125T212224: screen of step s16 (1 texts), not reached on 14 screens
+  goal: ravi-20261125T215801: screen of step s14 (1 texts), reached (first on screen 10 of 14)
+  replay: pass, 17 steps with no model in 72 s
+  Agent finished (exit 0), 34 files
+
+Total agent cost of the run: $0.72.

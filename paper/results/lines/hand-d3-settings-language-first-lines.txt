@@ -1,0 +1,12 @@
+Run 45789671063 of pierridotite/mobile-agent-testers (hand baseline on mutant d3-settings-language-first, 3 replays of each hand-kept trace of hand/d3-settings-language-first, replay_times=3)
+Branch eval-localsend-1-hand at 09622c7aacd2029fc48a495bdd1ec3c13411f290 (385a721 + hand/, the traces kept by hand for the hand baseline of amendment 5)
+Build in the job: the default flutter recipe after git -C .. apply of drift-bench/mutants/localsend/d3-settings-language-first.patch from ECR e5425f2abce99f51073a436b8c0ff6e881f4181e (the public build log names this patch), apk_path=mutant.apk
+Created 2026-11-26T09:11:30Z, attempt 1 started 2026-11-26T09:11:30Z, completed 2026-11-26T09:26:28Z, conclusion success. Personas ravi.
+Inputs seen in the job env: BRIEF=AGENT_BRIEF.md, MAP=none, MODEL=sonnet, RECORD_VIDEO=false, REPAIR=, REPLAY_PATH=false, REPLAY_TIMES=3, REPLAY_TRACES=hand/d3-settings-language-first
+
+Lines of the run page, copied from the public job logs:
+Android app: localsend/localsend v1.19.0 at 44f48f18a5503c43873570ff489d27ff1983e198, APK SHA-256 a4944057db59652c4eb5e7c1dfda81e2e98843a61f25f4f50edc0a7b48014b34
+replays: ravi-20261125T212224: 3 of 3 replays give what the trace recorded (3 pass), 1 with the network of the tools closed (pass), median 56 s, 16 steps, taps 7 by name, 0 by id, 0 by position, trace 24c1ed16c719, app start median 4.6 s, slowest 7.7 s, app cleared by the harness before 3 of 3, cleared again by the replay itself in 3 of 3
+
+Total: 3 of 3 replays give what the trace recorded. 1 of 1 traces 3 of 3. The last replay of each trace ran with the network of the tools closed: 1 of 1 pass.
+replays.json of each persona: public artifact replays-<persona> of the run (gh run download 45789671063 -R pierridotite/mobile-agent-testers -p 'replays-*').

@@ -1,0 +1,12 @@
+\section{Case Study: Agents That Test Mobile Applications}
+\label{sec:case}
+
+The mobile adapter was built for an existing open-source tool\matnamed~\matcite. The tool starts one coding agent per device on iOS Simulators and Android emulators in CI. Each agent plays a persona, drives the application with no script, and writes a report.
+
+Before ECR, the path that led an agent to a defect survived only as prose in its report, and the documentation advised writing a Maestro flow by hand for each defect worth guarding. Three pieces now connect the tool to ECR, and the trace format is the only thing they share: a recorder, a map, and the Maestro target of Section~\ref{sec:implementation}.
+
+\textbf{A recorder.} Each Android agent leaves a trace next to its report. Nothing changes for the agent: a pass-through in front of the device bridge notes its taps, and a script writes the trace when the agent is done. A tap is stored by the name of the element that was under the finger, failing that by its identifier, and by a position only as a last resort. Every text that the agent typed becomes a parameter, and the values go to a separate file, not to be committed.
+
+\textbf{A map.} A trace written by an agent is a path, not yet a test: it has no oracle. A local web page draws the screens of the application as a map, with the paths of the agents, a heat map of their taps and their findings. On a screen, a person picks an element and says whether it must be visible or must not be: the check becomes an oracle of the step that led to that screen. Started from a finding, the same gesture records the check as failed, as in Section~\ref{sec:bug}. Only checks can change: the page refuses a trace whose steps differ from the explored ones. No driver verifies these checks when they are written. The first replay on the unchanged application does, and a trace is kept only if that replay gives what the trace records.
+
+\textbf{State.} The recorder and the map are on the main branch of the tool, for Android only, and the map has not been tried on a real run. The tool also replays the path of an agent right after its exploration, with no model key and no edit in between, and holds the proposer of repairs used in Section~\ref{sec:evaluation}. Trials on its demonstration application, then on LocalSend, found errors of the recorder, such as a button and its label counted as two elements where Maestro finds one, that were fixed before the measured runs.

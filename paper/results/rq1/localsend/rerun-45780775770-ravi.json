@@ -1,0 +1,41 @@
+{
+ "rq": "rq1",
+ "kind": "rerun",
+ "system": "localsend",
+ "run": 45780775770,
+ "index": 5,
+ "persona": "ravi",
+ "job": "success",
+ "brief": "AGENT_BRIEF.md (inputs of exploration run 45701272440)",
+ "model": "claude-sonnet-5-5",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "mutant": null,
+ "app_tag": "v1.19.0",
+ "app_commit": "44f48f18a5503c43873570ff489d27ff1983e198",
+ "apk_sha256": null,
+ "turns": 23,
+ "price_usd": 0.16,
+ "price_rate_date": "2026-11-26",
+ "path_replay": {
+  "stopped_at": 7,
+  "of": 14,
+  "type": "target_not_found"
+ },
+ "traces": [
+  {
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "reached_goal": false,
+   "reported_bug_again": null,
+   "judged_by": "scripts/goal_check.py (amendment 5)"
+  },
+  {
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "reached_goal": true,
+   "reported_bug_again": null,
+   "judged_by": "scripts/goal_check.py (amendment 5)"
+  }
+ ],
+ "source": "public lines of the run page, rerun-5-lines.txt"
+}

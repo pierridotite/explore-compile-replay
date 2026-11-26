@@ -1,0 +1,12 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+Agents explore well and repeat badly. ECR keeps the exploration and removes the repetition: the agent explores once, a pure function compiles what it did and what it checked into a standard test, and CI replays that test with no model. A repair is a new action for one step, accepted only if every recorded oracle still gives the same result, and a failed oracle is left to a person. A defect becomes a test that is red until it is fixed. A contract and seven executable laws state what a new adapter must guarantee. On LocalSend, replays held for six traces of seven, none of the five injected regressions ended green, and the bound of one step was both safe and narrow.
+
+\section*{Artifact Availability}
+
+The specification, the implementation, the conformance kit, the mutants, the evaluation protocol and the result files are under the Apache~2.0 licence at \ecrartifact; the code is described at \ecrcommit{}. The measured traces and the prompts are with the mobile tool~\matcite.
+
+\section*{Use of Generative AI}
+
+ECR exists to bound what a model does in a test pipeline, and this work was done with the same tools it studies. An LLM coding agent wrote most of the implementation and the first draft of this text, under the direction of the author, who reviewed the code and the claims and is responsible for both. An AI assistant wrote the checks, the mutants and the hand-kept flows of the evaluation, and judged the accepted repairs, under the rules of the protocol. The model of the agent is named, with its version, in the protocol and in the result files of its runs.

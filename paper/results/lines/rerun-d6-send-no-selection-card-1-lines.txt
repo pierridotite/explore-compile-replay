@@ -1,0 +1,16 @@
+Run 45789387934 of pierridotite/mobile-agent-testers (agent run on mutant d6-send-no-selection-card, inputs of the reruns)
+Branch eval-localsend-1-traces at 385a721c34a86417b57e41e2e21f14059f46f87d (3a700fc + the repair code of protocol amendment 5, ECR 65f8064; with repair empty, replays run as at 3a700fc)
+Build in the job: the default flutter recipe after git -C .. apply of drift-bench/mutants/localsend/d6-send-no-selection-card.patch from ECR e5425f2abce99f51073a436b8c0ff6e881f4181e (the public build log names this patch), apk_path=mutant.apk
+Created 2026-11-26T09:09:41Z, attempt 1 started 2026-11-26T09:09:41Z, completed 2026-11-26T09:25:23Z, conclusion success. Personas malik.
+Inputs seen in the job env: BRIEF=AGENT_BRIEF.md, MAP=none, MODEL=claude-sonnet-5-5, RECORD_VIDEO=false, REPAIR=, REPLAY_PATH=true, REPLAY_TIMES=20, REPLAY_TRACES=
+
+Lines of the run page, copied from the public job logs:
+malik (job success, 4 min 54 s):
+  malik: finished (22 turns, $0.16)
+  trace: 13 steps, 2 typed texts kept apart, 0 commands left out
+  trace: 8 taps: 8 by name, 0 by id, 0 by position, 1 at a place inside the element
+  goal: malik-20261125T212400: screen of step s16 (1 texts), reached (first on screen 9 of 11)
+  replay: pass, 13 steps with no model in 54 s
+  Agent finished (exit 0), 28 files
+
+Total agent cost of the run: $0.16.

@@ -1,0 +1,38 @@
+{
+  "rq": "rq1",
+  "kind": "to_test",
+  "system": "localsend",
+  "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+  "mat_commit": "cd31933fee2d8e9821d5ec626fe8082ef635ef89",
+  "traces_commit": "983557adea724596660782870e72588346977f7c",
+  "freeze_commit": "3a700fcd4826dd4105a6bbf7653b2d217ea2f412",
+  "app_tag": "v1.19.0",
+  "app_commit": "44f48f18a5503c43873570ff489d27ff1983e198",
+  "apk_sha256": "23301784d9f0fc5857b3c16c1acf32cc38bf465c5db32b4cc2a41c8ea080162d",
+  "mutant": null,
+  "run": 45715086835,
+  "trace_id": "grace-20261125T215820",
+  "persona": "grace",
+  "trace_sha256": "b35f26b29faf39d65d9d34d3eaf703698933ae281fbbf2943f4a7c16e3495c59",
+  "checks_written_by": "AI assistant, rule of protocol amendment 4 (ECR d9e3931)",
+  "minutes_noted": null,
+  "check_seconds": null,
+  "time_note": "not measured: amendment 4",
+  "checks_added": 5,
+  "oracles": 5,
+  "known_bugs": 0,
+  "targets_by_name": 4,
+  "targets_by_id": 0,
+  "targets_by_point": 0,
+  "first_replay": {
+    "outcome": "fail",
+    "divergence": {
+      "step": "s4",
+      "type": "target_not_found"
+    },
+    "seconds": 52
+  },
+  "kept": false,
+  "drop_reason": "target_not_found at s4: a tap on a file of the system file picker; the file is the screen dump written on the phone of the agent (inferred)",
+  "source": "public lines of the run page, results/lines/run-45715086835-lines.txt"
+}

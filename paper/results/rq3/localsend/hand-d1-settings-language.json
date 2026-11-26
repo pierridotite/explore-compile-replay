@@ -1,0 +1,23 @@
+{
+ "rq": "rq3",
+ "kind": "hand_baseline_run",
+ "system": "localsend",
+ "mutant": "d1-settings-language",
+ "edited_by": "an AI assistant (protocol amendment 5)",
+ "branch": "eval-localsend-1-hand",
+ "traces": [
+  {
+   "kind": "hand_baseline",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "flow_sha256": "a9b812d714affb850bd812ca83f0e954879b485cc1ce31c7036eec1217147f70",
+   "lines_changed": 3,
+   "replays": {
+    "same_as_recorded": 2,
+    "of": 3,
+    "run": 45789627845
+   },
+   "kept_green": false
+  }
+ ]
+}

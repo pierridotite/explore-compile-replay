@@ -1,0 +1,19 @@
+Run 45783254229 of pierridotite/mobile-agent-testers (repair run on mutant d3-send-text-last, 1 replay of each kept trace, repair=3, public)
+Branch eval-localsend-1-traces at 385a721c34a86417b57e41e2e21f14059f46f87d (3a700fc + the repair code of protocol amendment 5, ECR 65f8064; with repair empty, replays run as at 3a700fc)
+Build in the job: the default flutter recipe after git -C .. apply of drift-bench/mutants/localsend/d3-send-text-last.patch from ECR e5425f2abce99f51073a436b8c0ff6e881f4181e (the public build log names this patch), apk_path=mutant.apk
+Created 2026-11-26T08:27:03Z, attempt 1 started 2026-11-26T08:27:03Z, completed 2026-11-26T08:44:30Z, conclusion success. Personas felipe, lucia, malik, ravi.
+Inputs seen in the job env: BRIEF=AGENT_BRIEF.md, MAP=none, MODEL=claude-sonnet-5-5, RECORD_VIDEO=false, REPAIR=3, public, REPLAY_PATH=false, REPLAY_TIMES=1, REPLAY_TRACES=traces/localsend
+
+Lines of the run page, copied from the public job logs:
+Android app: localsend/localsend v1.19.0 at 44f48f18a5503c43873570ff489d27ff1983e198, APK SHA-256 307cdf3d7123a729d895334210d172f27c6b6e23c5866e5ee0e118369ab22e1c
+replays: felipe-20261125T212237: 1 of 1 replays give what the trace recorded (1 pass), none with the network closed, median 57 s, 12 steps, taps 7 by name, 0 by id, 0 by position, trace 9e3e16266408, app start median 4 s, slowest 4 s, app cleared by the harness before 1 of 1, cleared again by the replay itself in 1 of 1
+replays: felipe-20261125T215845: 1 of 1 replays give what the trace recorded (1 pass), none with the network closed, median 48 s, 14 steps, taps 9 by name, 0 by id, 0 by position, trace 510a066ed6f1, app start median 3 s, slowest 3 s, app cleared by the harness before 1 of 1, cleared again by the replay itself in 1 of 1
+replays: lucia-20261125T212222: 1 of 1 replays give what the trace recorded (1 pass), none with the network closed, median 87 s, 11 steps, taps 7 by name, 0 by id, 0 by position, trace 5ee454480d35, app start median 5.6 s, slowest 5.6 s, app cleared by the harness before 1 of 1, cleared again by the replay itself in 1 of 1
+replays: lucia-20261125T215848: 1 of 1 replays give what the trace recorded (1 pass), none with the network closed, median 67 s, 10 steps, taps 6 by name, 0 by id, 0 by position, trace c81eac726eb5, app start median 4.2 s, slowest 4.2 s, app cleared by the harness before 1 of 1, cleared again by the replay itself in 1 of 1
+replays: malik-20261125T212400: 1 of 1 replays give what the trace recorded (1 pass), none with the network closed, median 105 s, 17 steps, taps 9 by name, 0 by id, 0 by position, trace faf70610fb65, app start median 5.8 s, slowest 5.8 s, app cleared by the harness before 1 of 1, cleared again by the replay itself in 1 of 1
+replays: ravi-20261125T212224: 1 of 1 replays give what the trace recorded (1 pass), none with the network closed, median 60 s, 16 steps, taps 7 by name, 0 by id, 0 by position, trace 96ac48d667ed, app start median 4.4 s, slowest 4.4 s, app cleared by the harness before 1 of 1, cleared again by the replay itself in 1 of 1
+replays: ravi-20261125T215801: 1 of 1 replays give what the trace recorded (1 pass), none with the network closed, median 54 s, 16 steps, taps 9 by name, 0 by id, 0 by position, trace 2e732a0cdf04, app start median 4.5 s, slowest 4.5 s, app cleared by the harness before 1 of 1, cleared again by the replay itself in 1 of 1
+
+Total: 7 of 7 replays give what the trace recorded. 7 of 7 traces 1 of 1. No replay of this run had the network closed.
+Repairs: 0 attempt lines for 0 diverged traces; a proposal accepted for 0 of 0; agent cost summed over the lines $0.00, 0 tokens out.
+replays.json of each persona: public artifact replays-<persona> of the run (gh run download 45783254229 -R pierridotite/mobile-agent-testers -p 'replays-*').

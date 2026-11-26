@@ -1,0 +1,689 @@
+{
+ "rq": "rq3",
+ "kind": "repair_run",
+ "system": "localsend",
+ "run": 45791807116,
+ "mutant": "d6-message-dialog-gone",
+ "mat_commit": "385a721c34a86417b57e41e2e21f14059f46f87d",
+ "ecr_commit": "c35dfed3ef7fe6a5ab7b4e5ad20e3a964e606d38",
+ "apk_sha256": "f7201de4f05794f636c5e4a8c7d6c5d7223c98bbbe1bc9ac0c17da88d0db00d1",
+ "traces_diverged_in_this_run": [
+  "felipe-20261125T212237",
+  "felipe-20261125T215845",
+  "lucia-20261125T212222",
+  "lucia-20261125T215848",
+  "malik-20261125T212400",
+  "ravi-20261125T212224",
+  "ravi-20261125T215801"
+ ],
+ "traces_with_nothing_to_repair": [],
+ "traces_repaired": [],
+ "proposer_price_usd": 0.7333,
+ "attempts": [
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Texto"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0354,
+    "turns": 2,
+    "tokens_out": 399
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "18%,23%"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0354,
+    "turns": 1,
+    "tokens_out": 948
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.036,
+    "turns": 1,
+    "tokens_out": 985
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Texto"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0305,
+    "turns": 1,
+    "tokens_out": 434
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "18%,23%"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0311,
+    "turns": 1,
+    "tokens_out": 465
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0367,
+    "turns": 2,
+    "tokens_out": 439
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Texto"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0398,
+    "turns": 2,
+    "tokens_out": 614
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "69%,18%"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0306,
+    "turns": 1,
+    "tokens_out": 446
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0416,
+    "turns": 2,
+    "tokens_out": 674
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Texto"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0295,
+    "turns": 1,
+    "tokens_out": 389
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0456,
+    "turns": 2,
+    "tokens_out": 1102
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "72%,20%"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0421,
+    "turns": 2,
+    "tokens_out": 769
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "Text"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0298,
+    "turns": 1,
+    "tokens_out": 318
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0368,
+    "turns": 1,
+    "tokens_out": 994
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "18%,23%"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0331,
+    "turns": 1,
+    "tokens_out": 613
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "पाठ"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0299,
+    "turns": 1,
+    "tokens_out": 300
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "30%,29%"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0339,
+    "turns": 1,
+    "tokens_out": 677
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T212224",
+   "trace_sha256": "96ac48d667edeaf28e90d4a3d2225ab8dfc19ba91cbd88795965d57887fd008a",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": null,
+    "stepId": "s3"
+   },
+   "action_kind": "none",
+   "accepted": false,
+   "refusal_reason": "no_proposal",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0361,
+    "turns": 1,
+    "tokens_out": 868
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 1,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "tapOn": null,
+     "target": {
+      "text": "पाठ"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0373,
+    "turns": 2,
+    "tokens_out": 445
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 2,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "text": "पाठ"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by name",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0307,
+    "turns": 1,
+    "tokens_out": 338
+   }
+  },
+  {
+   "kind": "repair",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "divergence": {
+    "type": "oracle_failed",
+    "step": "s3"
+   },
+   "attempt": 3,
+   "proposal": {
+    "action": {
+     "kind": "tapOn",
+     "target": {
+      "point": "18%,26%"
+     }
+    },
+    "stepId": "s3"
+   },
+   "action_kind": "tapOn by position",
+   "accepted": false,
+   "refusal_reason": "oracle_failed",
+   "oracles_kept": null,
+   "oracles_sha256_before": null,
+   "oracles_sha256_after": null,
+   "replays_after_pass": null,
+   "judgment": null,
+   "proposer": {
+    "model": "claude-sonnet-5-5",
+    "price_usd": 0.0314,
+    "turns": 1,
+    "tokens_out": 392
+   }
+  }
+ ],
+ "source": "public lines of the run page, run-d6-message-dialog-gone-repair-lines.txt"
+}

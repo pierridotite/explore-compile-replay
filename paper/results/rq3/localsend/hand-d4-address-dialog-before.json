@@ -1,0 +1,88 @@
+{
+ "rq": "rq3",
+ "kind": "hand_baseline_run",
+ "system": "localsend",
+ "mutant": "d4-address-dialog-before",
+ "edited_by": "an AI assistant (protocol amendment 5)",
+ "branch": "eval-localsend-1-hand",
+ "traces": [
+  {
+   "kind": "hand_baseline",
+   "trace_id": "felipe-20261125T212237",
+   "trace_sha256": "9e3e162664083afdea5e327313a32e7ce9e7a622784bfdd7d389677d7d7a951d",
+   "flow_sha256": "4f9d0e6748a87e36998bb560b94262b05e0bc2e05d3ccfbb15a26bf41b3298d2",
+   "lines_changed": 2,
+   "replays": {
+    "same_as_recorded": 3,
+    "of": 3,
+    "run": 45789699397
+   },
+   "kept_green": true
+  },
+  {
+   "kind": "hand_baseline",
+   "trace_id": "felipe-20261125T215845",
+   "trace_sha256": "510a066ed6f107c601beaae5514b0f2a24d96e1b7876286c19d88a52cfdd264b",
+   "flow_sha256": "6c3a6607922c04f7d9cfdf12251618aa8473cc4e5eda0ac93b35c7e8b5fd4f5c",
+   "lines_changed": 2,
+   "replays": {
+    "same_as_recorded": 3,
+    "of": 3,
+    "run": 45789699397
+   },
+   "kept_green": true
+  },
+  {
+   "kind": "hand_baseline",
+   "trace_id": "lucia-20261125T212222",
+   "trace_sha256": "5ee454480d3594918c404cbea02d12efbeba1af0f40f812ebca5c95d2c39b39e",
+   "flow_sha256": "62a5b9ba395b9896b2192ecf1c6845592ee7d0eafd12e418abc6d5725845e440",
+   "lines_changed": 2,
+   "replays": {
+    "same_as_recorded": 3,
+    "of": 3,
+    "run": 45789699397
+   },
+   "kept_green": true
+  },
+  {
+   "kind": "hand_baseline",
+   "trace_id": "lucia-20261125T215848",
+   "trace_sha256": "c81eac726eb53375d334545d24dbbb90feaf0486d5c65191a1445225b1854015",
+   "flow_sha256": "94bf5afaa579ed70c3820f8d1643eeac5f1f1927093b9666083b614e6dda12f6",
+   "lines_changed": 2,
+   "replays": {
+    "same_as_recorded": 3,
+    "of": 3,
+    "run": 45789699397
+   },
+   "kept_green": true
+  },
+  {
+   "kind": "hand_baseline",
+   "trace_id": "malik-20261125T212400",
+   "trace_sha256": "faf70610fb6587c0c7c0e8165c1a4e819a2a030f2588ad8d214c992cadb92436",
+   "flow_sha256": "782879cc6390e8dca73eac1d980eb69b0ce6247503efcfb2ce624a3431b91393",
+   "lines_changed": 2,
+   "replays": {
+    "same_as_recorded": 3,
+    "of": 3,
+    "run": 45789699397
+   },
+   "kept_green": true
+  },
+  {
+   "kind": "hand_baseline",
+   "trace_id": "ravi-20261125T215801",
+   "trace_sha256": "2e732a0cdf0446feaee72093ee662ee4c5b999f95186eb20f22b19e2ea13901e",
+   "flow_sha256": "5de6e065ec8c58d5f94e5cee930046c89b74cf58030d3c79209b98622f5cc0be",
+   "lines_changed": 2,
+   "replays": {
+    "same_as_recorded": 3,
+    "of": 3,
+    "run": 45789699397
+   },
+   "kept_green": true
+  }
+ ]
+}

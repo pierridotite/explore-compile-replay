@@ -124,6 +124,7 @@ Every number below is printed by `python3 scripts/summary.py` or comes from `res
 | No kept trace records a defect (62 checks) | `to_test-*.json`; amendment 5 (`reported_bug_again` is null) |
 | 7 traces kept, fewer than the 10 planned | `protocol.md` section 2 and amendment 6; `to_test-*.json` |
 | Every added dialog detected, mostly as a failed oracle | `replay-d4-*`; `summary.py` lists the stop types per mutant: `oracle_failed` on all five, `target_not_found` also on two |
+| The artifact is archived on Zenodo, concept DOI 10.5281/zenodo.24565052 (all versions; 0.1.0 is 10.5281/zenodo.24565053), named build only | Release v0.1.0 of the repository, tag on 0446150 |
 | Six dated amendments | `protocol.md`, section Amendments |
 | The cells of D4 and D6 count 34 pairs of a trace and a mutant, not 35: the unstable trace never opens the address dialog | `replay-d4-address-dialog-before-*`, `replay-d6-address-dialog-gone-*` |
 

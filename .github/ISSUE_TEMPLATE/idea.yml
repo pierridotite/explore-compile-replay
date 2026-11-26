@@ -1,0 +1,26 @@
+name: Idea to build with ECR
+description: Propose a kind of system that an agent could explore once, with tests that replay with no model
+title: "Idea: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The ideas already listed: [Build with ECR](https://github.com/pierridotite/explore-compile-replay#build-with-ecr). Security ideas are welcome when they test only systems that their users own or are allowed to test.
+  - type: textarea
+    id: system
+    attributes:
+      label: The system
+      description: What the agent would explore, and as whom.
+    validations:
+      required: true
+  - type: textarea
+    id: compiled
+    attributes:
+      label: What a trace would compile to
+      description: The test file that would replay with no model, and the tool that runs it.
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: What the tests would check

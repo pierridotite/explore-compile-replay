@@ -139,6 +139,43 @@ Varias herramientas ya guardan o reproducen lo que hizo un agente, cada una para
 
 </details>
 
+<a name="build-with-ecr"></a>
+
+## Construir con ECR
+
+ECR es un patrón, no una herramienta móvil: cualquier sistema que un agente pueda usar se puede explorar una vez y reproducir después sin modelo. Abajo hay ideas de proyectos para construir sobre él. Los primeros repositorios que construyan una de ellas como es debido aparecerán aquí, y cualquiera puede proponer una idea nueva.
+
+**Construido con ECR:** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers), para apps móviles, el primer proyecto que escribe trazas ECR.
+
+<details>
+<summary>Ideas para construir</summary>
+
+- **Tests de seguridad de tu propia app.** Un agente busca fallos de acceso en una copia de prueba de tu app: una cuenta que puede ver los datos de otra, una pantalla de pago que se abre sin pagar. Cada hallazgo se compila en un test que queda en rojo hasta que el fallo se corrige, y que luego impide que vuelva. Solo en sistemas que te pertenecen o que tienes permiso para probar.
+- **Apps web.** Un adaptador de navegador: el agente explora un sitio y la traza se compila en un test de Playwright.
+- **Accesibilidad.** El agente usa una app con un lector de pantalla, o solo con el teclado. Cada paso que no logra superar, como un botón sin etiqueta o una trampa de foco, se convierte en un test.
+- **Herramientas de línea de comandos.** El agente aprende una herramienta a partir de su ayuda, y la traza se compila en un test de shell que comprueba los códigos de salida y las salidas.
+- **APIs.** El agente explora una API REST a partir de su archivo OpenAPI, y la traza se compila en tests de contrato.
+- **Juegos.** El agente juega un nivel con una semilla fija, y la traza se compila en una reproducción de las entradas que comprueba, después de cada cambio, que el nivel todavía se puede terminar.
+- **Guías de inicio.** El agente sigue un README en una máquina nueva, y la traza se convierte en un job de CI que falla cuando la guía ya no coincide con el código.
+- **Apps de empresa.** El agente recorre un flujo de back-office de un CRM o un ERP en un sandbox, como crear un registro y conseguir su aprobación, y la traza se compila en los tests propios de la plataforma.
+
+</details>
+
+<details>
+<summary>Cómo entra un repositorio en la lista, y cómo proponer una idea</summary>
+
+Un repositorio entra en la lista cuando:
+
+- es público, con una licencia de código abierto;
+- sus trazas pasan `ecr validate`, y su adaptador, si trae uno, pasa `ecr conformance`;
+- sus tests compilados se ejecutan en CI sin modelo, y una ejecución en verde lo demuestra;
+- su README cita ECR, con la [insignia o el botón](#citing-ecr);
+- si prueba la seguridad, solo prueba sistemas que pertenecen a sus usuarios o que estos tienen permiso para probar, y no publica ningún ataque contra sistemas de otros.
+
+Para entrar, abre un issue [Built with ECR](https://github.com/pierridotite/explore-compile-replay/issues/new?template=built-with-ecr.yml) con el enlace a tu repositorio, una traza y la ejecución en verde. Los repositorios aparecen en el orden en que llegan. Para proponer una idea que no está en la lista, abre un issue [Idea to build with ECR](https://github.com/pierridotite/explore-compile-replay/issues/new?template=idea.yml).
+
+</details>
+
 <a name="citing-ecr"></a>
 
 ## Citar ECR

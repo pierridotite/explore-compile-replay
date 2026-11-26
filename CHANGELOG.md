@@ -15,3 +15,4 @@ Everything below is a draft: the trace format, the contract and the laws can sti
 - **Evaluation protocol**, written before any measured run: [paper/protocol.md](paper/protocol.md).
 - **The README and the docs pages in six more languages**: Chinese, Japanese, Spanish, Portuguese, Vietnamese and Turkish, in [i18n/](i18n/). `pnpm check` checks that every relative link of the Markdown pages points to a file and an anchor that exist.
 - **Citing ECR**: a [NOTICE](NOTICE) file, which the Apache-2.0 license requires every copy, fork or package of ECR's code to keep, the short name in [CITATION.cff](CITATION.cff), and a README section with a badge and a button, light or dark, that link back here, for the projects that use ECR.
+- **Build with ECR**: a README section with ideas of projects to build on ECR, the repositories built with it, and two issue forms, one to propose an idea and one to ask for a repository to be listed.

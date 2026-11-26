@@ -139,6 +139,43 @@ ECR 是 [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-test
 
 </details>
 
+<a name="build-with-ecr"></a>
+
+## 用 ECR 构建
+
+ECR 是一种模式，而不是一个移动端工具：任何智能体能够使用的系统，都可以先探索一次，再在没有模型的情况下重放。下面是一些可以基于它构建的项目创意。最先把其中一个创意认真实现的仓库会被列在这里，任何人都可以提出新的创意。
+
+**用 ECR 构建的项目：** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers)，面向移动应用，是第一个写出 ECR 轨迹的项目。
+
+<details>
+<summary>可以构建的创意</summary>
+
+- **对你自己的应用做安全测试。** 智能体在你的应用的测试副本中寻找访问控制漏洞：一个账号能看到另一个账号的数据，一个付费页面不付钱也能打开。每个发现都会编译成一个测试，在漏洞修复之前一直失败，修复之后防止它再次出现。只能用于你自己拥有或已获准测试的系统。
+- **Web 应用。** 一个浏览器适配器：智能体探索一个网站，轨迹编译成一个 Playwright 测试。
+- **无障碍。** 智能体用屏幕阅读器，或者只用键盘来使用一个应用。每个它过不去的步骤，比如没有标签的按钮或焦点陷阱，都会变成一个测试。
+- **命令行工具。** 智能体从帮助信息中学会一个工具，轨迹编译成一个检查退出码和输出的 shell 测试。
+- **API。** 智能体根据 OpenAPI 文件探索一个 REST API，轨迹编译成契约测试。
+- **游戏。** 智能体用固定的随机种子玩一个关卡，轨迹编译成一段输入重放，在每次改动之后检查这个关卡是否仍然可以通关。
+- **入门指南。** 智能体在一台全新的机器上按照 README 操作，轨迹变成一个 CI 任务，当指南和代码不再一致时就会失败。
+- **企业应用。** 智能体在沙盒中走完 CRM 或 ERP 的一个后台流程，例如创建一条记录并让它通过审批，轨迹编译成该平台自己的测试。
+
+</details>
+
+<details>
+<summary>仓库如何被列入，以及如何提出创意</summary>
+
+一个仓库满足以下条件时会被列入：
+
+- 它是公开的，使用开源许可证；
+- 它的轨迹通过 `ecr validate`，如果它自带适配器，适配器要通过 `ecr conformance`；
+- 它编译出的测试在 CI 中无需模型即可运行，并有一次通过的运行可以证明；
+- 它的 README 用[徽章或按钮](#citing-ecr)引用了 ECR；
+- 如果它做安全测试，只测试其用户拥有或已获准测试的系统，并且不公布任何针对他人系统的攻击。
+
+想被列入，请开一个 [Built with ECR](https://github.com/pierridotite/explore-compile-replay/issues/new?template=built-with-ecr.yml) issue，附上你的仓库链接、一份轨迹和那次通过的运行。仓库按提交的先后顺序列出。想提出列表中没有的创意，请开一个 [Idea to build with ECR](https://github.com/pierridotite/explore-compile-replay/issues/new?template=idea.yml) issue。
+
+</details>
+
 <a name="citing-ecr"></a>
 
 ## 引用 ECR

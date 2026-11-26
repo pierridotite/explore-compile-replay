@@ -133,6 +133,41 @@ Several tools already keep or replay what an agent did, each for its own system:
 
 </details>
 
+## Build with ECR
+
+ECR is a pattern, not a mobile tool: any system that an agent can use can be explored once and then replayed with no model. Below are ideas of projects to build on it. The first repositories that build one properly will be listed here, and anyone can propose a new idea.
+
+**Built with ECR:** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers), for mobile apps, the first project that writes ECR traces.
+
+<details>
+<summary>Ideas to build</summary>
+
+- **Security tests of your own app.** An agent looks for access flaws in a test copy of your app: an account that can see the data of another account, a paid screen that opens without paying. Each finding compiles to a test that stays red until the flaw is fixed, then keeps it from coming back. Only on systems that you own or are allowed to test.
+- **Web apps.** A browser adapter: the agent explores a site, and the trace compiles to a Playwright test.
+- **Accessibility.** The agent uses an app with a screen reader, or with the keyboard only. Each step it cannot get through, such as a button with no label or a focus trap, becomes a test.
+- **Command-line tools.** The agent learns a tool from its help, and the trace compiles to a shell test that checks exit codes and outputs.
+- **APIs.** The agent explores a REST API from its OpenAPI file, and the trace compiles to contract tests.
+- **Games.** The agent plays a level with a fixed seed, and the trace compiles to a replay of the inputs that checks, after each change, that the level can still be finished.
+- **Getting started guides.** The agent follows a README on a fresh machine, and the trace becomes a CI job that fails when the guide no longer matches the code.
+- **Business apps.** The agent goes through a back-office flow of a CRM or an ERP in a sandbox, such as creating a record and getting it approved, and the trace compiles to the platform's own tests.
+
+</details>
+
+<details>
+<summary>How a repository gets listed, and how to propose an idea</summary>
+
+A repository is listed when:
+
+- it is public, under an open-source license;
+- its traces pass `ecr validate`, and its adapter, if it brings one, passes `ecr conformance`;
+- its compiled tests run in CI with no model, and a green run shows it;
+- its README cites ECR, with the [badge or the button](#citing-ecr);
+- if it tests security, it tests only systems that its users own or are allowed to test, and it publishes no attack on the systems of others.
+
+To be listed, open a [Built with ECR](https://github.com/pierridotite/explore-compile-replay/issues/new?template=built-with-ecr.yml) issue with the link to your repository, one trace and the green run. Repositories are listed in the order they come in. To propose an idea that is not on the list, open an [Idea to build with ECR](https://github.com/pierridotite/explore-compile-replay/issues/new?template=idea.yml) issue.
+
+</details>
+
 ## Citing ECR
 
 If your project uses ECR, show it: add this badge to your README. It links back here, and that is how the next team finds the pattern.

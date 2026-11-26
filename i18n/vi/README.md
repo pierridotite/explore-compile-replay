@@ -139,6 +139,43 @@ ECR là sự tổng quát hóa của [mobile-agent-testers](https://github.com/p
 
 </details>
 
+<a name="build-with-ecr"></a>
+
+## Xây dựng với ECR
+
+ECR là một mẫu, không phải một công cụ cho di động: bất kỳ hệ thống nào mà agent dùng được đều có thể được khám phá một lần rồi phát lại mà không cần mô hình. Dưới đây là các ý tưởng dự án để xây dựng trên nó. Những repo đầu tiên hiện thực đúng cách một trong các ý tưởng này sẽ được liệt kê ở đây, và ai cũng có thể đề xuất ý tưởng mới.
+
+**Được xây dựng với ECR:** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers), cho ứng dụng di động, dự án đầu tiên ghi trace ECR.
+
+<details>
+<summary>Các ý tưởng để xây dựng</summary>
+
+- **Kiểm thử bảo mật cho chính ứng dụng của bạn.** Một agent tìm lỗ hổng phân quyền trong một bản sao thử nghiệm của ứng dụng: một tài khoản xem được dữ liệu của tài khoản khác, một màn hình trả phí mở được mà không cần trả tiền. Mỗi phát hiện được biên dịch thành một test giữ màu đỏ cho đến khi lỗ hổng được sửa, rồi ngăn nó quay lại. Chỉ trên các hệ thống bạn sở hữu hoặc được phép kiểm thử.
+- **Ứng dụng web.** Một adapter cho trình duyệt: agent khám phá một trang web, và trace được biên dịch thành một test Playwright.
+- **Khả năng tiếp cận.** Agent dùng ứng dụng bằng trình đọc màn hình, hoặc chỉ bằng bàn phím. Mỗi bước nó không vượt qua được, như một nút không có nhãn hay một bẫy tiêu điểm, trở thành một test.
+- **Công cụ dòng lệnh.** Agent học cách dùng một công cụ từ phần trợ giúp của nó, và trace được biên dịch thành một test shell kiểm tra mã thoát và đầu ra.
+- **API.** Agent khám phá một REST API từ file OpenAPI của nó, và trace được biên dịch thành các test hợp đồng.
+- **Trò chơi.** Agent chơi một màn với một seed cố định, và trace được biên dịch thành một bản phát lại các thao tác, kiểm tra sau mỗi thay đổi rằng màn chơi vẫn có thể hoàn thành.
+- **Hướng dẫn bắt đầu.** Agent làm theo một README trên một máy mới, và trace trở thành một job CI sẽ thất bại khi hướng dẫn không còn khớp với code.
+- **Ứng dụng doanh nghiệp.** Agent đi qua một quy trình back-office của một CRM hay ERP trong sandbox, chẳng hạn tạo một bản ghi và được phê duyệt, và trace được biên dịch thành các test của chính nền tảng đó.
+
+</details>
+
+<details>
+<summary>Cách một repo được liệt kê, và cách đề xuất ý tưởng</summary>
+
+Một repo được liệt kê khi:
+
+- nó công khai, với giấy phép mã nguồn mở;
+- các trace của nó vượt qua `ecr validate`, và adapter của nó, nếu có, vượt qua `ecr conformance`;
+- các test đã biên dịch chạy trong CI mà không cần mô hình, và có một lần chạy xanh chứng minh điều đó;
+- README của nó trích dẫn ECR bằng [huy hiệu hoặc nút](#citing-ecr);
+- nếu nó kiểm thử bảo mật, nó chỉ kiểm thử các hệ thống mà người dùng của nó sở hữu hoặc được phép kiểm thử, và không công bố cuộc tấn công nào vào hệ thống của người khác.
+
+Để được liệt kê, hãy mở một issue [Built with ECR](https://github.com/pierridotite/explore-compile-replay/issues/new?template=built-with-ecr.yml) kèm link repo của bạn, một trace và lần chạy xanh đó. Các repo được liệt kê theo thứ tự gửi đến. Để đề xuất một ý tưởng chưa có trong danh sách, hãy mở một issue [Idea to build with ECR](https://github.com/pierridotite/explore-compile-replay/issues/new?template=idea.yml).
+
+</details>
+
 <a name="citing-ecr"></a>
 
 ## Trích dẫn ECR

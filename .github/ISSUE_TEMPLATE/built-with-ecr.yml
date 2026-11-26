@@ -1,0 +1,60 @@
+name: Built with ECR
+description: Ask for your repository to be listed in the README, under Build with ECR
+title: "Built with ECR: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The README lists the repositories that build on ECR, in the order they come in. What a repository needs: [Build with ECR](https://github.com/pierridotite/explore-compile-replay#build-with-ecr).
+  - type: input
+    id: repository
+    attributes:
+      label: Repository
+      description: A public repository, under an open-source license.
+      placeholder: https://github.com/you/your-project
+    validations:
+      required: true
+  - type: dropdown
+    id: idea
+    attributes:
+      label: Idea it builds
+      options:
+        - Security tests of your own app
+        - Web apps
+        - Accessibility
+        - Command-line tools
+        - APIs
+        - Games
+        - Getting started guides
+        - Business apps
+        - Another idea (say which below)
+    validations:
+      required: true
+  - type: input
+    id: trace
+    attributes:
+      label: One trace
+      description: A link to a trace file of the repository that passes `ecr validate`.
+    validations:
+      required: true
+  - type: input
+    id: run
+    attributes:
+      label: A green CI run
+      description: A link to a run where the compiled tests pass with no model.
+    validations:
+      required: true
+  - type: textarea
+    id: about
+    attributes:
+      label: What it does
+      description: Two or three sentences. If the repository brings its own adapter, say whether it passes `ecr conformance`.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: The README cites ECR, with the badge or the button.
+          required: true
+        - label: It tests only systems that its users own or are allowed to test.
+          required: true

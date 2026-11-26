@@ -139,6 +139,43 @@ Bir ajanın yaptıklarını saklayan ya da yeniden oynatan birkaç araç zaten v
 
 </details>
 
+<a name="build-with-ecr"></a>
+
+## ECR ile geliştirin
+
+ECR bir kalıptır, bir mobil araç değil: bir ajanın kullanabildiği her sistem bir kez keşfedilip ardından modelsiz yeniden oynatılabilir. Aşağıda onun üzerine kurulabilecek proje fikirleri var. Bunlardan birini düzgün biçimde hayata geçiren ilk depolar burada listelenecek ve herkes yeni bir fikir önerebilir.
+
+**ECR ile geliştirilenler:** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers), mobil uygulamalar için, ECR izleri yazan ilk proje.
+
+<details>
+<summary>Geliştirilecek fikirler</summary>
+
+- **Kendi uygulamanızın güvenlik testleri.** Bir ajan, uygulamanızın bir test kopyasında erişim açıkları arar: başka bir hesabın verilerini görebilen bir hesap, ödeme yapmadan açılan ücretli bir ekran. Her bulgu, açık düzeltilene kadar kırmızı kalan ve sonra açığın geri gelmesini önleyen bir teste derlenir. Yalnızca sahibi olduğunuz ya da test etme izniniz olan sistemlerde.
+- **Web uygulamaları.** Bir tarayıcı adaptörü: ajan bir siteyi keşfeder ve iz bir Playwright testine derlenir.
+- **Erişilebilirlik.** Ajan bir uygulamayı bir ekran okuyucuyla ya da yalnızca klavyeyle kullanır. Geçemediği her adım, örneğin etiketsiz bir düğme ya da bir odak tuzağı, bir teste dönüşür.
+- **Komut satırı araçları.** Ajan bir aracı yardım metninden öğrenir ve iz, çıkış kodlarını ve çıktıları kontrol eden bir kabuk testine derlenir.
+- **API'ler.** Ajan bir REST API'yi OpenAPI dosyasından keşfeder ve iz sözleşme testlerine derlenir.
+- **Oyunlar.** Ajan sabit bir tohumla bir bölüm oynar ve iz, her değişiklikten sonra bölümün hâlâ bitirilebildiğini kontrol eden bir girdi tekrarına derlenir.
+- **Başlangıç kılavuzları.** Ajan yeni bir makinede bir README'yi adım adım izler ve iz, kılavuz artık kodla uyuşmadığında başarısız olan bir CI işine dönüşür.
+- **Kurumsal uygulamalar.** Ajan bir sandbox'ta bir CRM ya da ERP'nin arka ofis akışından geçer, örneğin bir kayıt oluşturup onaylatır, ve iz platformun kendi testlerine derlenir.
+
+</details>
+
+<details>
+<summary>Bir depo nasıl listelenir ve bir fikir nasıl önerilir</summary>
+
+Bir depo şu durumda listelenir:
+
+- herkese açıktır ve açık kaynak bir lisansı vardır;
+- izleri `ecr validate` kontrolünden geçer ve kendi adaptörü varsa o adaptör `ecr conformance` kontrolünden geçer;
+- derlenen testleri CI'da modelsiz çalışır ve bunu gösteren yeşil bir çalıştırma vardır;
+- README dosyası ECR'ye [rozet ya da düğmeyle](#citing-ecr) atıf yapar;
+- güvenlik test ediyorsa yalnızca kullanıcılarının sahibi olduğu ya da test etme izni olan sistemleri test eder ve başkalarının sistemlerine yönelik hiçbir saldırı yayımlamaz.
+
+Listelenmek için deponuzun bağlantısını, bir izi ve yeşil çalıştırmayı ekleyerek bir [Built with ECR](https://github.com/pierridotite/explore-compile-replay/issues/new?template=built-with-ecr.yml) issue'su açın. Depolar geliş sırasına göre listelenir. Listede olmayan bir fikir önermek için bir [Idea to build with ECR](https://github.com/pierridotite/explore-compile-replay/issues/new?template=idea.yml) issue'su açın.
+
+</details>
+
 <a name="citing-ecr"></a>
 
 ## ECR'ye atıf

@@ -1,8 +1,8 @@
 # Changelog
 
-## Unreleased
+## 0.1.0 (2026-11-26)
 
-Everything below is a draft: the trace format, the contract and the laws can still change.
+This first version is a draft: the trace format, the contract and the laws can still change.
 
 - **Trace format, adapter contract and seven laws**: [spec/](spec/). A trace is typed and validated, stores a typed text by its name and never by its value, and can carry evidence on a step or at its top. The format and the mobile vocabulary are also published as JSON Schemas.
 - **The `ecr` command**: `validate`, `compile`, `replay`, `repair`, `conformance`. It runs from a clone, and no command calls a model. See [docs/command.md](docs/command.md).

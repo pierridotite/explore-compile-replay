@@ -156,7 +156,7 @@ ECR'nin aleyhine olanlar: bir iz kararlı değil ve bir Geri basışının hemen
 ## Şu anki durum
 
 - **Bugün çalışan:** `ecr` komutu (`validate`, `compile`, `replay`, `repair`, `conformance`), bir referans adaptör ve Maestro akışlarına derleyen bir mobil adaptör. LocalSend'de, Android emülatörlerinde ölçüldü: model kullanmayan yeniden oynatmalar ve `ecr repair`'in cihaz üzerinde denetlediği onarımlar.
-- **Sürüyor:** ön baskı ile DOI'yi içeren ilk sürüm.
+- **Sürüyor:** Zenodo'daki ön baskı ve 26 Kasım 2026'da yayımlanan 0.1.0 sürümünün DOI'si.
 - **Henüz yok:** iOS, npm'de bir paket.
 
 Parça parça: [docs/status.md](docs/status.md).

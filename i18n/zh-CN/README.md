@@ -156,7 +156,7 @@ ECR 想成为任何人都能实现的标准，而不只是一个工具。
 ## 当前进展
 
 - **现在可用：** `ecr` 命令（`validate`、`compile`、`replay`、`repair`、`conformance`）、一个参考适配器，以及一个编译为 Maestro flow 的移动适配器。已在 LocalSend 上、在 Android 模拟器中测量：不调用模型的重放，以及由 `ecr repair` 在设备上检查的修复。
-- **进行中：** 第一个版本，附带预印本和 DOI。
+- **进行中：** Zenodo 上的预印本，以及 2026 年 11 月 26 日发布的 0.1.0 版本的 DOI。
 - **尚未开始：** iOS、npm 包。
 
 逐个部分的说明：[docs/status.md](docs/status.md)。

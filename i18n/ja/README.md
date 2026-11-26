@@ -156,7 +156,7 @@ ECR に不利な点：1 本のトレースが安定せず、20 回中 3 回、�
 ## 現状
 
 - **今動くもの：** `ecr` コマンド（`validate`、`compile`、`replay`、`repair`、`conformance`）、リファレンスアダプター、そして Maestro フローにコンパイルするモバイルアダプター。LocalSend で Android エミュレーター上で計測済み：モデルなしの再生と、`ecr repair` がデバイス上で確認した修復。
-- **進行中：** プレプリントと DOI を伴う最初のリリース。
+- **進行中：** Zenodo でのプレプリントと、2026 年 11 月 26 日にリリースしたバージョン 0.1.0 の DOI。
 - **未着手：** iOS、npm パッケージ。
 
 部分ごとの状況：[docs/status.md](docs/status.md)。

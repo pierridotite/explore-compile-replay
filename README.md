@@ -148,7 +148,7 @@ What counts against ECR: one trace is not stable, and fails 3 replays of 20 on t
 ## Where it stands
 
 - **Works today:** the `ecr` command (`validate`, `compile`, `replay`, `repair`, `conformance`), a reference adapter, and a mobile adapter that compiles to Maestro flows. Measured on LocalSend, on Android emulators: replays with no model, and repairs that `ecr repair` checked on the device.
-- **In progress:** the first release, with the preprint and a DOI.
+- **In progress:** the preprint on Zenodo, and the DOI of version 0.1.0, released on 26 November 2026.
 - **Not yet:** iOS, a package on npm.
 
 Part by part: [docs/status.md](docs/status.md).

@@ -156,7 +156,7 @@ Những điểm bất lợi cho ECR: một trace không ổn định, thất b�
 ## Tiến độ hiện tại
 
 - **Đã chạy được:** lệnh `ecr` (`validate`, `compile`, `replay`, `repair`, `conformance`), một adapter tham chiếu, và một adapter di động biên dịch ra flow Maestro. Đã đo trên LocalSend, trên trình giả lập Android: phát lại không dùng mô hình, và các lần sửa được `ecr repair` kiểm tra ngay trên thiết bị.
-- **Đang làm:** bản phát hành đầu tiên cùng preprint và DOI.
+- **Đang làm:** bản preprint trên Zenodo, và DOI của phiên bản 0.1.0, phát hành ngày 26 tháng 11 năm 2026.
 - **Chưa có:** iOS, gói trên npm.
 
 Chi tiết từng phần: [docs/status.md](docs/status.md).

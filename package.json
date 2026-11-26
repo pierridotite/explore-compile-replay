@@ -1,6 +1,6 @@
 {
   "name": "explore-compile-replay",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Explore once with an agent, compile to a standard test, replay in CI with no model.",
   "license": "Apache-2.0",

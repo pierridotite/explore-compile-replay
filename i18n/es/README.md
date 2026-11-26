@@ -156,7 +156,7 @@ Lo que cuenta en contra de ECR: una traza no es estable y falla 3 reproducciones
 ## En qué punto está
 
 - **Funciona hoy:** el comando `ecr` (`validate`, `compile`, `replay`, `repair`, `conformance`), un adaptador de referencia y un adaptador móvil que compila a flujos de Maestro. Medido en LocalSend, en emuladores Android: reproducciones sin modelo y reparaciones que `ecr repair` comprobó en el dispositivo.
-- **En curso:** la primera versión, con el preprint y un DOI.
+- **En curso:** el preprint en Zenodo y el DOI de la versión 0.1.0, publicada el 26 de noviembre de 2026.
 - **Todavía no:** iOS, un paquete en npm.
 
 Parte por parte: [docs/status.md](docs/status.md).

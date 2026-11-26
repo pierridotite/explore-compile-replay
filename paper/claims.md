@@ -101,7 +101,7 @@ Every number below is printed by `python3 scripts/summary.py` or comes from `res
 | Claim in the paper | Source |
 |---|---|
 | A replay takes 52 to 101 s per trace; mean of the per-trace medians 67 s | `results/rq2/localsend/replay-45717206733.json`, `per_trace.median_seconds`; `break-even.json` `replay_seconds` |
-| An agent run of the same persona: median \$0.20 (0.12 to 0.31) and about 2 minutes (122 s, 20 runs) | `results/rq1/localsend/rerun-<run>-<persona>.json` (20 files, `price_usd`), `rerun-seconds.json` (public log timestamps, install to "finished", as for explorations) |
+| An agent run of the same persona: median \$0.20 (0.12 to 0.31) and 121.5 s (20 runs) | `results/rq1/localsend/rerun-<run>-<persona>.json` (20 files, `price_usd`), `rerun-seconds.json` (public log timestamps, install to "finished", as for explorations) |
 | Repairs per trace (\$ and minutes of device time), break-even in price and time, with and without one new exploration per unrepaired pair | `break-even.json`. Time of repairs: `repair-job-seconds.json` (`scripts/repair_job_seconds.sh`, GitHub API step "Emulator + agent"), minus the median of the same step for the same persona in repair runs that repaired nothing. Every proposal is counted, D6 included |
 | The build with no patch: 20 of 21, the failure on the unstable trace | `results/rq3/localsend/replay-control-no-patch-45772317572.json` |
 | The agent reached the goal of a trace in 30 of 35 trace-runs, never for ravi-20261125T212224; its own path replayed in full in 12 of 20 | `rerun-*.json`, `traces[].reached_goal` (`scripts/goal_check.py`), `path_replay` |
@@ -114,7 +114,7 @@ Every number below is printed by `python3 scripts/summary.py` or comes from `res
 | On D4 the proposer declined in most attempts | `refusal_reason: no_proposal` in `repair-d4-*` |
 | Hand-kept: 2 to 4 lines changed, all 3 of 3 apart from the unstable trace | `results/rq3/localsend/hand-<mutant>.json` (`scripts/hand_results.py`), runs `hand-*` and `hand2-*` of `run-ids.txt`. Two edits of malik needed a second try (`071f0f3`) |
 | On D6 the agent reached its goal screen in 12 of 15 runs | `rerun-d6-*.json` |
-| Mobile adapter: L3 and L4 pass, L1 and L2 for 6 traces of 7, L6 on the campaign, L5 and L7 not checked; no change to the contract | `results/rq4/adapters.json` |
+| Mobile adapter: L3 and L4 pass, L1 and part of L2 for 6 traces of 7, L6 on the campaign, L5 and L7 not checked; no change to the contract | `results/rq4/adapters.json` |
 
 | An AI assistant judged all 25 accepted repairs right (amendment 6); no person checked the judgments | `results/rq3/localsend/judgments-of-repairs.json`; `summary.py`, line "accepted repairs judged" |
 | In five accepted repairs (#1 to #4 and #25 of the judgment file) no check that follows could tell a miss | `judgments-of-repairs.json`, `check_that_follows_can_tell_a_miss` |
@@ -122,6 +122,8 @@ Every number below is printed by `python3 scripts/summary.py` or comes from `res
 | On D5, 102 of 105 replays passed; a 5 s delay failed one trace on an oracle in 2 replays of 3 (`lucia-20261125T215848` at `s9`, `d5-address-confirm-5s`) | `replay-d5-*` |
 | The 54 taps of the 7 traces all target a text, so D2 does not apply | The 7 frozen traces, branch `eval-localsend-1-traces` |
 | No kept trace records a defect (62 checks) | `to_test-*.json`; amendment 5 (`reported_bug_again` is null) |
+| 7 traces kept, fewer than the 10 planned | `protocol.md` section 2 and amendment 6; `to_test-*.json` |
+| Every added dialog detected, mostly as a failed oracle | `replay-d4-*`; `summary.py` lists the stop types per mutant: `oracle_failed` on all five, `target_not_found` also on two |
 | Six dated amendments | `protocol.md`, section Amendments |
 | The cells of D4 and D6 count 34 pairs of a trace and a mutant, not 35: the unstable trace never opens the address dialog | `replay-d4-address-dialog-before-*`, `replay-d6-address-dialog-gone-*` |
 
@@ -142,7 +144,7 @@ Checked at commit `65dfbbc2f3386ce9dacb6905024d047425f0999e` of that repository.
 | AnkiDroid: 10 agents, 83 reports, $4.69 | Section 7 | `docs/runs/data/ankidroid-10.json` | Same script |
 | In these two runs, one agent costs between $0.13 and $0.56 and takes between 17 and 68 turns | Section 7 | The per-agent rows of the two data files | Same script, last line |
 | A demonstration application with 11 planted defects | Section 7 | `demo-app/BUGS.md` | Reading |
-| The trials ran on the demonstration application; the evaluation uses LocalSend, an open-source file-sharing app that the author did not write, built from source at a pinned version, on Android | Sections 6 and 7 | The trial rows of section 2 name the application of each run; `protocol.md`, section 2 (revised 2026-11-25, before any run, on the author's choice of LocalSend as the only real application). The tag, its commit and the SHA-256 of the APK are recorded by the first measured run | Reading |
+| The trials ran on the demonstration application, then on LocalSend, before the measured runs; the evaluation uses LocalSend, an open-source file-sharing app that the author did not write, built from source at a pinned version, on Android | Sections 6 and 7 | The trial rows of section 2 name the application of each run; `protocol.md`, section 2 (revised 2026-11-25, before any run, on the author's choice of LocalSend as the only real application). The tag, its commit and the SHA-256 of the APK are recorded by the first measured run | Reading |
 | "two runs never take the same path: expect the same kinds of bugs, not the same list", and the advice to keep scripted tests for regressions | Section 1 | `docs/faq.md`, under "Will two runs give the same result?" | Reading |
 | The documentation advised writing a Maestro flow by hand for each defect | Section 7 | `docs/compare.md` | Reading |
 | Before ECR, the path to a defect survived only as prose in the report | Section 7 | `AGENT_BRIEF.md`: each issue of a report gives its screenshots and its steps to reproduce | Reading |
@@ -207,7 +209,7 @@ What the paper says of each work, in one line:
 | `choudhary2011water`, `stocco2018vista` | Repair of web test scripts after the interface has changed |
 | `xu2023guiding` | LLMs extend test repair |
 | `jia2011mutation` | Mutation analysis |
-| `baltes2025guidelines` | Guidelines for empirical studies that involve LLMs: versions, prompts, an open model |
+| `baltes2025guidelines` | Guidelines for empirical studies that involve LLMs: versions, prompts and traces published |
 | `remotion` | An analogy outside testing: code written once, rendered as often as needed, randomness seeded so that parallel renders agree. Not a tool ECR uses |
 | `wang2025llmdroid` | An existing automated testing tool explores, and an LLM guides it when coverage growth slows (it also uses an LLM to summarise explored pages, which the paper does not need to say). Abstract: "When code coverage growth slows, it transitions to LLM Guidance" |
 

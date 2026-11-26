@@ -219,7 +219,7 @@ Rows of section 3 that the paper no longer uses since 2026-11-26 (cut to fit 8 p
 
 ## 7. Confirmed by the author, and still to confirm
 
-Confirmed on 2026-11-26: the author finished reading the draft and accepts the statement on the use of generative AI. Confirmed on 2026-11-25: the affiliation (independent researcher, Paris, France), the e-mail address printed under his name, and the wording of the statement on the use of generative AI.
+Confirmed on 2026-11-26: the author finished reading the draft and accepts the statement on the use of generative AI. Confirmed on 2026-11-25: the affiliation (Paris, France; on 2026-11-26 the author asked to drop "Independent Researcher"), the e-mail address printed under his name, and the wording of the statement on the use of generative AI.
 
 Still open:
 

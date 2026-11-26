@@ -97,7 +97,7 @@ ECR is meant to be a standard that anyone can implement, not one tool.
 - **Specification.** The [trace format](spec/schema.ts), also published as a [JSON Schema](spec/trace.schema.json), the [adapter contract](spec/contract.ts) and [seven laws](spec/laws.md): determinism, fidelity, traceability, no model, state, safe repair, no secret. Drafts that can still change.
 - **Conformance kit.** It checks an adapter law by law. An adapter that passes it conforms, whoever wrote it. How to write one: [docs/adapter.md](docs/adapter.md).
 - **Paper.** The pattern, the contract and an evaluation on a real app, [LocalSend](https://github.com/localsend/localsend). Its [protocol](paper/protocol.md) was public before the first measured run. Being written: the preprint comes on Zenodo with the first release.
-- **Citation.** [CITATION.cff](CITATION.cff), or "Cite this repository" on this page. A DOI comes with the first release.
+- **Citation.** [CITATION.cff](CITATION.cff), or "Cite this repository" on this page, and a badge for the projects that use ECR: [citing ECR](#citing-ecr).
 
 <details>
 <summary>The seven laws in short</summary>
@@ -132,6 +132,20 @@ ECR generalizes [mobile-agent-testers](https://github.com/pierridotite/mobile-ag
 Several tools already keep or replay what an agent did, each for its own system: [Stagehand](https://github.com/browserbase/stagehand), [Skyvern](https://github.com/Skyvern-AI/skyvern), [workflow-use](https://github.com/browser-use/workflow-use), [Midscene](https://github.com/web-infra-dev/midscene), [Arbigent](https://github.com/takahirom/arbigent), [muscle-mem](https://github.com/pig-dot-dev/muscle-mem) and [autocompile](https://github.com/mirkokiefer/autocompile). What this project adds is a name for the pattern and a written contract for it: one that works across systems, compiles to files that run without the tool, protects what the tests check, and can be verified by a conformance kit.
 
 </details>
+
+## Citing ECR
+
+If your project uses ECR, show it: add this badge to your README. It links back here, and that is how the next team finds the pattern.
+
+[![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
+
+```md
+[![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
+```
+
+In a paper, a talk or a product page, cite the repository: the "Cite this repository" button on GitHub gives the reference, from [CITATION.cff](CITATION.cff). A DOI comes with the first release.
+
+For the code itself, the Apache-2.0 license decides: a copy, a fork or a package of ECR's code, changed or not, must keep the [LICENSE](LICENSE) and [NOTICE](NOTICE) files. NOTICE names ECR and links to this repository.
 
 ## Contributing
 

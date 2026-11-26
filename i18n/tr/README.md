@@ -101,7 +101,7 @@ ECR tek bir araç değil, herkesin uygulayabileceği bir standart olmayı hedefl
 - **Şartname.** [İz biçimi](../../spec/schema.ts) (ayrıca bir [JSON Schema](../../spec/trace.schema.json) olarak yayımlandı), [adaptör sözleşmesi](../../spec/contract.ts) ve [yedi yasa](../../spec/laws.md): belirlenimcilik, sadakat, izlenebilirlik, model yok, durum, güvenli onarım, sır yok. Hâlâ değişebilecek taslaklar.
 - **Uygunluk kiti.** Bir adaptörü yasa yasa kontrol eder. Onu geçen bir adaptör, kim yazmış olursa olsun uygundur. Nasıl yazılır: [docs/adapter.md](docs/adapter.md).
 - **Makale.** Bu kalıbı, sözleşmeyi ve gerçek bir uygulama olan [LocalSend](https://github.com/localsend/localsend) üzerindeki bir değerlendirmeyi anlatır. [Değerlendirme protokolü](../../paper/protocol.md) ilk ölçümden önce yayımlandı. Yazılıyor: ön baskı ilk sürümle birlikte Zenodo'ya gelecek.
-- **Atıf.** [CITATION.cff](../../CITATION.cff) ya da deponun sayfasındaki "Cite this repository". İlk sürümle birlikte bir DOI gelecek.
+- **Atıf.** [CITATION.cff](../../CITATION.cff) ya da deponun sayfasındaki "Cite this repository" ve ECR kullanan projeler için bir rozet: [ECR'ye atıf](#citing-ecr).
 
 <details>
 <summary>Kısaca yedi yasa</summary>
@@ -138,6 +138,22 @@ ECR, GitHub'ın runner'larında her yapay zekâ test edicisine bir telefon veren
 Bir ajanın yaptıklarını saklayan ya da yeniden oynatan birkaç araç zaten var, her biri kendi sistemi için: [Stagehand](https://github.com/browserbase/stagehand), [Skyvern](https://github.com/Skyvern-AI/skyvern), [workflow-use](https://github.com/browser-use/workflow-use), [Midscene](https://github.com/web-infra-dev/midscene), [Arbigent](https://github.com/takahirom/arbigent), [muscle-mem](https://github.com/pig-dot-dev/muscle-mem) ve [autocompile](https://github.com/mirkokiefer/autocompile). Bu projenin eklediği, kalıp için bir ad ve yazılı bir sözleşmedir: farklı sistemlerde işleyen, aracın kendisi olmadan çalışan dosyalara derleyen, testlerin kontrol ettiğini koruyan ve bir uygunluk kitiyle doğrulanabilen bir sözleşme.
 
 </details>
+
+<a name="citing-ecr"></a>
+
+## ECR'ye atıf
+
+Projeniz ECR kullanıyorsa bunu gösterin: bu rozeti README dosyanıza ekleyin. Rozet bu depoya bağlantı verir; bir sonraki ekip kalıbı böyle bulur.
+
+[![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
+
+```md
+[![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
+```
+
+Bir makalede, bir konuşmada ya da bir ürün sayfasında depoya atıf yapın: GitHub'daki "Cite this repository" düğmesi kaynağı [CITATION.cff](../../CITATION.cff) dosyasından verir. İlk sürümle birlikte bir DOI gelecek.
+
+Kodun kendisi için Apache-2.0 lisansı geçerlidir: ECR kodunun her kopyası, fork'u ya da paketi, değiştirilmiş olsun ya da olmasın, [LICENSE](../../LICENSE) ve [NOTICE](../../NOTICE) dosyalarını korumak zorundadır. NOTICE, ECR'nin adını ve bu deponun bağlantısını içerir.
 
 ## Katkıda bulunma
 

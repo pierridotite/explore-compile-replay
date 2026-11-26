@@ -101,7 +101,7 @@ ECR 想成为任何人都能实现的标准，而不只是一个工具。
 - **规范。** [轨迹格式](../../spec/schema.ts)（也以 [JSON Schema](../../spec/trace.schema.json) 形式发布）、[适配器契约](../../spec/contract.ts)和[七条定律](../../spec/laws.md)：确定性、忠实性、可追溯性、无模型、状态、安全修复、无机密。它们都是草案，仍可能变化。
 - **一致性套件。** 按定律逐条检查一个适配器。通过它的适配器就是符合规范的，无论作者是谁。如何编写适配器：[docs/adapter.md](docs/adapter.md)。
 - **论文。** 描述这一模式、契约，以及在真实应用 [LocalSend](https://github.com/localsend/localsend) 上的评估。它的[评估协议](../../paper/protocol.md)在第一次正式测量之前就已公开。论文正在撰写，预印本将随第一个版本发布在 Zenodo 上。
-- **引用。** [CITATION.cff](../../CITATION.cff)，或仓库页面上的 "Cite this repository"。DOI 将随第一个版本提供。
+- **引用。** [CITATION.cff](../../CITATION.cff)，或仓库页面上的 "Cite this repository"，以及供使用 ECR 的项目展示的徽章：[引用 ECR](#citing-ecr)。
 
 <details>
 <summary>七条定律简述</summary>
@@ -138,6 +138,22 @@ ECR 是 [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-test
 已经有一些工具会保存或重放智能体做过的事，各自针对自己的系统：[Stagehand](https://github.com/browserbase/stagehand)、[Skyvern](https://github.com/Skyvern-AI/skyvern)、[workflow-use](https://github.com/browser-use/workflow-use)、[Midscene](https://github.com/web-infra-dev/midscene)、[Arbigent](https://github.com/takahirom/arbigent)、[muscle-mem](https://github.com/pig-dot-dev/muscle-mem) 和 [autocompile](https://github.com/mirkokiefer/autocompile)。本项目补充的是这一模式的名字和一份成文的契约：它跨系统适用，编译出不依赖该工具就能运行的文件，保护测试检查的内容，并且可以由一致性套件来验证。
 
 </details>
+
+<a name="citing-ecr"></a>
+
+## 引用 ECR
+
+如果你的项目使用了 ECR，就把它展示出来：把这个徽章加到你的 README 中。徽章链接回本仓库，下一个团队就是这样找到这个模式的。
+
+[![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
+
+```md
+[![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
+```
+
+在论文、演讲或产品页面中，请引用本仓库：GitHub 上的 "Cite this repository" 按钮会根据 [CITATION.cff](../../CITATION.cff) 给出引用信息。DOI 将随第一个版本提供。
+
+至于代码本身，以 Apache-2.0 许可证为准：ECR 代码的任何副本、fork 或软件包，无论是否修改，都必须保留 [LICENSE](../../LICENSE) 和 [NOTICE](../../NOTICE) 两个文件。NOTICE 写明了 ECR 的名称和本仓库的链接。
 
 ## 参与贡献
 

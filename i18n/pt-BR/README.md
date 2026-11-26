@@ -101,7 +101,7 @@ O ECR quer ser um padrão que qualquer pessoa possa implementar, não uma ferram
 - **Especificação.** O [formato do trace](../../spec/schema.ts), publicado também como [JSON Schema](../../spec/trace.schema.json), o [contrato do adaptador](../../spec/contract.ts) e [sete leis](../../spec/laws.md): determinismo, fidelidade, rastreabilidade, sem modelo, estado, reparo seguro, sem segredo. São rascunhos que ainda podem mudar.
 - **Kit de conformidade.** Verifica um adaptador lei por lei. Um adaptador que passa nele está conforme, não importa quem o escreveu. Como escrever um: [docs/adapter.md](docs/adapter.md).
 - **Artigo.** O padrão, o contrato e uma avaliação em um app real, o [LocalSend](https://github.com/localsend/localsend). O [protocolo](../../paper/protocol.md) foi publicado antes da primeira medição. Em redação: o preprint sai no Zenodo com a primeira versão.
-- **Citação.** [CITATION.cff](../../CITATION.cff), ou "Cite this repository" na página do repositório. Um DOI vem com a primeira versão.
+- **Citação.** [CITATION.cff](../../CITATION.cff), ou "Cite this repository" na página do repositório, e um selo para os projetos que usam o ECR: [citar o ECR](#citing-ecr).
 
 <details>
 <summary>As sete leis em resumo</summary>
@@ -138,6 +138,22 @@ O ECR generaliza o [mobile-agent-testers](https://github.com/pierridotite/mobile
 Várias ferramentas já guardam ou reexecutam o que um agente fez, cada uma para o seu próprio sistema: [Stagehand](https://github.com/browserbase/stagehand), [Skyvern](https://github.com/Skyvern-AI/skyvern), [workflow-use](https://github.com/browser-use/workflow-use), [Midscene](https://github.com/web-infra-dev/midscene), [Arbigent](https://github.com/takahirom/arbigent), [muscle-mem](https://github.com/pig-dot-dev/muscle-mem) e [autocompile](https://github.com/mirkokiefer/autocompile). O que este projeto acrescenta é um nome para o padrão e um contrato escrito: um que serve para sistemas diferentes, compila para arquivos que rodam sem a ferramenta, protege o que os testes verificam e pode ser verificado por um kit de conformidade.
 
 </details>
+
+<a name="citing-ecr"></a>
+
+## Citar o ECR
+
+Se o seu projeto usa o ECR, mostre isso: adicione este selo ao seu README. Ele leva a este repositório, e é assim que a próxima equipe encontra o padrão.
+
+[![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
+
+```md
+[![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
+```
+
+Em um artigo, uma palestra ou a página de um produto, cite o repositório: o botão "Cite this repository" do GitHub dá a referência, a partir do [CITATION.cff](../../CITATION.cff). Um DOI vem com a primeira versão.
+
+Para o código em si, vale a licença Apache-2.0: toda cópia, fork ou pacote do código do ECR, com ou sem mudanças, deve manter os arquivos [LICENSE](../../LICENSE) e [NOTICE](../../NOTICE). O NOTICE nomeia o ECR e leva a este repositório.
 
 ## Contribuir
 

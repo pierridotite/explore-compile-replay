@@ -101,7 +101,7 @@ ECR muốn trở thành một chuẩn mà ai cũng có thể hiện thực, khô
 - **Đặc tả.** [Định dạng trace](../../spec/schema.ts), cũng được công bố dưới dạng [JSON Schema](../../spec/trace.schema.json), [hợp đồng adapter](../../spec/contract.ts) và [bảy định luật](../../spec/laws.md): tất định, trung thực, truy vết được, không mô hình, trạng thái, sửa an toàn, không bí mật. Đây là các bản nháp và vẫn có thể thay đổi.
 - **Bộ kiểm tra tuân thủ.** Kiểm tra một adapter theo từng định luật. Adapter nào vượt qua thì tuân thủ, bất kể ai viết nó. Cách viết một adapter: [docs/adapter.md](docs/adapter.md).
 - **Bài báo.** Mô tả mẫu này, hợp đồng và một đánh giá trên một ứng dụng thật, [LocalSend](https://github.com/localsend/localsend). [Giao thức đánh giá](../../paper/protocol.md) đã được công khai trước lần đo đầu tiên. Bài báo đang được viết: bản preprint sẽ lên Zenodo cùng bản phát hành đầu tiên.
-- **Trích dẫn.** [CITATION.cff](../../CITATION.cff), hoặc "Cite this repository" trên trang của repo. DOI sẽ có cùng bản phát hành đầu tiên.
+- **Trích dẫn.** [CITATION.cff](../../CITATION.cff), hoặc "Cite this repository" trên trang của repo, và một huy hiệu cho các dự án dùng ECR: [trích dẫn ECR](#citing-ecr).
 
 <details>
 <summary>Tóm tắt bảy định luật</summary>
@@ -138,6 +138,22 @@ ECR là sự tổng quát hóa của [mobile-agent-testers](https://github.com/p
 Đã có một số công cụ lưu hoặc phát lại những gì một agent đã làm, mỗi công cụ cho hệ thống riêng của nó: [Stagehand](https://github.com/browserbase/stagehand), [Skyvern](https://github.com/Skyvern-AI/skyvern), [workflow-use](https://github.com/browser-use/workflow-use), [Midscene](https://github.com/web-infra-dev/midscene), [Arbigent](https://github.com/takahirom/arbigent), [muscle-mem](https://github.com/pig-dot-dev/muscle-mem) và [autocompile](https://github.com/mirkokiefer/autocompile). Điều dự án này thêm vào là một cái tên cho mẫu này và một hợp đồng thành văn: dùng được cho nhiều hệ thống, biên dịch ra file chạy được mà không cần công cụ, bảo vệ những gì test kiểm tra, và có thể được kiểm chứng bằng một bộ kiểm tra tuân thủ.
 
 </details>
+
+<a name="citing-ecr"></a>
+
+## Trích dẫn ECR
+
+Nếu dự án của bạn dùng ECR, hãy cho mọi người thấy: thêm huy hiệu này vào README của bạn. Huy hiệu dẫn về repo này, và đó là cách nhóm tiếp theo tìm thấy mẫu này.
+
+[![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
+
+```md
+[![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
+```
+
+Trong một bài báo, một bài nói hay trang của một sản phẩm, hãy trích dẫn repo: nút "Cite this repository" trên GitHub cho bạn thông tin trích dẫn, lấy từ [CITATION.cff](../../CITATION.cff). DOI sẽ có cùng bản phát hành đầu tiên.
+
+Với chính phần mã, giấy phép Apache-2.0 quyết định: mọi bản sao, fork hay gói chứa mã của ECR, dù có sửa hay không, đều phải giữ lại hai tệp [LICENSE](../../LICENSE) và [NOTICE](../../NOTICE). NOTICE ghi tên ECR và dẫn về repo này.
 
 ## Đóng góp
 

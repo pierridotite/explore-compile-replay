@@ -101,7 +101,7 @@ ECR は一つのツールではなく、誰でも実装できる標準を目指�
 - **仕様。** [トレース形式](../../spec/schema.ts)（[JSON Schema](../../spec/trace.schema.json) としても公開）、[アダプター契約](../../spec/contract.ts)、そして [7 つの法則](../../spec/laws.md)：決定性、忠実性、追跡可能性、モデルなし、状態、安全な修復、秘密なし。いずれもドラフトで、まだ変わる可能性があります。
 - **適合性キット。** アダプターを法則ごとに検証します。これに通るアダプターは、誰が書いたものでも適合しています。書き方：[docs/adapter.md](docs/adapter.md)。
 - **論文。** このパターン、契約、そして実際のアプリ [LocalSend](https://github.com/localsend/localsend) での評価を記述します。[評価プロトコル](../../paper/protocol.md)は最初の本計測より前に公開されました。執筆中で、プレプリントは最初のリリースとともに Zenodo で公開します。
-- **引用。** [CITATION.cff](../../CITATION.cff)、またはリポジトリページの "Cite this repository"。DOI は最初のリリースとともに付与します。
+- **引用。** [CITATION.cff](../../CITATION.cff)、またはリポジトリページの "Cite this repository"。ECR を使うプロジェクト向けのバッジもあります: [ECR の引用](#citing-ecr)。
 
 <details>
 <summary>7 つの法則の要約</summary>
@@ -138,6 +138,22 @@ ECR は [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-test
 エージェントの操作を保存または再生するツールはすでにいくつかあり、それぞれ自分のシステム向けです：[Stagehand](https://github.com/browserbase/stagehand)、[Skyvern](https://github.com/Skyvern-AI/skyvern)、[workflow-use](https://github.com/browser-use/workflow-use)、[Midscene](https://github.com/web-infra-dev/midscene)、[Arbigent](https://github.com/takahirom/arbigent)、[muscle-mem](https://github.com/pig-dot-dev/muscle-mem)、[autocompile](https://github.com/mirkokiefer/autocompile)。このプロジェクトが加えるのは、このパターンの名前と、それを文書化した契約です。システムをまたいで使え、ツールなしで動くファイルにコンパイルし、テストが検証する内容を守り、適合性キットで検証できる契約です。
 
 </details>
+
+<a name="citing-ecr"></a>
+
+## ECR の引用
+
+あなたのプロジェクトで ECR を使っているなら、このバッジを README に追加して示してください。バッジはこのリポジトリにリンクしていて、次のチームはそこからこのパターンを見つけます。
+
+[![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
+
+```md
+[![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
+```
+
+論文、講演、製品ページでは、リポジトリを引用してください。GitHub の "Cite this repository" ボタンが [CITATION.cff](../../CITATION.cff) から参照情報を出します。DOI は最初のリリースとともに付与します。
+
+コードそのものについては Apache-2.0 ライセンスが定めています。ECR のコードのコピー、フォーク、パッケージは、変更の有無にかかわらず、[LICENSE](../../LICENSE) と [NOTICE](../../NOTICE) の 2 つのファイルを残さなければなりません。NOTICE には ECR の名前とこのリポジトリへのリンクが書かれています。
 
 ## コントリビュート
 

@@ -1,7 +1,7 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below."
+message: "If you use ECR, please cite it as below."
 type: software
-title: "Explore-Compile-Replay"
+title: "Explore-Compile-Replay (ECR)"
 abstract: "A pattern and a contract to turn one agent exploration into a standard test that replays in CI with no model."
 authors:
   - family-names: Raffalli

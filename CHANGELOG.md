@@ -14,3 +14,4 @@ Everything below is a draft: the trace format, the contract and the laws can sti
 - **Repeated replays**: `ecr replay --times <n> --report <file>` replays each trace several times and keeps every result as JSON, with no message of the system and no parameter value.
 - **Evaluation protocol**, written before any measured run: [paper/protocol.md](paper/protocol.md).
 - **The README and the docs pages in six more languages**: Chinese, Japanese, Spanish, Portuguese, Vietnamese and Turkish, in [i18n/](i18n/). `pnpm check` checks that every relative link of the Markdown pages points to a file and an anchor that exist.
+- **Citing ECR**: a [NOTICE](NOTICE) file, which the Apache-2.0 license requires every copy, fork or package of ECR's code to keep, the short name in [CITATION.cff](CITATION.cff), and a README section with a badge that links back here, for the projects that use ECR.

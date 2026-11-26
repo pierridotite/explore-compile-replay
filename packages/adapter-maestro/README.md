@@ -1,6 +1,6 @@
 # Mobile adapter: traces to Maestro flows
 
-Status: draft. The vocabulary and the compiler exist. The flows are checked for syntax in CI. Two of them replay on an Android emulator, in a run started by hand ([`device.yml`](../../.github/workflows/device.yml)). Nothing has been tried on iOS or on a real app.
+Status: draft. The vocabulary and the compiler exist. The flows are checked for syntax in CI. Two of them replay on an Android emulator, in a run started by hand ([`device.yml`](../../.github/workflows/device.yml)). On a real app, LocalSend, 7 traces replay on Android emulators with no model, and 137 of 140 replays on the unchanged app gave what the trace records ([results](../../README.md#results-on-localsend)). Nothing has been tried on iOS.
 
 ## What it does
 

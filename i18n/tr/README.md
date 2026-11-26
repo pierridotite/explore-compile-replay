@@ -25,7 +25,7 @@
 
 Yapay zekâ ajanları kimsenin test etmeyi düşünmediği şeyleri bulmakta iyidir. Ama yavaştırlar, her çalıştırmada para harcatırlar ve aynı yolu asla iki kez izlemezler, bu yüzden CI'a uymazlar. Explore-Compile-Replay (ECR) ilk kısmı tutar ve gerisini atar: ajan bir kez çalışır ve izlediği yol, herkesin okuyabileceği, inceleyebileceği ve çalıştırabileceği sade bir test dosyası olarak saklanır.
 
-> **İlk taslak, 24 Kasım 2026'da açıldı.** Bir oyuncak sistemde ve bir demo mobil uygulamada baştan sona çalışıyor, henüz gerçek bir uygulamada değil: [şu anki durum](#where-it-stands).
+> **İlk taslak, 24 Kasım 2026'da açıldı, artık gerçek bir uygulamada ölçüldü.** LocalSend'de biri kararsız 7 iz, eklenen 25 değişiklikle karşılaştı: hiçbir gerileme yeşil bitmedi ve yeniden yazılmış bir metin yüzünden bozulan 26 izden 25'i için tek adımlık bir onarım, hiçbir kontrol değişmeden kabul edildi. İki adım gerektiren değişiklikler reddedilir ve metin ile yapı değişikliklerinin yarısından azı tam olarak onarıldı: [sonuçlar ve sınırlar](#results-on-localsend).
 
 <a name="quick-start"></a>
 
@@ -100,7 +100,7 @@ ECR tek bir araç değil, herkesin uygulayabileceği bir standart olmayı hedefl
 
 - **Şartname.** [İz biçimi](../../spec/schema.ts) (ayrıca bir [JSON Schema](../../spec/trace.schema.json) olarak yayımlandı), [adaptör sözleşmesi](../../spec/contract.ts) ve [yedi yasa](../../spec/laws.md): belirlenimcilik, sadakat, izlenebilirlik, model yok, durum, güvenli onarım, sır yok. Hâlâ değişebilecek taslaklar.
 - **Uygunluk kiti.** Bir adaptörü yasa yasa kontrol eder. Onu geçen bir adaptör, kim yazmış olursa olsun uygundur. Nasıl yazılır: [docs/adapter.md](docs/adapter.md).
-- **Makale.** Bu kalıbı, sözleşmeyi ve gerçek bir uygulama olan [LocalSend](https://github.com/localsend/localsend) üzerindeki bir değerlendirmeyi anlatır. [Değerlendirme protokolü](../../paper/protocol.md) ilk ölçümden önce yayımlandı. Yazılıyor: ön baskı ilk sürümle birlikte Zenodo'ya gelecek.
+- **Makale.** Bu kalıbı, sözleşmeyi ve gerçek bir uygulama olan [LocalSend](https://github.com/localsend/localsend) üzerindeki bir değerlendirmeyi anlatır: [PDF](../../paper/ecr-paper.pdf), 8 sayfa. [Değerlendirme protokolü](../../paper/protocol.md) ilk ölçümden önce yayımlandı ve her sayı bir [sonuç dosyasından](../../paper/results/) gelir. Ön baskı ilk sürümle birlikte Zenodo'ya gelecek.
 - **Atıf.** [CITATION.cff](../../CITATION.cff) ya da deponun sayfasındaki "Cite this repository" ve ECR kullanan projeler için bir rozet: [ECR'ye atıf](#citing-ecr).
 
 <details>
@@ -118,13 +118,46 @@ ECR tek bir araç değil, herkesin uygulayabileceği bir standart olmayı hedefl
 
 </details>
 
+<a name="results-on-localsend"></a>
+
+## LocalSend'deki sonuçlar
+
+[Makalenin](../../paper/ecr-paper.pdf) değerlendirmesi, kaynak koddan derlenen ve Android emülatörlerinde çalıştırılan açık kaynaklı bir dosya paylaşım uygulaması olan [LocalSend](https://github.com/localsend/localsend) v1.19.0 üzerinde yapıldı. Bir ajan, `claude-sonnet-5-5`, uygulamayı 20 kez keşfetti ve kontrolleri önceden belirlenmiş bir kurala göre bir yapay zekâ asistanı yazdı: planlanan 10 izden az olarak, 62 kontrolle birlikte 7 iz tutuldu. [Protokol](../../paper/protocol.md) ilk ölçümden önce yayımlandı ve aşağıdaki her sayı bir [sonuç dosyasından](../../paper/results/) gelir.
+
+| | Sonuç |
+|---|---|
+| Model yok | Hiçbir yeniden oynatma bir model çağırmadı. Her izin son yeniden oynatması ağ kesikken çalıştı ve geçti |
+| Aynı sonuç | Değişmemiş uygulamada 140 yeniden oynatmanın 137'si izin kaydettiği sonucu verdi: 6 iz 20 kezde 20, biri 17 kez |
+| Ajan yeniden | Yeniden çalıştırılan ajan, 35 çalıştırmanın 30'unda izin hedefine ulaştı ve kendi yolu 20 çalıştırmanın 12'sinde baştan sona yeniden oynatıldı |
+| Maliyet | Bir yeniden oynatma model çağırmaz; bir ajan çalıştırmasının medyan maliyeti 0,20 $'dır. Tüm onarımlar sayıldığında tutulan bir iz, ajanı yeniden çalıştırmaktan fiyatta 8. çalıştırmadan, zamanda ise ancak 76. çalıştırmadan itibaren daha ucuzdur: bir yeniden oynatma 52 ile 101 sn, bir ajan çalıştırması 121,5 sn sürer |
+| Gerilemeler | 5 davranış değişikliğinin hiçbiri yeşil bitmedi. Toplamda beş sınıfta 25 değişiklik eklendi |
+| Onarım | Yeniden yazılmış bir metin yüzünden bozulan 26 izden 25'i için bir ajanın önerdiği tek adımlık onarım, hiçbir kontrol değişmeden kabul edildi ve yazar değil bir yapay zekâ asistanı bu 25 onarımın hepsini doğru buldu. Başarısız bir kontrol asla onarılmaz |
+
+<details>
+<summary>Değişiklik sınıfına göre, ve ECR'nin aleyhine olanlar</summary>
+
+Her sınıfta beş değişiklik, her biri tek başına uygulandı, ardından 7 izin her biri 3 kez yeniden oynatıldı. Saptandı: bir iz 3 yeniden oynatmasının hepsinde başarısız olur.
+
+| Değişiklik | Saptandı | Onarıldı |
+|---|---|---|
+| D1, bir metin yeniden yazılır | 5'te 5 | 26 izden 25'i; 5 değişiklikten 4'ü tüm izler için |
+| D2, bir tanımlayıcının adı değişir | Uygulanamaz: 7 izdeki 54 dokunuşun hepsi bir metni hedefliyor | |
+| D3, hedef yer değiştirir | 5'te 2: metniyle bulunan bir hedef yer değiştirmeye dayanır | 8 izden 0: 7'sinde iki adımın değişmesi gerekiyordu, 1'i bir kontrolde durdu |
+| D4, önce bir iletişim kutusu çıkar | 5'te 5, çoğunlukla asla onarılmayan başarısız bir kontrol olarak | 34 izden 0, beklendiği gibi: tek adımlık onarım bir adım ekleyemez. 102 denemenin 90'ında ajanın kendisi tek adımın yetmediğini söyledi |
+| D5, hedef 1, 5 veya 15 sn geç gelir | 5'te 0: 105 yeniden oynatmanın 102'si geçti, ama 5 sn'lik bir gecikme bir izi 3 yeniden oynatmanın 2'sinde bir kontrolde başarısız kıldı | Onarım istenmedi |
+| D6, kontrol edilen bir duruma ulaşılmaz | 5'te 5 | 102 denemede tüm öneriler reddedildi: sahte yeşil yok |
+
+ECR'nin aleyhine olanlar: bir iz kararlı değil ve bir Geri basışının hemen ardından gelen kontrolde 20 yeniden oynatmanın 3'ünde başarısız oluyor; nedeni belirlenemedi. Bir onarım yalnızca tek adımı değiştirir, bu yüzden 10 metin ve yapı değişikliğinden yalnızca 4'ü tüm izler için onarıldı. Bir yapay zekâ asistanı serbestçe düzenlediğinde aynı 68 bozuk iz, derlenmiş akışta 2 ile 4 satırın değişmesini gerektirdi ve ardından kararsız iz dışında hepsi 3 yeniden oynatmanın 3'ünde geçti: serbest düzenleme sınırın reddettiğine ulaşır, ama neyi değiştirdiğini koruyan hiçbir şey yoktur. Kabul edilen 25 onarımın 5'inde hiçbir kontrol kaçırılmış bir dokunuşu göremezdi; bu yüzden kabul edilen her onarım sonradan değerlendirilir. Değişiklikler proje içinde, bir yapay zekâ asistanı tarafından yazıldı ve tek bir uygulama, tek bir platform ve tek bir model diğerleri hakkında pek bir şey söylemez.
+
+</details>
+
 <a name="where-it-stands"></a>
 
 ## Şu anki durum
 
-- **Bugün çalışan:** `ecr` komutu (`validate`, `compile`, `replay`, `repair`, `conformance`), bir referans adaptör ve Maestro akışlarına derleyen, bir Android emülatöründe yeniden oynatılmış bir mobil adaptör.
-- **Sürüyor:** gerçek bir uygulama olarak LocalSend ve ön baskı ile DOI'yi içeren ilk sürüm.
-- **Henüz yok:** iOS, bir cihazda onarım, npm'de bir paket.
+- **Bugün çalışan:** `ecr` komutu (`validate`, `compile`, `replay`, `repair`, `conformance`), bir referans adaptör ve Maestro akışlarına derleyen bir mobil adaptör. LocalSend'de, Android emülatörlerinde ölçüldü: model kullanmayan yeniden oynatmalar ve `ecr repair`'in cihaz üzerinde denetlediği onarımlar.
+- **Sürüyor:** ön baskı ile DOI'yi içeren ilk sürüm.
+- **Henüz yok:** iOS, npm'de bir paket.
 
 Parça parça: [docs/status.md](docs/status.md).
 
@@ -143,9 +176,9 @@ Bir ajanın yaptıklarını saklayan ya da yeniden oynatan birkaç araç zaten v
 
 ## ECR ile geliştirin
 
-ECR bir kalıptır, bir mobil araç değil: bir ajanın kullanabildiği her sistem bir kez keşfedilip ardından modelsiz yeniden oynatılabilir. Aşağıda onun üzerine kurulabilecek proje fikirleri var. Bunlardan birini düzgün biçimde hayata geçiren ilk depolar burada listelenecek ve herkes yeni bir fikir önerebilir.
+ECR bir kalıptır, bir mobil araç değil: bir ajanın kullanabildiği her sistem bir kez keşfedilip ardından modelsiz yeniden oynatılabilir. Aşağıda onun üzerine kurulabilecek proje fikirleri var. Bunlardan birini düzgün biçimde hayata geçiren ilk depolar burada listelenecek ve herkes yeni bir fikir önerebilir. Listelenen her proje, yazarıyla birlikte adıyla, burada ve bir sonraki sürümün sürüm notlarında anılır.
 
-**ECR ile geliştirilenler:** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers), mobil uygulamalar için, ECR izleri yazan ilk proje.
+**ECR ile geliştirilenler:** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers), [pierridotite](https://github.com/pierridotite) tarafından, mobil uygulamalar için, ECR izleri yazan ilk proje. Makale için LocalSend'i onun ajanları keşfetti ve bu keşiflerden tutulan 7 iz orada modelsiz yeniden oynatılıyor: [sonuçlar](#results-on-localsend).
 
 <details>
 <summary>Geliştirilecek fikirler</summary>

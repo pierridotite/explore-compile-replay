@@ -25,7 +25,7 @@
 
 Los agentes de IA encuentran bien lo que nadie pensó en probar. También son lentos, cuestan dinero en cada ejecución y nunca toman el mismo camino dos veces, así que no encajan en CI. Explore-Compile-Replay (ECR) conserva lo primero y quita lo demás: el agente se ejecuta una vez, y su camino se guarda como un archivo de test normal que cualquiera puede leer, revisar y ejecutar.
 
-> **Borrador inicial, abierto el 24 de noviembre de 2026.** Funciona de principio a fin en un sistema de juguete y en una app móvil de demostración, todavía no en una app real: [en qué punto está](#where-it-stands).
+> **Borrador inicial, abierto el 24 de noviembre de 2026, ya medido en una app real.** En LocalSend, 7 trazas, una de ellas inestable, se enfrentaron a 25 cambios inyectados: ninguna regresión terminó en verde, y se aceptó una reparación de un solo paso para 25 de las 26 trazas rotas por un texto reformulado, sin cambiar ninguna comprobación. Los cambios que necesitan dos pasos se rechazan, y menos de la mitad de los cambios de texto y de estructura quedaron reparados del todo: [resultados y límites](#results-on-localsend).
 
 <a name="quick-start"></a>
 
@@ -100,7 +100,7 @@ ECR quiere ser un estándar que cualquiera pueda implementar, no una herramienta
 
 - **Especificación.** El [formato de traza](../../spec/schema.ts), publicado también como [JSON Schema](../../spec/trace.schema.json), el [contrato del adaptador](../../spec/contract.ts) y [siete leyes](../../spec/laws.md): determinismo, fidelidad, trazabilidad, sin modelo, estado, reparación segura, sin secretos. Son borradores que aún pueden cambiar.
 - **Kit de conformidad.** Comprueba un adaptador ley por ley. Un adaptador que lo pasa es conforme, lo haya escrito quien lo haya escrito. Cómo escribir uno: [docs/adapter.md](docs/adapter.md).
-- **Artículo.** El patrón, el contrato y una evaluación en una app real, [LocalSend](https://github.com/localsend/localsend). Su [protocolo](../../paper/protocol.md) se publicó antes de la primera medición. En redacción: el preprint llegará a Zenodo con la primera versión.
+- **Artículo.** El patrón, el contrato y una evaluación en una app real, [LocalSend](https://github.com/localsend/localsend): [el PDF](../../paper/ecr-paper.pdf), 8 páginas. Su [protocolo](../../paper/protocol.md) se publicó antes de la primera medición, y cada cifra sale de un [archivo de resultados](../../paper/results/). El preprint llegará a Zenodo con la primera versión.
 - **Cita.** [CITATION.cff](../../CITATION.cff), o "Cite this repository" en la página del repositorio, y una insignia para los proyectos que usan ECR: [citar ECR](#citing-ecr).
 
 <details>
@@ -118,13 +118,46 @@ ECR quiere ser un estándar que cualquiera pueda implementar, no una herramienta
 
 </details>
 
+<a name="results-on-localsend"></a>
+
+## Resultados en LocalSend
+
+La evaluación del [artículo](../../paper/ecr-paper.pdf) se hizo en [LocalSend](https://github.com/localsend/localsend) v1.19.0, una app de código abierto para compartir archivos, compilada desde el código fuente y ejecutada en emuladores Android. Un agente, `claude-sonnet-5-5`, la exploró 20 veces, y un asistente de IA escribió las comprobaciones con una regla fijada de antemano: se conservaron 7 trazas, menos de las 10 previstas, con 62 comprobaciones. El [protocolo](../../paper/protocol.md) se publicó antes de la primera medición, y cada cifra de abajo sale de un [archivo de resultados](../../paper/results/).
+
+| | Resultado |
+|---|---|
+| Sin modelo | Ninguna reproducción llamó a un modelo. La última reproducción de cada traza se hizo con la red cortada, y pasó |
+| Mismo resultado | En la app sin cambios, 137 de 140 reproducciones dieron lo que registra la traza: 6 trazas 20 veces de 20, una 17 veces |
+| El agente otra vez | Ejecutado de nuevo, el agente llegó a la meta de una traza en 30 de 35 ejecuciones, y su propio camino se reprodujo entero en 12 de 20 |
+| Coste | Una reproducción no llama a ningún modelo; una ejecución del agente cuesta una mediana de 0,20 $. Contando todas las reparaciones, una traza conservada cuesta menos que volver a ejecutar el agente a partir de la 8.ª ejecución en precio, pero solo a partir de la 76.ª en tiempo: una reproducción tarda de 52 a 101 s, una ejecución del agente 121,5 s |
+| Regresiones | Ninguno de los 5 cambios de comportamiento terminó en verde. En total se inyectaron 25 cambios, en cinco clases |
+| Reparación | Se aceptó la reparación de un solo paso propuesta por un agente para 25 de las 26 trazas rotas por un texto reformulado, sin cambiar ninguna comprobación, y un asistente de IA, no el autor, juzgó correctas las 25. Una comprobación fallida nunca se repara |
+
+<details>
+<summary>Por clase de cambio, y lo que cuenta en contra de ECR</summary>
+
+Cinco cambios por clase, cada uno aplicado solo, y después 3 reproducciones de las 7 trazas. Detectado: una traza falla sus 3 reproducciones.
+
+| Cambio | Detectado | Reparado |
+|---|---|---|
+| D1, se reformula un texto | 5 de 5 | 25 de 26 trazas; 4 de los 5 cambios para todas las trazas |
+| D2, se renombra un identificador | No aplica: los 54 toques de las 7 trazas apuntan todos a un texto | |
+| D3, el objetivo se mueve | 2 de 5: un objetivo encontrado por su texto sobrevive a un movimiento | 0 de 8 trazas: 7 necesitaban cambiar dos pasos, 1 se detuvo en una comprobación |
+| D4, primero aparece un diálogo | 5 de 5, casi siempre como comprobación fallida, que nunca se repara | 0 de 34 trazas, como se esperaba: un solo paso no puede añadir un paso. En 90 de 102 intentos, el propio agente respondió que un paso no bastaba |
+| D5, el objetivo llega 1, 5 o 15 s más tarde | 0 de 5: pasaron 102 de 105 reproducciones, pero un retraso de 5 s hizo fallar una traza en una comprobación en 2 reproducciones de 3 | No se pidió ninguna reparación |
+| D6, no se alcanza un estado comprobado | 5 de 5 | Todas las propuestas rechazadas, en 102 intentos: ningún falso verde |
+
+Lo que cuenta en contra de ECR: una traza no es estable y falla 3 reproducciones de 20 en la comprobación justo después de un Atrás, por una causa no establecida. Una reparación cambia un solo paso, así que solo 4 de los 10 cambios de texto y de estructura quedaron reparados para todas las trazas. Editadas libremente por un asistente de IA, las mismas 68 trazas rotas necesitaron cambiar de 2 a 4 líneas del flujo compilado, y luego todas pasaron 3 reproducciones de 3, salvo la traza inestable: la edición libre llega a lo que el límite rechaza, sin ninguna protección sobre lo que cambia. En 5 de las 25 reparaciones aceptadas, ninguna comprobación podía ver un toque fallido, y por eso cada reparación aceptada se juzga después. Los cambios se escribieron dentro del proyecto, por un asistente de IA, y una app, una plataforma y un modelo dicen poco de los demás.
+
+</details>
+
 <a name="where-it-stands"></a>
 
 ## En qué punto está
 
-- **Funciona hoy:** el comando `ecr` (`validate`, `compile`, `replay`, `repair`, `conformance`), un adaptador de referencia y un adaptador móvil que compila a flujos de Maestro, reproducido en un emulador Android.
-- **En curso:** una app real, LocalSend, y la primera versión, con el preprint y un DOI.
-- **Todavía no:** iOS, una reparación en un dispositivo, un paquete en npm.
+- **Funciona hoy:** el comando `ecr` (`validate`, `compile`, `replay`, `repair`, `conformance`), un adaptador de referencia y un adaptador móvil que compila a flujos de Maestro. Medido en LocalSend, en emuladores Android: reproducciones sin modelo y reparaciones que `ecr repair` comprobó en el dispositivo.
+- **En curso:** la primera versión, con el preprint y un DOI.
+- **Todavía no:** iOS, un paquete en npm.
 
 Parte por parte: [docs/status.md](docs/status.md).
 
@@ -143,9 +176,9 @@ Varias herramientas ya guardan o reproducen lo que hizo un agente, cada una para
 
 ## Construir con ECR
 
-ECR es un patrón, no una herramienta móvil: cualquier sistema que un agente pueda usar se puede explorar una vez y reproducir después sin modelo. Abajo hay ideas de proyectos para construir sobre él. Los primeros repositorios que construyan una de ellas como es debido aparecerán aquí, y cualquiera puede proponer una idea nueva.
+ECR es un patrón, no una herramienta móvil: cualquier sistema que un agente pueda usar se puede explorar una vez y reproducir después sin modelo. Abajo hay ideas de proyectos para construir sobre él. Los primeros repositorios que construyan una de ellas como es debido aparecerán aquí, y cualquiera puede proponer una idea nueva. Cada proyecto listado se acredita por su nombre, con su autor, aquí y en las notas de la siguiente versión.
 
-**Construido con ECR:** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers), para apps móviles, el primer proyecto que escribe trazas ECR.
+**Construido con ECR:** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers), de [pierridotite](https://github.com/pierridotite), para apps móviles, el primer proyecto que escribe trazas ECR. Sus agentes exploraron LocalSend para el artículo, y las 7 trazas conservadas de esas exploraciones se reproducen allí sin modelo: [resultados](#results-on-localsend).
 
 <details>
 <summary>Ideas para construir</summary>

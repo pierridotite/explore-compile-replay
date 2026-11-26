@@ -25,7 +25,7 @@
 
 AI agents are good at finding what nobody thought to test. They are also slow, they cost money on every run, and they never take the same path twice, so they do not fit in CI. Explore-Compile-Replay (ECR) keeps the first part and removes the rest: the agent runs once, and its path is kept as a plain test file that anyone can read, review and run.
 
-> **Early draft, opened on 24 November 2026.** It runs end to end on a toy system and on a demo mobile app, not yet on a real app: [where it stands](#where-it-stands).
+> **Early draft, opened on 24 November 2026, now measured on a real app.** On LocalSend, 7 traces, one of them unstable, met 25 injected changes: no regression ended green, and a one-step repair was accepted for 25 of the 26 traces broken by a reworded text, every check unchanged. Changes that need two steps are refused, and fewer than half of the text and structure changes were repaired in full: [results and limits](#results-on-localsend).
 
 ## Quick start
 
@@ -96,7 +96,7 @@ ECR is meant to be a standard that anyone can implement, not one tool.
 
 - **Specification.** The [trace format](spec/schema.ts), also published as a [JSON Schema](spec/trace.schema.json), the [adapter contract](spec/contract.ts) and [seven laws](spec/laws.md): determinism, fidelity, traceability, no model, state, safe repair, no secret. Drafts that can still change.
 - **Conformance kit.** It checks an adapter law by law. An adapter that passes it conforms, whoever wrote it. How to write one: [docs/adapter.md](docs/adapter.md).
-- **Paper.** The pattern, the contract and an evaluation on a real app, [LocalSend](https://github.com/localsend/localsend). Its [protocol](paper/protocol.md) was public before the first measured run. Being written: the preprint comes on Zenodo with the first release.
+- **Paper.** The pattern, the contract and an evaluation on a real app, [LocalSend](https://github.com/localsend/localsend): [the PDF](paper/ecr-paper.pdf), 8 pages. Its [protocol](paper/protocol.md) was public before the first measured run, and every number comes from a [result file](paper/results/). The preprint comes on Zenodo with the first release.
 - **Citation.** [CITATION.cff](CITATION.cff), or "Cite this repository" on this page, and a badge for the projects that use ECR: [citing ECR](#citing-ecr).
 
 <details>
@@ -114,11 +114,42 @@ ECR is meant to be a standard that anyone can implement, not one tool.
 
 </details>
 
+## Results on LocalSend
+
+The evaluation of the [paper](paper/ecr-paper.pdf) ran on [LocalSend](https://github.com/localsend/localsend) v1.19.0, an open-source file-sharing app built from source, on Android emulators. An agent, `claude-sonnet-5-5`, explored it 20 times, and an AI assistant wrote the checks under a rule fixed in advance: 7 traces were kept, fewer than the 10 planned, with 62 checks. The [protocol](paper/protocol.md) was public before the first measured run, and every number below comes from a [result file](paper/results/).
+
+| | Result |
+|---|---|
+| No model | Every replay ran with no model. The last replay of each trace ran with the network closed, and passed |
+| Same result | On the unchanged app, 137 of 140 replays gave what the trace records: 6 traces 20 times of 20, one 17 times |
+| The agent again | Run again, the agent reached the goal of a trace in 30 of 35 runs, and its own path replayed in full in 12 of 20 |
+| Cost | A replay calls no model; an agent run costs a median of $0.20. With every repair counted, a kept trace costs less than running the agent again from the 8th run in price, but only from the 76th in time: a replay takes 52 to 101 s, an agent run 121.5 s |
+| Regressions | None of the 5 changes of behaviour ended green. In all, 25 changes were injected, in five classes |
+| Repair | An agent's one-step repair was accepted for 25 of the 26 traces broken by a reworded text, every check unchanged, and an AI assistant, not the author, judged all 25 right. A failed check is never repaired |
+
+<details>
+<summary>By class of change, and what counts against ECR</summary>
+
+Five changes per class, each applied alone, then 3 replays of the 7 traces. Detected: a trace fails its 3 replays.
+
+| Change | Detected | Repaired |
+|---|---|---|
+| D1, a text is reworded | 5 of 5 | 25 of 26 traces; 4 of the 5 changes for every trace |
+| D2, an identifier is renamed | Does not apply: the 54 taps of the 7 traces all target a text | |
+| D3, the target moves | 2 of 5: a target found by its text survives a move | 0 of 8 traces: 7 needed two steps changed, 1 stopped on a check |
+| D4, a dialog comes first | 5 of 5, mostly as a failed check, which is never repaired | 0 of 34 traces, as expected: one step cannot add a step. In 90 of 102 attempts, the agent itself answered that one step was not enough |
+| D5, the target comes 1, 5 or 15 s later | 0 of 5: 102 of 105 replays passed, but a 5 s delay failed one trace on a check in 2 replays of 3 | No repair asked |
+| D6, a checked state is not reached | 5 of 5 | Every proposal refused, in 102 attempts: no false green |
+
+What counts against ECR: one trace is not stable, and fails 3 replays of 20 on the check right after a Back, for a cause not established. A repair changes one step only, so only 4 of the 10 text and structure changes were repaired for every trace. Edited freely by an AI assistant, the same 68 broken traces needed 2 to 4 lines changed in the compiled flow, and all then passed 3 replays of 3 apart from the unstable trace: free edits reach what the bound refuses, with no guard on what they change. For 5 of the 25 accepted repairs, no check could see a missed tap, which is why each accepted repair is judged afterwards. The changes were written inside the project, by an AI assistant, and one app, one platform and one model say little about others.
+
+</details>
+
 ## Where it stands
 
-- **Works today:** the `ecr` command (`validate`, `compile`, `replay`, `repair`, `conformance`), a reference adapter, and a mobile adapter that compiles to Maestro flows, replayed on an Android emulator.
-- **In progress:** a real app, LocalSend, and the first release, with the preprint and a DOI.
-- **Not yet:** iOS, a repair on a device, a package on npm.
+- **Works today:** the `ecr` command (`validate`, `compile`, `replay`, `repair`, `conformance`), a reference adapter, and a mobile adapter that compiles to Maestro flows. Measured on LocalSend, on Android emulators: replays with no model, and repairs that `ecr repair` checked on the device.
+- **In progress:** the first release, with the preprint and a DOI.
+- **Not yet:** iOS, a package on npm.
 
 Part by part: [docs/status.md](docs/status.md).
 
@@ -135,9 +166,9 @@ Several tools already keep or replay what an agent did, each for its own system:
 
 ## Build with ECR
 
-ECR is a pattern, not a mobile tool: any system that an agent can use can be explored once and then replayed with no model. Below are ideas of projects to build on it. The first repositories that build one properly will be listed here, and anyone can propose a new idea.
+ECR is a pattern, not a mobile tool: any system that an agent can use can be explored once and then replayed with no model. Below are ideas of projects to build on it. The first repositories that build one properly will be listed here, and anyone can propose a new idea. Each listed project is credited by name, with its author, here and in the release notes of the next version.
 
-**Built with ECR:** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers), for mobile apps, the first project that writes ECR traces.
+**Built with ECR:** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers), by [pierridotite](https://github.com/pierridotite), for mobile apps, the first project that writes ECR traces. Its agents explored LocalSend for the paper, and the 7 traces kept from them replay there with no model: [results](#results-on-localsend).
 
 <details>
 <summary>Ideas to build</summary>

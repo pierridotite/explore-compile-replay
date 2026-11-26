@@ -25,7 +25,7 @@
 
 Các agent AI giỏi tìm ra những chỗ không ai nghĩ đến việc test. Nhưng chúng chậm, tốn tiền mỗi lần chạy và không bao giờ đi cùng một đường hai lần, nên không hợp với CI. Explore-Compile-Replay (ECR) giữ phần đầu và bỏ phần còn lại: agent chạy một lần, và đường đi của nó được giữ lại thành một file test bình thường mà ai cũng đọc, review và chạy được.
 
-> **Bản nháp đầu tiên, mở ngày 24 tháng 11 năm 2026.** Nó chạy trọn vẹn trên một hệ thống đồ chơi và một ứng dụng di động demo, nhưng chưa chạy trên ứng dụng thật: [tiến độ hiện tại](#where-it-stands).
+> **Bản nháp đầu tiên, mở ngày 24 tháng 11 năm 2026, nay đã đo trên một ứng dụng thật.** Trên LocalSend, 7 trace, trong đó một trace không ổn định, gặp 25 thay đổi được cài vào: không có hồi quy nào kết thúc màu xanh, và một lần sửa chỉ một bước được chấp nhận cho 25 trong 26 trace bị hỏng do một đoạn văn bản được viết lại, mọi kiểm tra giữ nguyên. Thay đổi cần sửa hai bước sẽ bị từ chối, và chưa đến một nửa số thay đổi về văn bản và cấu trúc được sửa trọn vẹn: [kết quả và giới hạn](#results-on-localsend).
 
 <a name="quick-start"></a>
 
@@ -100,7 +100,7 @@ ECR muốn trở thành một chuẩn mà ai cũng có thể hiện thực, khô
 
 - **Đặc tả.** [Định dạng trace](../../spec/schema.ts), cũng được công bố dưới dạng [JSON Schema](../../spec/trace.schema.json), [hợp đồng adapter](../../spec/contract.ts) và [bảy định luật](../../spec/laws.md): tất định, trung thực, truy vết được, không mô hình, trạng thái, sửa an toàn, không bí mật. Đây là các bản nháp và vẫn có thể thay đổi.
 - **Bộ kiểm tra tuân thủ.** Kiểm tra một adapter theo từng định luật. Adapter nào vượt qua thì tuân thủ, bất kể ai viết nó. Cách viết một adapter: [docs/adapter.md](docs/adapter.md).
-- **Bài báo.** Mô tả mẫu này, hợp đồng và một đánh giá trên một ứng dụng thật, [LocalSend](https://github.com/localsend/localsend). [Giao thức đánh giá](../../paper/protocol.md) đã được công khai trước lần đo đầu tiên. Bài báo đang được viết: bản preprint sẽ lên Zenodo cùng bản phát hành đầu tiên.
+- **Bài báo.** Mô tả mẫu này, hợp đồng và một đánh giá trên một ứng dụng thật, [LocalSend](https://github.com/localsend/localsend): [bản PDF](../../paper/ecr-paper.pdf), 8 trang. [Giao thức đánh giá](../../paper/protocol.md) đã được công khai trước lần đo đầu tiên, và mỗi con số đều lấy từ một [tệp kết quả](../../paper/results/). Bản preprint sẽ lên Zenodo cùng bản phát hành đầu tiên.
 - **Trích dẫn.** [CITATION.cff](../../CITATION.cff), hoặc "Cite this repository" trên trang của repo, và một huy hiệu cho các dự án dùng ECR: [trích dẫn ECR](#citing-ecr).
 
 <details>
@@ -118,13 +118,46 @@ ECR muốn trở thành một chuẩn mà ai cũng có thể hiện thực, khô
 
 </details>
 
+<a name="results-on-localsend"></a>
+
+## Kết quả trên LocalSend
+
+Phần đánh giá của [bài báo](../../paper/ecr-paper.pdf) chạy trên [LocalSend](https://github.com/localsend/localsend) v1.19.0, một ứng dụng chia sẻ tệp mã nguồn mở, được build từ mã nguồn và chạy trên trình giả lập Android. Một agent, `claude-sonnet-5-5`, đã khám phá nó 20 lần, và một trợ lý AI viết các kiểm tra theo một quy tắc định sẵn: 7 trace được giữ lại, ít hơn 10 trace dự kiến, với 62 kiểm tra. [Giao thức](../../paper/protocol.md) đã được công khai trước lần đo đầu tiên, và mỗi con số dưới đây đều lấy từ một [tệp kết quả](../../paper/results/).
+
+| | Kết quả |
+|---|---|
+| Không mô hình | Không lần phát lại nào gọi mô hình. Lần phát lại cuối của mỗi trace chạy khi đã ngắt mạng, và vẫn đạt |
+| Cùng kết quả | Trên ứng dụng không thay đổi, 137 trong 140 lần phát lại cho đúng kết quả mà trace ghi lại: 6 trace đạt 20 trên 20 lần, một trace 17 lần |
+| Chạy lại agent | Khi chạy lại, agent đến được mục tiêu của trace trong 30 trên 35 lần, và đường đi của chính nó được phát lại trọn vẹn trong 12 trên 20 lần |
+| Chi phí | Một lần phát lại không gọi mô hình; một lần chạy agent tốn trung vị 0,20 USD. Tính cả mọi lần sửa, một trace được giữ lại rẻ hơn việc chạy lại agent từ lần chạy thứ 8 về giá, nhưng chỉ từ lần thứ 76 về thời gian: một lần phát lại mất 52 đến 101 giây, một lần chạy agent mất 121,5 giây |
+| Hồi quy | Không thay đổi nào trong 5 thay đổi hành vi kết thúc màu xanh. Tổng cộng có 25 thay đổi được cài vào, thuộc năm loại |
+| Sửa | Lần sửa chỉ một bước do agent đề xuất được chấp nhận cho 25 trong 26 trace bị hỏng do một đoạn văn bản được viết lại, mọi kiểm tra giữ nguyên, và một trợ lý AI, không phải tác giả, đánh giá cả 25 lần sửa là đúng. Một kiểm tra thất bại không bao giờ được sửa |
+
+<details>
+<summary>Theo loại thay đổi, và những điểm bất lợi cho ECR</summary>
+
+Năm thay đổi cho mỗi loại, mỗi thay đổi áp dụng riêng, rồi phát lại 7 trace, mỗi trace 3 lần. Phát hiện: một trace thất bại cả 3 lần phát lại.
+
+| Thay đổi | Phát hiện | Sửa được |
+|---|---|---|
+| D1, một đoạn văn bản được viết lại | 5 trên 5 | 25 trên 26 trace; 4 trong 5 thay đổi được sửa cho mọi trace |
+| D2, một định danh bị đổi tên | Không áp dụng: cả 54 lần chạm của 7 trace đều nhắm vào văn bản | |
+| D3, mục tiêu bị dời chỗ | 2 trên 5: mục tiêu tìm theo văn bản vẫn tìm thấy sau khi dời chỗ | 0 trên 8 trace: 7 trace cần sửa hai bước, 1 trace dừng ở một kiểm tra |
+| D4, một hộp thoại hiện ra trước | 5 trên 5, phần lớn dưới dạng kiểm tra thất bại, loại không bao giờ được sửa | 0 trên 34 trace, như dự kiến: sửa một bước không thể thêm một bước. Trong 90 trên 102 lần thử, chính agent trả lời rằng một bước là không đủ |
+| D5, mục tiêu hiện ra trễ 1, 5 hoặc 15 giây | 0 trên 5: 102 trên 105 lần phát lại đạt, nhưng độ trễ 5 giây làm một trace thất bại ở một kiểm tra trong 2 trên 3 lần phát lại | Không yêu cầu sửa |
+| D6, một trạng thái được kiểm tra không đạt tới | 5 trên 5 | Mọi đề xuất đều bị từ chối, qua 102 lần thử: không có màu xanh giả |
+
+Những điểm bất lợi cho ECR: một trace không ổn định, thất bại 3 trong 20 lần phát lại ở kiểm tra ngay sau một lần nhấn Quay lại, chưa rõ nguyên nhân. Một lần sửa chỉ đổi một bước, nên chỉ 4 trong 10 thay đổi về văn bản và cấu trúc được sửa cho mọi trace. Khi được một trợ lý AI sửa tự do, chính 68 trace bị hỏng đó cần sửa 2 đến 4 dòng trong flow đã biên dịch, rồi đều đạt 3 trên 3 lần phát lại, trừ trace không ổn định: sửa tự do làm được điều mà giới hạn từ chối, nhưng không có gì bảo vệ những gì nó thay đổi. Với 5 trong 25 lần sửa được chấp nhận, không kiểm tra nào phát hiện được một lần chạm bị bỏ lỡ, vì vậy mỗi lần sửa được chấp nhận đều được đánh giá lại sau đó. Các thay đổi được viết ngay trong dự án, bởi một trợ lý AI, và một ứng dụng, một nền tảng, một mô hình chưa nói được nhiều về các trường hợp khác.
+
+</details>
+
 <a name="where-it-stands"></a>
 
 ## Tiến độ hiện tại
 
-- **Đã chạy được:** lệnh `ecr` (`validate`, `compile`, `replay`, `repair`, `conformance`), một adapter tham chiếu, và một adapter di động biên dịch ra flow Maestro, đã phát lại trên trình giả lập Android.
-- **Đang làm:** một ứng dụng thật là LocalSend, và bản phát hành đầu tiên cùng preprint và DOI.
-- **Chưa có:** iOS, sửa trên thiết bị, gói trên npm.
+- **Đã chạy được:** lệnh `ecr` (`validate`, `compile`, `replay`, `repair`, `conformance`), một adapter tham chiếu, và một adapter di động biên dịch ra flow Maestro. Đã đo trên LocalSend, trên trình giả lập Android: phát lại không dùng mô hình, và các lần sửa được `ecr repair` kiểm tra ngay trên thiết bị.
+- **Đang làm:** bản phát hành đầu tiên cùng preprint và DOI.
+- **Chưa có:** iOS, gói trên npm.
 
 Chi tiết từng phần: [docs/status.md](docs/status.md).
 
@@ -143,9 +176,9 @@ ECR là sự tổng quát hóa của [mobile-agent-testers](https://github.com/p
 
 ## Xây dựng với ECR
 
-ECR là một mẫu, không phải một công cụ cho di động: bất kỳ hệ thống nào mà agent dùng được đều có thể được khám phá một lần rồi phát lại mà không cần mô hình. Dưới đây là các ý tưởng dự án để xây dựng trên nó. Những repo đầu tiên hiện thực đúng cách một trong các ý tưởng này sẽ được liệt kê ở đây, và ai cũng có thể đề xuất ý tưởng mới.
+ECR là một mẫu, không phải một công cụ cho di động: bất kỳ hệ thống nào mà agent dùng được đều có thể được khám phá một lần rồi phát lại mà không cần mô hình. Dưới đây là các ý tưởng dự án để xây dựng trên nó. Những repo đầu tiên hiện thực đúng cách một trong các ý tưởng này sẽ được liệt kê ở đây, và ai cũng có thể đề xuất ý tưởng mới. Mỗi dự án được liệt kê đều được ghi công bằng tên, kèm tác giả, ở đây và trong ghi chú phát hành của phiên bản tiếp theo.
 
-**Được xây dựng với ECR:** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers), cho ứng dụng di động, dự án đầu tiên ghi trace ECR.
+**Được xây dựng với ECR:** [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-testers), của [pierridotite](https://github.com/pierridotite), cho ứng dụng di động, dự án đầu tiên ghi trace ECR. Các agent của nó đã khám phá LocalSend cho bài báo, và 7 trace được giữ lại từ đó phát lại được ở đó mà không cần mô hình: [kết quả](#results-on-localsend).
 
 <details>
 <summary>Các ý tưởng để xây dựng</summary>

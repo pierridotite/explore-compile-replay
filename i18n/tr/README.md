@@ -10,6 +10,7 @@
 [![Stars](https://img.shields.io/github/stars/pierridotite/explore-compile-replay?style=flat&label=stars&color=1f883d)](https://github.com/pierridotite/explore-compile-replay/stargazers)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-1f883d)](../../LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/pierridotite/explore-compile-replay?color=1f883d)](https://github.com/pierridotite/explore-compile-replay/commits/main)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24565052-1f883d)](https://doi.org/10.5281/zenodo.24565052)
 
 **[Hızlı başlangıç](#quick-start)** · **[Belgeler](docs/command.md)** · **[Makale ve şartname](#paper-and-specification)** · **[Katkıda bulunma](../../CONTRIBUTING.md)** · **[Değişiklikler](../../CHANGELOG.md)**
 
@@ -100,7 +101,7 @@ ECR tek bir araç değil, herkesin uygulayabileceği bir standart olmayı hedefl
 
 - **Şartname.** [İz biçimi](../../spec/schema.ts) (ayrıca bir [JSON Schema](../../spec/trace.schema.json) olarak yayımlandı), [adaptör sözleşmesi](../../spec/contract.ts) ve [yedi yasa](../../spec/laws.md): belirlenimcilik, sadakat, izlenebilirlik, model yok, durum, güvenli onarım, sır yok. Hâlâ değişebilecek taslaklar.
 - **Uygunluk kiti.** Bir adaptörü yasa yasa kontrol eder. Onu geçen bir adaptör, kim yazmış olursa olsun uygundur. Nasıl yazılır: [docs/adapter.md](docs/adapter.md).
-- **Makale.** Bu kalıbı, sözleşmeyi ve gerçek bir uygulama olan [LocalSend](https://github.com/localsend/localsend) üzerindeki bir değerlendirmeyi anlatır: [PDF](../../paper/ecr-paper.pdf), 8 sayfa. [Değerlendirme protokolü](../../paper/protocol.md) ilk ölçümden önce yayımlandı ve her sayı bir [sonuç dosyasından](../../paper/results/) gelir. Ön baskı ilk sürümle birlikte Zenodo'ya gelecek.
+- **Makale.** Bu kalıbı, sözleşmeyi ve gerçek bir uygulama olan [LocalSend](https://github.com/localsend/localsend) üzerindeki bir değerlendirmeyi anlatır: [PDF](../../paper/ecr-paper.pdf), 8 sayfa. [Değerlendirme protokolü](../../paper/protocol.md) ilk ölçümden önce yayımlandı ve her sayı bir [sonuç dosyasından](../../paper/results/) gelir. Ön baskı Zenodo'ya gelecek.
 - **Atıf.** [CITATION.cff](../../CITATION.cff) ya da deponun sayfasındaki "Cite this repository" ve ECR kullanan projeler için bir rozet: [ECR'ye atıf](#citing-ecr).
 
 <details>
@@ -156,7 +157,8 @@ ECR'nin aleyhine olanlar: bir iz kararlı değil ve bir Geri basışının hemen
 ## Şu anki durum
 
 - **Bugün çalışan:** `ecr` komutu (`validate`, `compile`, `replay`, `repair`, `conformance`), bir referans adaptör ve Maestro akışlarına derleyen bir mobil adaptör. LocalSend'de, Android emülatörlerinde ölçüldü: model kullanmayan yeniden oynatmalar ve `ecr repair`'in cihaz üzerinde denetlediği onarımlar.
-- **Sürüyor:** Zenodo'daki ön baskı ve 26 Kasım 2026'da yayımlanan 0.1.0 sürümünün DOI'si.
+- **Yayımlandı:** 0.1.0 sürümü, 26 Kasım 2026'da; Zenodo'da bir DOI ile arşivlendi: [10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053).
+- **Sürüyor:** Zenodo'daki ön baskı.
 - **Henüz yok:** iOS, npm'de bir paket.
 
 Parça parça: [docs/status.md](docs/status.md).
@@ -229,7 +231,7 @@ Ya da sayfanın açık veya koyu temasına uyan bu düğme:
 <a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-dark.svg"><img src="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
 ```
 
-Bir makalede, bir konuşmada ya da bir ürün sayfasında depoya atıf yapın: GitHub'daki "Cite this repository" düğmesi kaynağı [CITATION.cff](../../CITATION.cff) dosyasından verir. İlk sürümle birlikte bir DOI gelecek.
+Bir makalede, bir konuşmada ya da bir ürün sayfasında depoya atıf yapın: GitHub'daki "Cite this repository" düğmesi kaynağı [CITATION.cff](../../CITATION.cff) dosyasından verir. Her sürüm Zenodo'da kendi DOI'siyle arşivlenir ve [10.5281/zenodo.24565052](https://doi.org/10.5281/zenodo.24565052) her zaman en son sürümü gösterir.
 
 Kodun kendisi için Apache-2.0 lisansı geçerlidir: ECR kodunun her kopyası, fork'u ya da paketi, değiştirilmiş olsun ya da olmasın, [LICENSE](../../LICENSE) ve [NOTICE](../../NOTICE) dosyalarını korumak zorundadır. NOTICE, ECR'nin adını ve bu deponun bağlantısını içerir.
 

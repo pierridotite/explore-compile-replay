@@ -4,6 +4,7 @@ type: software
 title: "Explore-Compile-Replay (ECR)"
 version: 0.1.0
 date-released: 2026-11-26
+doi: 10.5281/zenodo.24565052
 abstract: "A pattern and a contract to turn one agent exploration into a standard test that replays in CI with no model."
 authors:
   - family-names: Raffalli

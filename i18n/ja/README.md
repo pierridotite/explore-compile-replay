@@ -10,6 +10,7 @@
 [![Stars](https://img.shields.io/github/stars/pierridotite/explore-compile-replay?style=flat&label=stars&color=1f883d)](https://github.com/pierridotite/explore-compile-replay/stargazers)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-1f883d)](../../LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/pierridotite/explore-compile-replay?color=1f883d)](https://github.com/pierridotite/explore-compile-replay/commits/main)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24565052-1f883d)](https://doi.org/10.5281/zenodo.24565052)
 
 **[クイックスタート](#quick-start)** · **[ドキュメント](docs/command.md)** · **[論文と仕様](#paper-and-specification)** · **[コントリビュート](../../CONTRIBUTING.md)** · **[変更履歴](../../CHANGELOG.md)**
 
@@ -100,7 +101,7 @@ ECR は一つのツールではなく、誰でも実装できる標準を目指�
 
 - **仕様。** [トレース形式](../../spec/schema.ts)（[JSON Schema](../../spec/trace.schema.json) としても公開）、[アダプター契約](../../spec/contract.ts)、そして [7 つの法則](../../spec/laws.md)：決定性、忠実性、追跡可能性、モデルなし、状態、安全な修復、秘密なし。いずれもドラフトで、まだ変わる可能性があります。
 - **適合性キット。** アダプターを法則ごとに検証します。これに通るアダプターは、誰が書いたものでも適合しています。書き方：[docs/adapter.md](docs/adapter.md)。
-- **論文。** このパターン、契約、そして実際のアプリ [LocalSend](https://github.com/localsend/localsend) での評価を記述します：[PDF](../../paper/ecr-paper.pdf)、8 ページ。[評価プロトコル](../../paper/protocol.md)は最初の本計測より前に公開され、すべての数値は[結果ファイル](../../paper/results/)から来ています。プレプリントは最初のリリースとともに Zenodo で公開します。
+- **論文。** このパターン、契約、そして実際のアプリ [LocalSend](https://github.com/localsend/localsend) での評価を記述します：[PDF](../../paper/ecr-paper.pdf)、8 ページ。[評価プロトコル](../../paper/protocol.md)は最初の本計測より前に公開され、すべての数値は[結果ファイル](../../paper/results/)から来ています。プレプリントは Zenodo で公開します。
 - **引用。** [CITATION.cff](../../CITATION.cff)、またはリポジトリページの "Cite this repository"。ECR を使うプロジェクト向けのバッジもあります: [ECR の引用](#citing-ecr)。
 
 <details>
@@ -156,7 +157,8 @@ ECR に不利な点：1 本のトレースが安定せず、20 回中 3 回、�
 ## 現状
 
 - **今動くもの：** `ecr` コマンド（`validate`、`compile`、`replay`、`repair`、`conformance`）、リファレンスアダプター、そして Maestro フローにコンパイルするモバイルアダプター。LocalSend で Android エミュレーター上で計測済み：モデルなしの再生と、`ecr repair` がデバイス上で確認した修復。
-- **進行中：** Zenodo でのプレプリントと、2026 年 11 月 26 日にリリースしたバージョン 0.1.0 の DOI。
+- **リリース済み：** バージョン 0.1.0、2026 年 11 月 26 日。Zenodo にアーカイブされ、DOI は [10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053) です。
+- **進行中：** Zenodo でのプレプリント。
 - **未着手：** iOS、npm パッケージ。
 
 部分ごとの状況：[docs/status.md](docs/status.md)。
@@ -229,7 +231,7 @@ ECR はパターンであり、モバイル用のツールではありません�
 <a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-dark.svg"><img src="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
 ```
 
-論文、講演、製品ページでは、リポジトリを引用してください。GitHub の "Cite this repository" ボタンが [CITATION.cff](../../CITATION.cff) から参照情報を出します。DOI は最初のリリースとともに付与します。
+論文、講演、製品ページでは、リポジトリを引用してください。GitHub の "Cite this repository" ボタンが [CITATION.cff](../../CITATION.cff) から参照情報を出します。各バージョンは Zenodo にアーカイブされ、それぞれ DOI を持ちます。[10.5281/zenodo.24565052](https://doi.org/10.5281/zenodo.24565052) は常に最新版を指します。
 
 コードそのものについては Apache-2.0 ライセンスが定めています。ECR のコードのコピー、フォーク、パッケージは、変更の有無にかかわらず、[LICENSE](../../LICENSE) と [NOTICE](../../NOTICE) の 2 つのファイルを残さなければなりません。NOTICE には ECR の名前とこのリポジトリへのリンクが書かれています。
 

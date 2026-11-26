@@ -10,6 +10,7 @@
 [![Stars](https://img.shields.io/github/stars/pierridotite/explore-compile-replay?style=flat&label=stars&color=1f883d)](https://github.com/pierridotite/explore-compile-replay/stargazers)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-1f883d)](LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/pierridotite/explore-compile-replay?color=1f883d)](https://github.com/pierridotite/explore-compile-replay/commits/main)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24565052-1f883d)](https://doi.org/10.5281/zenodo.24565052)
 
 **[Quick start](#quick-start)** · **[Documentation](docs/command.md)** · **[Paper and specification](#paper-and-specification)** · **[Contributing](CONTRIBUTING.md)** · **[Changelog](CHANGELOG.md)**
 
@@ -96,7 +97,7 @@ ECR is meant to be a standard that anyone can implement, not one tool.
 
 - **Specification.** The [trace format](spec/schema.ts), also published as a [JSON Schema](spec/trace.schema.json), the [adapter contract](spec/contract.ts) and [seven laws](spec/laws.md): determinism, fidelity, traceability, no model, state, safe repair, no secret. Drafts that can still change.
 - **Conformance kit.** It checks an adapter law by law. An adapter that passes it conforms, whoever wrote it. How to write one: [docs/adapter.md](docs/adapter.md).
-- **Paper.** The pattern, the contract and an evaluation on a real app, [LocalSend](https://github.com/localsend/localsend): [the PDF](paper/ecr-paper.pdf), 8 pages. Its [protocol](paper/protocol.md) was public before the first measured run, and every number comes from a [result file](paper/results/). The preprint comes on Zenodo with the first release.
+- **Paper.** The pattern, the contract and an evaluation on a real app, [LocalSend](https://github.com/localsend/localsend): [the PDF](paper/ecr-paper.pdf), 8 pages. Its [protocol](paper/protocol.md) was public before the first measured run, and every number comes from a [result file](paper/results/). The preprint comes on Zenodo.
 - **Citation.** [CITATION.cff](CITATION.cff), or "Cite this repository" on this page, and a badge for the projects that use ECR: [citing ECR](#citing-ecr).
 
 <details>
@@ -148,7 +149,8 @@ What counts against ECR: one trace is not stable, and fails 3 replays of 20 on t
 ## Where it stands
 
 - **Works today:** the `ecr` command (`validate`, `compile`, `replay`, `repair`, `conformance`), a reference adapter, and a mobile adapter that compiles to Maestro flows. Measured on LocalSend, on Android emulators: replays with no model, and repairs that `ecr repair` checked on the device.
-- **In progress:** the preprint on Zenodo, and the DOI of version 0.1.0, released on 26 November 2026.
+- **Released:** version 0.1.0, on 26 November 2026, archived on Zenodo with a DOI: [10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053).
+- **In progress:** the preprint on Zenodo.
 - **Not yet:** iOS, a package on npm.
 
 Part by part: [docs/status.md](docs/status.md).
@@ -217,7 +219,7 @@ Or this button, which follows the light or dark theme of the page:
 <a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-dark.svg"><img src="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
 ```
 
-In a paper, a talk or a product page, cite the repository: the "Cite this repository" button on GitHub gives the reference, from [CITATION.cff](CITATION.cff). A DOI comes with the first release.
+In a paper, a talk or a product page, cite the repository: the "Cite this repository" button on GitHub gives the reference, from [CITATION.cff](CITATION.cff). Every version is archived on Zenodo with its own DOI, and [10.5281/zenodo.24565052](https://doi.org/10.5281/zenodo.24565052) always points to the latest.
 
 For the code itself, the Apache-2.0 license decides: a copy, a fork or a package of ECR's code, changed or not, must keep the [LICENSE](LICENSE) and [NOTICE](NOTICE) files. NOTICE names ECR and links to this repository.
 

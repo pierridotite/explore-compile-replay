@@ -18,4 +18,4 @@
 | 移动适配器，[`packages/adapter-maestro`](../../../packages/adapter-maestro/README.md) | 草案。一套移动端词汇和一个编译为 [Maestro](https://maestro.dev) flow 的编译器。在 Android 模拟器上针对 mobile-agent-testers 的演示应用：两个手写的 flow 在一个[手动启动的运行](../../../.github/workflows/device.yml)中重放；智能体探索的四条路径中，两条停在某一步，另外两条（37 步和 25 步）在没有模型的情况下完整重放。失败时会指出它的步骤或检查。没有驱动。没在 iOS 上试过。在真实应用 LocalSend 上：从智能体的 20 次探索中保留了 7 份轨迹，在未改动的应用上 140 次重放中有 137 次得到轨迹记录的结果，不调用模型（[结果](../README.md#results-on-localsend)）。一个无模型机器人的 24 条路径中有 20 条完整重放 |
 | Web 适配器，编译为 Playwright 测试 | 尚未开始。欢迎贡献：[CONTRIBUTING.md](../../../CONTRIBUTING.md) |
 | 漂移基准：重放在应该中断、修复或保持失败时，是否真的如此？ | 已在 LocalSend 上运行：五类共 25 处改动，[变异体](../../../drift-bench/mutants/localsend/README.md)按[协议](../../../paper/protocol.md)的要求在轨迹冻结后编写。没有任何行为改动以通过告终。按类别的结果：[README](../README.md#results-on-localsend)，文件在 [`paper/results/`](../../../paper/results/) |
-| 论文 | 已完成：[PDF](../../../paper/ecr-paper.pdf)，8 页，包含在 LocalSend 上的评估。预印本将随第一个版本发布在 Zenodo 上 |
+| 论文 | 已完成：[PDF](../../../paper/ecr-paper.pdf)，8 页，包含在 LocalSend 上的评估。预印本将发布在 Zenodo 上 |

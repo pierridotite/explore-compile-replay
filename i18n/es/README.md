@@ -10,6 +10,7 @@
 [![Stars](https://img.shields.io/github/stars/pierridotite/explore-compile-replay?style=flat&label=stars&color=1f883d)](https://github.com/pierridotite/explore-compile-replay/stargazers)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-1f883d)](../../LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/pierridotite/explore-compile-replay?color=1f883d)](https://github.com/pierridotite/explore-compile-replay/commits/main)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24565052-1f883d)](https://doi.org/10.5281/zenodo.24565052)
 
 **[Inicio rápido](#quick-start)** · **[Documentación](docs/command.md)** · **[Artículo y especificación](#paper-and-specification)** · **[Contribuir](../../CONTRIBUTING.md)** · **[Cambios](../../CHANGELOG.md)**
 
@@ -100,7 +101,7 @@ ECR quiere ser un estándar que cualquiera pueda implementar, no una herramienta
 
 - **Especificación.** El [formato de traza](../../spec/schema.ts), publicado también como [JSON Schema](../../spec/trace.schema.json), el [contrato del adaptador](../../spec/contract.ts) y [siete leyes](../../spec/laws.md): determinismo, fidelidad, trazabilidad, sin modelo, estado, reparación segura, sin secretos. Son borradores que aún pueden cambiar.
 - **Kit de conformidad.** Comprueba un adaptador ley por ley. Un adaptador que lo pasa es conforme, lo haya escrito quien lo haya escrito. Cómo escribir uno: [docs/adapter.md](docs/adapter.md).
-- **Artículo.** El patrón, el contrato y una evaluación en una app real, [LocalSend](https://github.com/localsend/localsend): [el PDF](../../paper/ecr-paper.pdf), 8 páginas. Su [protocolo](../../paper/protocol.md) se publicó antes de la primera medición, y cada cifra sale de un [archivo de resultados](../../paper/results/). El preprint llegará a Zenodo con la primera versión.
+- **Artículo.** El patrón, el contrato y una evaluación en una app real, [LocalSend](https://github.com/localsend/localsend): [el PDF](../../paper/ecr-paper.pdf), 8 páginas. Su [protocolo](../../paper/protocol.md) se publicó antes de la primera medición, y cada cifra sale de un [archivo de resultados](../../paper/results/). El preprint llegará a Zenodo.
 - **Cita.** [CITATION.cff](../../CITATION.cff), o "Cite this repository" en la página del repositorio, y una insignia para los proyectos que usan ECR: [citar ECR](#citing-ecr).
 
 <details>
@@ -156,7 +157,8 @@ Lo que cuenta en contra de ECR: una traza no es estable y falla 3 reproducciones
 ## En qué punto está
 
 - **Funciona hoy:** el comando `ecr` (`validate`, `compile`, `replay`, `repair`, `conformance`), un adaptador de referencia y un adaptador móvil que compila a flujos de Maestro. Medido en LocalSend, en emuladores Android: reproducciones sin modelo y reparaciones que `ecr repair` comprobó en el dispositivo.
-- **En curso:** el preprint en Zenodo y el DOI de la versión 0.1.0, publicada el 26 de noviembre de 2026.
+- **Publicado:** la versión 0.1.0, el 26 de noviembre de 2026, archivada en Zenodo con un DOI: [10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053).
+- **En curso:** el preprint en Zenodo.
 - **Todavía no:** iOS, un paquete en npm.
 
 Parte por parte: [docs/status.md](docs/status.md).
@@ -229,7 +231,7 @@ O este botón, que sigue el tema claro u oscuro de la página:
 <a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-dark.svg"><img src="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
 ```
 
-En un artículo, una charla o la página de un producto, cita el repositorio: el botón "Cite this repository" de GitHub da la referencia, a partir de [CITATION.cff](../../CITATION.cff). Habrá un DOI con la primera versión.
+En un artículo, una charla o la página de un producto, cita el repositorio: el botón "Cite this repository" de GitHub da la referencia, a partir de [CITATION.cff](../../CITATION.cff). Cada versión se archiva en Zenodo con su propio DOI, y [10.5281/zenodo.24565052](https://doi.org/10.5281/zenodo.24565052) apunta siempre a la última.
 
 Para el código en sí, manda la licencia Apache-2.0: toda copia, fork o paquete del código de ECR, con cambios o sin ellos, debe conservar los archivos [LICENSE](../../LICENSE) y [NOTICE](../../NOTICE). NOTICE nombra ECR y enlaza con este repositorio.
 

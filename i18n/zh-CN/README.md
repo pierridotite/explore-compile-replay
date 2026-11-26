@@ -10,6 +10,7 @@
 [![Stars](https://img.shields.io/github/stars/pierridotite/explore-compile-replay?style=flat&label=stars&color=1f883d)](https://github.com/pierridotite/explore-compile-replay/stargazers)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-1f883d)](../../LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/pierridotite/explore-compile-replay?color=1f883d)](https://github.com/pierridotite/explore-compile-replay/commits/main)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24565052-1f883d)](https://doi.org/10.5281/zenodo.24565052)
 
 **[快速开始](#quick-start)** · **[文档](docs/command.md)** · **[论文与规范](#paper-and-specification)** · **[参与贡献](../../CONTRIBUTING.md)** · **[更新日志](../../CHANGELOG.md)**
 
@@ -100,7 +101,7 @@ ECR 想成为任何人都能实现的标准，而不只是一个工具。
 
 - **规范。** [轨迹格式](../../spec/schema.ts)（也以 [JSON Schema](../../spec/trace.schema.json) 形式发布）、[适配器契约](../../spec/contract.ts)和[七条定律](../../spec/laws.md)：确定性、忠实性、可追溯性、无模型、状态、安全修复、无机密。它们都是草案，仍可能变化。
 - **一致性套件。** 按定律逐条检查一个适配器。通过它的适配器就是符合规范的，无论作者是谁。如何编写适配器：[docs/adapter.md](docs/adapter.md)。
-- **论文。** 描述这一模式、契约，以及在真实应用 [LocalSend](https://github.com/localsend/localsend) 上的评估：[PDF](../../paper/ecr-paper.pdf)，8 页。它的[评估协议](../../paper/protocol.md)在第一次正式测量之前就已公开，每个数字都来自一个[结果文件](../../paper/results/)。预印本将随第一个版本发布在 Zenodo 上。
+- **论文。** 描述这一模式、契约，以及在真实应用 [LocalSend](https://github.com/localsend/localsend) 上的评估：[PDF](../../paper/ecr-paper.pdf)，8 页。它的[评估协议](../../paper/protocol.md)在第一次正式测量之前就已公开，每个数字都来自一个[结果文件](../../paper/results/)。预印本将发布在 Zenodo 上。
 - **引用。** [CITATION.cff](../../CITATION.cff)，或仓库页面上的 "Cite this repository"，以及供使用 ECR 的项目展示的徽章：[引用 ECR](#citing-ecr)。
 
 <details>
@@ -156,7 +157,8 @@ ECR 想成为任何人都能实现的标准，而不只是一个工具。
 ## 当前进展
 
 - **现在可用：** `ecr` 命令（`validate`、`compile`、`replay`、`repair`、`conformance`）、一个参考适配器，以及一个编译为 Maestro flow 的移动适配器。已在 LocalSend 上、在 Android 模拟器中测量：不调用模型的重放，以及由 `ecr repair` 在设备上检查的修复。
-- **进行中：** Zenodo 上的预印本，以及 2026 年 11 月 26 日发布的 0.1.0 版本的 DOI。
+- **已发布：** 0.1.0 版本，2026 年 11 月 26 日发布，已存档在 Zenodo 上，DOI 为 [10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053)。
+- **进行中：** Zenodo 上的预印本。
 - **尚未开始：** iOS、npm 包。
 
 逐个部分的说明：[docs/status.md](docs/status.md)。
@@ -229,7 +231,7 @@ ECR 是一种模式，而不是一个移动端工具：任何智能体能够使�
 <a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-dark.svg"><img src="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
 ```
 
-在论文、演讲或产品页面中，请引用本仓库：GitHub 上的 "Cite this repository" 按钮会根据 [CITATION.cff](../../CITATION.cff) 给出引用信息。DOI 将随第一个版本提供。
+在论文、演讲或产品页面中，请引用本仓库：GitHub 上的 "Cite this repository" 按钮会根据 [CITATION.cff](../../CITATION.cff) 给出引用信息。每个版本都存档在 Zenodo 上，并有自己的 DOI；[10.5281/zenodo.24565052](https://doi.org/10.5281/zenodo.24565052) 始终指向最新版本。
 
 至于代码本身，以 Apache-2.0 许可证为准：ECR 代码的任何副本、fork 或软件包，无论是否修改，都必须保留 [LICENSE](../../LICENSE) 和 [NOTICE](../../NOTICE) 两个文件。NOTICE 写明了 ECR 的名称和本仓库的链接。
 

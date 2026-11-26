@@ -101,7 +101,7 @@ ECR tek bir araç değil, herkesin uygulayabileceği bir standart olmayı hedefl
 
 - **Şartname.** [İz biçimi](../../spec/schema.ts) (ayrıca bir [JSON Schema](../../spec/trace.schema.json) olarak yayımlandı), [adaptör sözleşmesi](../../spec/contract.ts) ve [yedi yasa](../../spec/laws.md): belirlenimcilik, sadakat, izlenebilirlik, model yok, durum, güvenli onarım, sır yok. Hâlâ değişebilecek taslaklar.
 - **Uygunluk kiti.** Bir adaptörü yasa yasa kontrol eder. Onu geçen bir adaptör, kim yazmış olursa olsun uygundur. Nasıl yazılır: [docs/adapter.md](docs/adapter.md).
-- **Makale.** Bu kalıbı, sözleşmeyi ve gerçek bir uygulama olan [LocalSend](https://github.com/localsend/localsend) üzerindeki bir değerlendirmeyi anlatır: [PDF](../../paper/ecr-paper.pdf), 8 sayfa. [Değerlendirme protokolü](../../paper/protocol.md) ilk ölçümden önce yayımlandı ve her sayı bir [sonuç dosyasından](../../paper/results/) gelir. Ön baskı Zenodo'ya gelecek.
+- **Makale.** Bu kalıbı, sözleşmeyi ve gerçek bir uygulama olan [LocalSend](https://github.com/localsend/localsend) üzerindeki bir değerlendirmeyi anlatır: [PDF](../../paper/ecr-paper.pdf), 8 sayfa. [Değerlendirme protokolü](../../paper/protocol.md) ilk ölçümden önce yayımlandı ve her sayı bir [sonuç dosyasından](../../paper/results/) gelir. Ön baskı Zenodo'da: [10.5281/zenodo.24565285](https://doi.org/10.5281/zenodo.24565285).
 - **Atıf.** [CITATION.cff](../../CITATION.cff) ya da deponun sayfasındaki "Cite this repository" ve ECR kullanan projeler için bir rozet: [ECR'ye atıf](#citing-ecr).
 
 <details>
@@ -157,8 +157,7 @@ ECR'nin aleyhine olanlar: bir iz kararlı değil ve bir Geri basışının hemen
 ## Şu anki durum
 
 - **Bugün çalışan:** `ecr` komutu (`validate`, `compile`, `replay`, `repair`, `conformance`), bir referans adaptör ve Maestro akışlarına derleyen bir mobil adaptör. LocalSend'de, Android emülatörlerinde ölçüldü: model kullanmayan yeniden oynatmalar ve `ecr repair`'in cihaz üzerinde denetlediği onarımlar.
-- **Yayımlandı:** 0.1.0 sürümü, 26 Kasım 2026'da; Zenodo'da bir DOI ile arşivlendi: [10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053).
-- **Sürüyor:** Zenodo'daki ön baskı.
+- **Yayımlandı:** 26 Kasım 2026'da 0.1.0 sürümü ([10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053)) ve makalenin ön baskısı ([10.5281/zenodo.24565285](https://doi.org/10.5281/zenodo.24565285)), ikisi de Zenodo'da.
 - **Henüz yok:** iOS, npm'de bir paket.
 
 Parça parça: [docs/status.md](docs/status.md).

@@ -101,7 +101,7 @@ ECR quiere ser un estándar que cualquiera pueda implementar, no una herramienta
 
 - **Especificación.** El [formato de traza](../../spec/schema.ts), publicado también como [JSON Schema](../../spec/trace.schema.json), el [contrato del adaptador](../../spec/contract.ts) y [siete leyes](../../spec/laws.md): determinismo, fidelidad, trazabilidad, sin modelo, estado, reparación segura, sin secretos. Son borradores que aún pueden cambiar.
 - **Kit de conformidad.** Comprueba un adaptador ley por ley. Un adaptador que lo pasa es conforme, lo haya escrito quien lo haya escrito. Cómo escribir uno: [docs/adapter.md](docs/adapter.md).
-- **Artículo.** El patrón, el contrato y una evaluación en una app real, [LocalSend](https://github.com/localsend/localsend): [el PDF](../../paper/ecr-paper.pdf), 8 páginas. Su [protocolo](../../paper/protocol.md) se publicó antes de la primera medición, y cada cifra sale de un [archivo de resultados](../../paper/results/). El preprint llegará a Zenodo.
+- **Artículo.** El patrón, el contrato y una evaluación en una app real, [LocalSend](https://github.com/localsend/localsend): [el PDF](../../paper/ecr-paper.pdf), 8 páginas. Su [protocolo](../../paper/protocol.md) se publicó antes de la primera medición, y cada cifra sale de un [archivo de resultados](../../paper/results/). El preprint está en Zenodo: [10.5281/zenodo.24565285](https://doi.org/10.5281/zenodo.24565285).
 - **Cita.** [CITATION.cff](../../CITATION.cff), o "Cite this repository" en la página del repositorio, y una insignia para los proyectos que usan ECR: [citar ECR](#citing-ecr).
 
 <details>
@@ -157,8 +157,7 @@ Lo que cuenta en contra de ECR: una traza no es estable y falla 3 reproducciones
 ## En qué punto está
 
 - **Funciona hoy:** el comando `ecr` (`validate`, `compile`, `replay`, `repair`, `conformance`), un adaptador de referencia y un adaptador móvil que compila a flujos de Maestro. Medido en LocalSend, en emuladores Android: reproducciones sin modelo y reparaciones que `ecr repair` comprobó en el dispositivo.
-- **Publicado:** la versión 0.1.0, el 26 de noviembre de 2026, archivada en Zenodo con un DOI: [10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053).
-- **En curso:** el preprint en Zenodo.
+- **Publicado:** el 26 de noviembre de 2026, la versión 0.1.0 ([10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053)) y el preprint del artículo ([10.5281/zenodo.24565285](https://doi.org/10.5281/zenodo.24565285)), ambos en Zenodo.
 - **Todavía no:** iOS, un paquete en npm.
 
 Parte por parte: [docs/status.md](docs/status.md).

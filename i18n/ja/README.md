@@ -101,7 +101,7 @@ ECR は一つのツールではなく、誰でも実装できる標準を目指�
 
 - **仕様。** [トレース形式](../../spec/schema.ts)（[JSON Schema](../../spec/trace.schema.json) としても公開）、[アダプター契約](../../spec/contract.ts)、そして [7 つの法則](../../spec/laws.md)：決定性、忠実性、追跡可能性、モデルなし、状態、安全な修復、秘密なし。いずれもドラフトで、まだ変わる可能性があります。
 - **適合性キット。** アダプターを法則ごとに検証します。これに通るアダプターは、誰が書いたものでも適合しています。書き方：[docs/adapter.md](docs/adapter.md)。
-- **論文。** このパターン、契約、そして実際のアプリ [LocalSend](https://github.com/localsend/localsend) での評価を記述します：[PDF](../../paper/ecr-paper.pdf)、8 ページ。[評価プロトコル](../../paper/protocol.md)は最初の本計測より前に公開され、すべての数値は[結果ファイル](../../paper/results/)から来ています。プレプリントは Zenodo で公開します。
+- **論文。** このパターン、契約、そして実際のアプリ [LocalSend](https://github.com/localsend/localsend) での評価を記述します：[PDF](../../paper/ecr-paper.pdf)、8 ページ。[評価プロトコル](../../paper/protocol.md)は最初の本計測より前に公開され、すべての数値は[結果ファイル](../../paper/results/)から来ています。プレプリントは Zenodo で公開しています：[10.5281/zenodo.24565285](https://doi.org/10.5281/zenodo.24565285)。
 - **引用。** [CITATION.cff](../../CITATION.cff)、またはリポジトリページの "Cite this repository"。ECR を使うプロジェクト向けのバッジもあります: [ECR の引用](#citing-ecr)。
 
 <details>
@@ -157,8 +157,7 @@ ECR に不利な点：1 本のトレースが安定せず、20 回中 3 回、�
 ## 現状
 
 - **今動くもの：** `ecr` コマンド（`validate`、`compile`、`replay`、`repair`、`conformance`）、リファレンスアダプター、そして Maestro フローにコンパイルするモバイルアダプター。LocalSend で Android エミュレーター上で計測済み：モデルなしの再生と、`ecr repair` がデバイス上で確認した修復。
-- **リリース済み：** バージョン 0.1.0、2026 年 11 月 26 日。Zenodo にアーカイブされ、DOI は [10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053) です。
-- **進行中：** Zenodo でのプレプリント。
+- **リリース済み：** 2026 年 11 月 26 日に、バージョン 0.1.0（[10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053)）と論文のプレプリント（[10.5281/zenodo.24565285](https://doi.org/10.5281/zenodo.24565285)）。どちらも Zenodo にあります。
 - **未着手：** iOS、npm パッケージ。
 
 部分ごとの状況：[docs/status.md](docs/status.md)。

@@ -16,3 +16,13 @@ keywords:
   - agents
   - record and replay
   - deterministic replay
+references:
+  - type: article
+    status: preprint
+    title: "Explore, Compile, Replay: Turning Persona-Driven Agent Explorations into Deterministic Tests"
+    authors:
+      - family-names: Raffalli
+        given-names: Pierre
+    year: 2026
+    doi: 10.5281/zenodo.24565285
+    url: "https://doi.org/10.5281/zenodo.24565285"

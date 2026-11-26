@@ -101,7 +101,7 @@ ECR muốn trở thành một chuẩn mà ai cũng có thể hiện thực, khô
 
 - **Đặc tả.** [Định dạng trace](../../spec/schema.ts), cũng được công bố dưới dạng [JSON Schema](../../spec/trace.schema.json), [hợp đồng adapter](../../spec/contract.ts) và [bảy định luật](../../spec/laws.md): tất định, trung thực, truy vết được, không mô hình, trạng thái, sửa an toàn, không bí mật. Đây là các bản nháp và vẫn có thể thay đổi.
 - **Bộ kiểm tra tuân thủ.** Kiểm tra một adapter theo từng định luật. Adapter nào vượt qua thì tuân thủ, bất kể ai viết nó. Cách viết một adapter: [docs/adapter.md](docs/adapter.md).
-- **Bài báo.** Mô tả mẫu này, hợp đồng và một đánh giá trên một ứng dụng thật, [LocalSend](https://github.com/localsend/localsend): [bản PDF](../../paper/ecr-paper.pdf), 8 trang. [Giao thức đánh giá](../../paper/protocol.md) đã được công khai trước lần đo đầu tiên, và mỗi con số đều lấy từ một [tệp kết quả](../../paper/results/). Bản preprint sẽ lên Zenodo.
+- **Bài báo.** Mô tả mẫu này, hợp đồng và một đánh giá trên một ứng dụng thật, [LocalSend](https://github.com/localsend/localsend): [bản PDF](../../paper/ecr-paper.pdf), 8 trang. [Giao thức đánh giá](../../paper/protocol.md) đã được công khai trước lần đo đầu tiên, và mỗi con số đều lấy từ một [tệp kết quả](../../paper/results/). Bản preprint đã có trên Zenodo: [10.5281/zenodo.24565285](https://doi.org/10.5281/zenodo.24565285).
 - **Trích dẫn.** [CITATION.cff](../../CITATION.cff), hoặc "Cite this repository" trên trang của repo, và một huy hiệu cho các dự án dùng ECR: [trích dẫn ECR](#citing-ecr).
 
 <details>
@@ -157,8 +157,7 @@ Những điểm bất lợi cho ECR: một trace không ổn định, thất b�
 ## Tiến độ hiện tại
 
 - **Đã chạy được:** lệnh `ecr` (`validate`, `compile`, `replay`, `repair`, `conformance`), một adapter tham chiếu, và một adapter di động biên dịch ra flow Maestro. Đã đo trên LocalSend, trên trình giả lập Android: phát lại không dùng mô hình, và các lần sửa được `ecr repair` kiểm tra ngay trên thiết bị.
-- **Đã phát hành:** phiên bản 0.1.0, ngày 26 tháng 11 năm 2026, được lưu trữ trên Zenodo với DOI: [10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053).
-- **Đang làm:** bản preprint trên Zenodo.
+- **Đã phát hành:** ngày 26 tháng 11 năm 2026, phiên bản 0.1.0 ([10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053)) và bản preprint của bài báo ([10.5281/zenodo.24565285](https://doi.org/10.5281/zenodo.24565285)), cả hai đều trên Zenodo.
 - **Chưa có:** iOS, gói trên npm.
 
 Chi tiết từng phần: [docs/status.md](docs/status.md).

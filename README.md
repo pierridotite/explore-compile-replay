@@ -97,7 +97,7 @@ ECR is meant to be a standard that anyone can implement, not one tool.
 
 - **Specification.** The [trace format](spec/schema.ts), also published as a [JSON Schema](spec/trace.schema.json), the [adapter contract](spec/contract.ts) and [seven laws](spec/laws.md): determinism, fidelity, traceability, no model, state, safe repair, no secret. Drafts that can still change.
 - **Conformance kit.** It checks an adapter law by law. An adapter that passes it conforms, whoever wrote it. How to write one: [docs/adapter.md](docs/adapter.md).
-- **Paper.** The pattern, the contract and an evaluation on a real app, [LocalSend](https://github.com/localsend/localsend): [the PDF](paper/ecr-paper.pdf), 8 pages. Its [protocol](paper/protocol.md) was public before the first measured run, and every number comes from a [result file](paper/results/). The preprint comes on Zenodo.
+- **Paper.** The pattern, the contract and an evaluation on a real app, [LocalSend](https://github.com/localsend/localsend): [the PDF](paper/ecr-paper.pdf), 8 pages. Its [protocol](paper/protocol.md) was public before the first measured run, and every number comes from a [result file](paper/results/). The preprint is on Zenodo: [10.5281/zenodo.24565285](https://doi.org/10.5281/zenodo.24565285).
 - **Citation.** [CITATION.cff](CITATION.cff), or "Cite this repository" on this page, and a badge for the projects that use ECR: [citing ECR](#citing-ecr).
 
 <details>
@@ -149,8 +149,7 @@ What counts against ECR: one trace is not stable, and fails 3 replays of 20 on t
 ## Where it stands
 
 - **Works today:** the `ecr` command (`validate`, `compile`, `replay`, `repair`, `conformance`), a reference adapter, and a mobile adapter that compiles to Maestro flows. Measured on LocalSend, on Android emulators: replays with no model, and repairs that `ecr repair` checked on the device.
-- **Released:** version 0.1.0, on 26 November 2026, archived on Zenodo with a DOI: [10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053).
-- **In progress:** the preprint on Zenodo.
+- **Released:** on 26 November 2026, version 0.1.0 ([10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053)) and the preprint of the paper ([10.5281/zenodo.24565285](https://doi.org/10.5281/zenodo.24565285)), both on Zenodo.
 - **Not yet:** iOS, a package on npm.
 
 Part by part: [docs/status.md](docs/status.md).

@@ -101,7 +101,7 @@ ECR 想成为任何人都能实现的标准，而不只是一个工具。
 
 - **规范。** [轨迹格式](../../spec/schema.ts)（也以 [JSON Schema](../../spec/trace.schema.json) 形式发布）、[适配器契约](../../spec/contract.ts)和[七条定律](../../spec/laws.md)：确定性、忠实性、可追溯性、无模型、状态、安全修复、无机密。它们都是草案，仍可能变化。
 - **一致性套件。** 按定律逐条检查一个适配器。通过它的适配器就是符合规范的，无论作者是谁。如何编写适配器：[docs/adapter.md](docs/adapter.md)。
-- **论文。** 描述这一模式、契约，以及在真实应用 [LocalSend](https://github.com/localsend/localsend) 上的评估：[PDF](../../paper/ecr-paper.pdf)，8 页。它的[评估协议](../../paper/protocol.md)在第一次正式测量之前就已公开，每个数字都来自一个[结果文件](../../paper/results/)。预印本将发布在 Zenodo 上。
+- **论文。** 描述这一模式、契约，以及在真实应用 [LocalSend](https://github.com/localsend/localsend) 上的评估：[PDF](../../paper/ecr-paper.pdf)，8 页。它的[评估协议](../../paper/protocol.md)在第一次正式测量之前就已公开，每个数字都来自一个[结果文件](../../paper/results/)。预印本已发布在 Zenodo 上：[10.5281/zenodo.24565285](https://doi.org/10.5281/zenodo.24565285)。
 - **引用。** [CITATION.cff](../../CITATION.cff)，或仓库页面上的 "Cite this repository"，以及供使用 ECR 的项目展示的徽章：[引用 ECR](#citing-ecr)。
 
 <details>
@@ -157,8 +157,7 @@ ECR 想成为任何人都能实现的标准，而不只是一个工具。
 ## 当前进展
 
 - **现在可用：** `ecr` 命令（`validate`、`compile`、`replay`、`repair`、`conformance`）、一个参考适配器，以及一个编译为 Maestro flow 的移动适配器。已在 LocalSend 上、在 Android 模拟器中测量：不调用模型的重放，以及由 `ecr repair` 在设备上检查的修复。
-- **已发布：** 0.1.0 版本，2026 年 11 月 26 日发布，已存档在 Zenodo 上，DOI 为 [10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053)。
-- **进行中：** Zenodo 上的预印本。
+- **已发布：** 2026 年 11 月 26 日，0.1.0 版本（[10.5281/zenodo.24565053](https://doi.org/10.5281/zenodo.24565053)）和论文的预印本（[10.5281/zenodo.24565285](https://doi.org/10.5281/zenodo.24565285)），都在 Zenodo 上。
 - **尚未开始：** iOS、npm 包。
 
 逐个部分的说明：[docs/status.md](docs/status.md)。

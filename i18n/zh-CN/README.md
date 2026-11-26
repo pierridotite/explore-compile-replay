@@ -151,6 +151,14 @@ ECR 是 [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-test
 [![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
 ```
 
+或者使用这个按钮，它会跟随页面的浅色或深色主题：
+
+<a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="../../assets/tested-with-ecr-dark.svg"><img src="../../assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
+
+```html
+<a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-dark.svg"><img src="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
+```
+
 在论文、演讲或产品页面中，请引用本仓库：GitHub 上的 "Cite this repository" 按钮会根据 [CITATION.cff](../../CITATION.cff) 给出引用信息。DOI 将随第一个版本提供。
 
 至于代码本身，以 Apache-2.0 许可证为准：ECR 代码的任何副本、fork 或软件包，无论是否修改，都必须保留 [LICENSE](../../LICENSE) 和 [NOTICE](../../NOTICE) 两个文件。NOTICE 写明了 ECR 的名称和本仓库的链接。

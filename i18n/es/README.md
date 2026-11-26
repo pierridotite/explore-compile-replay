@@ -151,6 +151,14 @@ Si tu proyecto usa ECR, muéstralo: añade esta insignia a tu README. Enlaza con
 [![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
 ```
 
+O este botón, que sigue el tema claro u oscuro de la página:
+
+<a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="../../assets/tested-with-ecr-dark.svg"><img src="../../assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
+
+```html
+<a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-dark.svg"><img src="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
+```
+
 En un artículo, una charla o la página de un producto, cita el repositorio: el botón "Cite this repository" de GitHub da la referencia, a partir de [CITATION.cff](../../CITATION.cff). Habrá un DOI con la primera versión.
 
 Para el código en sí, manda la licencia Apache-2.0: toda copia, fork o paquete del código de ECR, con cambios o sin ellos, debe conservar los archivos [LICENSE](../../LICENSE) y [NOTICE](../../NOTICE). NOTICE nombra ECR y enlaza con este repositorio.

@@ -143,6 +143,14 @@ If your project uses ECR, show it: add this badge to your README. It links back 
 [![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
 ```
 
+Or this button, which follows the light or dark theme of the page:
+
+<a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tested-with-ecr-dark.svg"><img src="assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
+
+```html
+<a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-dark.svg"><img src="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
+```
+
 In a paper, a talk or a product page, cite the repository: the "Cite this repository" button on GitHub gives the reference, from [CITATION.cff](CITATION.cff). A DOI comes with the first release.
 
 For the code itself, the Apache-2.0 license decides: a copy, a fork or a package of ECR's code, changed or not, must keep the [LICENSE](LICENSE) and [NOTICE](NOTICE) files. NOTICE names ECR and links to this repository.

@@ -151,6 +151,14 @@ Projeniz ECR kullanıyorsa bunu gösterin: bu rozeti README dosyanıza ekleyin. 
 [![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
 ```
 
+Ya da sayfanın açık veya koyu temasına uyan bu düğme:
+
+<a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="../../assets/tested-with-ecr-dark.svg"><img src="../../assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
+
+```html
+<a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-dark.svg"><img src="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
+```
+
 Bir makalede, bir konuşmada ya da bir ürün sayfasında depoya atıf yapın: GitHub'daki "Cite this repository" düğmesi kaynağı [CITATION.cff](../../CITATION.cff) dosyasından verir. İlk sürümle birlikte bir DOI gelecek.
 
 Kodun kendisi için Apache-2.0 lisansı geçerlidir: ECR kodunun her kopyası, fork'u ya da paketi, değiştirilmiş olsun ya da olmasın, [LICENSE](../../LICENSE) ve [NOTICE](../../NOTICE) dosyalarını korumak zorundadır. NOTICE, ECR'nin adını ve bu deponun bağlantısını içerir.

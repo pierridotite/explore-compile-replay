@@ -151,6 +151,14 @@ ECR は [mobile-agent-testers](https://github.com/pierridotite/mobile-agent-test
 [![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
 ```
 
+または、ページのライトテーマとダークテーマに合わせて表示が変わるこのボタン:
+
+<a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="../../assets/tested-with-ecr-dark.svg"><img src="../../assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
+
+```html
+<a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-dark.svg"><img src="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
+```
+
 論文、講演、製品ページでは、リポジトリを引用してください。GitHub の "Cite this repository" ボタンが [CITATION.cff](../../CITATION.cff) から参照情報を出します。DOI は最初のリリースとともに付与します。
 
 コードそのものについては Apache-2.0 ライセンスが定めています。ECR のコードのコピー、フォーク、パッケージは、変更の有無にかかわらず、[LICENSE](../../LICENSE) と [NOTICE](../../NOTICE) の 2 つのファイルを残さなければなりません。NOTICE には ECR の名前とこのリポジトリへのリンクが書かれています。

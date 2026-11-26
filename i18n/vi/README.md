@@ -151,6 +151,14 @@ Nếu dự án của bạn dùng ECR, hãy cho mọi người thấy: thêm huy 
 [![tested with Explore-Compile-Replay](https://img.shields.io/badge/tested%20with-Explore--Compile--Replay-18181B)](https://github.com/pierridotite/explore-compile-replay)
 ```
 
+Hoặc nút này, tự đổi theo giao diện sáng hay tối của trang:
+
+<a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="../../assets/tested-with-ecr-dark.svg"><img src="../../assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
+
+```html
+<a href="https://github.com/pierridotite/explore-compile-replay"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-dark.svg"><img src="https://raw.githubusercontent.com/pierridotite/explore-compile-replay/main/assets/tested-with-ecr-light.svg" alt="Tested with Explore-Compile-Replay" width="320" height="54"></picture></a>
+```
+
 Trong một bài báo, một bài nói hay trang của một sản phẩm, hãy trích dẫn repo: nút "Cite this repository" trên GitHub cho bạn thông tin trích dẫn, lấy từ [CITATION.cff](../../CITATION.cff). DOI sẽ có cùng bản phát hành đầu tiên.
 
 Với chính phần mã, giấy phép Apache-2.0 quyết định: mọi bản sao, fork hay gói chứa mã của ECR, dù có sửa hay không, đều phải giữ lại hai tệp [LICENSE](../../LICENSE) và [NOTICE](../../NOTICE). NOTICE ghi tên ECR và dẫn về repo này.

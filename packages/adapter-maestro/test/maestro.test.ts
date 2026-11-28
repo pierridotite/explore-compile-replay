@@ -3,6 +3,7 @@ import { chmodSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSyn
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { test } from "node:test";
+import { runInNewContext } from "node:vm";
 import { checkSourceMap, outcomeOf, parseTrace } from "../../core/src/index.ts";
 import { compileToMaestro, createMaestroAdapter, failedCommand, failedCommandFromOutput, flowCommands, maestroTarget, type MobileAction, type MobileTrace } from "../src/adapter.ts";
 
@@ -60,6 +61,27 @@ test("the header names the app of the first step", () => {
 test("a literal text is escaped, because Maestro matches text as a regular expression", () => {
   const flow = commands(withSteps({ kind: "tapOn", target: { text: "Total: $4.50 (2 items)?" } }));
   assert.match(flow, /text: "Total: \\\\\$4\\\\\.50 \\\\\(2 items\\\\\)\\\\\?"/);
+});
+
+test("parameter selectors match replay-time text literally without embedding its value", () => {
+  const trace = withSteps({ kind: "tapOn", target: { text: { param: "ITEM_TITLE" } } });
+  const artifact = compileToMaestro(trace);
+  const line = commands(trace).split("\n").find((line) => line.startsWith("    text:"))!;
+  const expression = JSON.parse(line.slice("    text: ".length)) as string;
+  // Maestro 2.12.1 Env.evaluateScripts only evaluates expressions without an inner $.
+  const script = /\$\{([^$]*)}/.exec(expression);
+  assert.equal(script?.[0], expression, "Maestro must evaluate the entire selector expression");
+  const values = ["Total: $4.50 (2 items)?", "C++ [draft]", "a.b|c^d*e{2}", "a\\b", "value with (", "\u65e5\u672c\u8a9e + (1)"];
+  for (const value of values) {
+    assert.equal(artifact.content.includes(value), false);
+    const pattern = runInNewContext(script![1]!, { ITEM_TITLE: value }) as string;
+    const regex = new RegExp(`^(?:${pattern})$`);
+    assert.equal(regex.test(value), true, value);
+    assert.equal(regex.test(value + "extra"), false, value);
+  }
+  const pattern = runInNewContext(script![1]!, { ITEM_TITLE: "a.b" }) as string;
+  assert.equal(new RegExp(`^(?:${pattern})$`).test("axb"), false);
+  assert.deepEqual(checkSourceMap(artifact, trace.steps.map((step) => step.id)), []);
 });
 
 test("typed text is not escaped", () => {

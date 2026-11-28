@@ -1,8 +1,8 @@
 # Compiled by Explore-Compile-Replay: https://github.com/pierridotite/explore-compile-replay
 # Trace: tiny-todo-first-task
-# Trace hash: sha256:48927630e78d0d1f708a749cb9921a4046d2f58f0824dd1b16e8f5e4fa2d41ba
+# Trace hash: sha256:a1322fcaae9bbb7dd7a0b30604582ba1162bee30a6436440a630b14c915b25d9
 # Do not edit by hand. Change the trace and compile again.
-# Run: maestro test -e NAME=<value> -e EMAIL=<value> -e PASSWORD=<value> <this file>
+# Run: maestro test -e NAME=<value> -e EMAIL=<value> -e PASSWORD=<value> -e TASK_TITLE=<value> <this file>
 appId: com.example.tinytodo
 name: "anna: Create her account and add a first task."
 ---
@@ -83,7 +83,7 @@ name: "anna: Create her account and add a first task."
 - assertNotVisible:
     text: "Something went wrong"
 # Step task
-- inputText: "Buy milk"
+- inputText: "${TASK_TITLE}"
 # Oracle no-vague-error
 - assertNotVisible:
     text: "Something went wrong"
@@ -92,7 +92,7 @@ name: "anna: Create her account and add a first task."
     text: "Add"
 # Oracle task-listed
 - assertVisible:
-    text: "Buy milk"
+    text: "${TASK_TITLE.replace(/[\\\\^\\x24.|?*+()[\\]{}]/g, '\\\\\\x24&')}"
 # Oracle five-tasks
 - assertVisible:
     text: "5 tasks"

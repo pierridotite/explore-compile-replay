@@ -77,7 +77,7 @@ To keep what Maestro wrote for one replay (its record, its screenshots), set `EC
 
 ## Known limits
 
-- Maestro matches text as a regular expression. Literal texts are escaped. The value of a parameter is not: a value with `(` or `.` in it is read as a pattern.
+- Maestro matches text as a regular expression. Literal texts are escaped when compiled, and parameter values are escaped at replay time; typed text is passed through unchanged.
 - A literal text cannot contain `${`.
 - Values are passed as `maestro test -e NAME=value`, so they are visible in the process list while the flow runs.
 - How a failed step is classified (`target_not_found`, `timeout`, `action_failed`) is read from the words of Maestro's message. This is not yet checked on a device.

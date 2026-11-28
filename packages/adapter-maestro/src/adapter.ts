@@ -112,9 +112,9 @@ function plainText(text: Text, where: string): string {
   return quoted(isParamRef(text) ? `\${${text.param}}` : literal(text as string, where));
 }
 
-/** Text matched against the screen. Maestro reads it as a regular expression, so a literal is escaped. */
+/** Maestro matches regular expressions: escape literals now and parameter values at replay time. */
 function matchedText(text: Text, where: string): string {
-  if (isParamRef(text)) return quoted(`\${${text.param}}`);
+  if (isParamRef(text)) return quoted("${" + text.param + String.raw`.replace(/[\\^\x24.|?*+()[\]{}]/g, '\\\x24&')}`);
   return quoted(literal(text as string, where).replace(/[\\^$.|?*+()[\]{}]/g, "\\$&"));
 }
 

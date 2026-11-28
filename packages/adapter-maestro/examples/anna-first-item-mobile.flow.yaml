@@ -67,7 +67,7 @@ name: "anna: Add her first item without help."
     text: "Save"
 # Oracle item-listed
 - assertVisible:
-    text: "${ITEM_TITLE}"
+    text: "${ITEM_TITLE.replace(/[\\\\^\\x24.|?*+()[\\]{}]/g, '\\\\\\x24&')}"
 # Oracle empty-message-gone
 - assertNotVisible:
     text: "Nothing here yet \\(0 items\\)"

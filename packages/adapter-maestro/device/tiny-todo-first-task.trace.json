@@ -28,6 +28,11 @@
       "name": "PASSWORD",
       "secret": true,
       "description": "Password of the test account, 8 characters or more"
+    },
+    {
+      "name": "TASK_TITLE",
+      "secret": false,
+      "description": "Task title, including regex metacharacters"
     }
   ],
   "invariants": [
@@ -174,7 +179,9 @@
       "id": "task",
       "action": {
         "kind": "inputText",
-        "text": "Buy milk"
+        "text": {
+          "param": "TASK_TITLE"
+        }
       },
       "checkpoints": []
     },
@@ -193,7 +200,9 @@
           "check": {
             "kind": "visible",
             "target": {
-              "text": "Buy milk"
+              "text": {
+                "param": "TASK_TITLE"
+              }
             }
           }
         },

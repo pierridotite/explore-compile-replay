@@ -114,7 +114,7 @@ function plainText(text: Text, where: string): string {
 
 /** Maestro matches regular expressions: escape literals now and parameter values at replay time. */
 function matchedText(text: Text, where: string): string {
-  if (isParamRef(text)) return quoted("${" + text.param + String.raw`.replace(/[\\^$.|?*+()[\]{}]/g, '\\$&')}`);
+  if (isParamRef(text)) return quoted("${" + text.param + String.raw`.replace(/[\\^\x24.|?*+()[\]{}]/g, '\\\x24&')}`);
   return quoted(literal(text as string, where).replace(/[\\^$.|?*+()[\]{}]/g, "\\$&"));
 }
 
